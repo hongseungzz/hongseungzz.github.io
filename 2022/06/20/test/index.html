@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>June 20, 2022, Monday | SeungZZang&#39;s Blog</title>
+  <title>20220620 시각화 테스트 | SeungZZang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="6.20 MondayFlying in the dark skyRiding that shining star,With your long sleepIf you could take me with you, Even if you go around the sky, day and night,If only I could see youEven my sweet sleepYou">
+  <meta name="description" content="csv 파일 불러오기12mpg1 &lt;- read.csv(&quot;mpg1.csv&quot;)str(mpg1)  123456## &amp;#x27;data.frame&amp;#x27;:	234 obs. of  5 variables:##  $ manufacturer: chr  &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="June 20, 2022, Monday">
-<meta property="og:url" content="https://hongseungzz.github.io/2022/06/20/June-20,-2022,-Day3/index.html">
+<meta property="og:title" content="20220620 시각화 테스트">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/06/20/test/index.html">
 <meta property="og:site_name" content="SeungZZang&#39;s Blog">
-<meta property="og:description" content="6.20 MondayFlying in the dark skyRiding that shining star,With your long sleepIf you could take me with you, Even if you go around the sky, day and night,If only I could see youEven my sweet sleepYou">
+<meta property="og:description" content="csv 파일 불러오기12mpg1 &lt;- read.csv(&quot;mpg1.csv&quot;)str(mpg1)  123456## &amp;#x27;data.frame&amp;#x27;:	234 obs. of  5 variables:##  $ manufacturer: chr  &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; &amp;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hongseungzz.github.io/images/rmd_0620/unnamed-chunk-2-1.png">
 <meta property="article:published_time" content="2022-06-20T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-19T23:49:15.594Z">
+<meta property="article:modified_time" content="2022-06-20T08:14:35.390Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hongseungzz.github.io/images/rmd_0620/unnamed-chunk-2-1.png">
   
     <link rel="alternate" href="/atom.xml" title="SeungZZang's Blog" type="application/atom+xml">
   
@@ -77,9 +79,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-June-20,-2022,-Day3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/06/20/June-20,-2022,-Day3/" class="article-date">
+    <a href="/2022/06/20/test/" class="article-date">
   <time class="dt-published" datetime="2022-06-20T00:00:00.000Z" itemprop="datePublished">2022-06-20</time>
 </a>
     
@@ -91,7 +93,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      June 20, 2022, Monday
+      20220620 시각화 테스트
     </h1>
   
 
@@ -99,14 +101,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="6-20-Monday"><a href="#6-20-Monday" class="headerlink" title="6.20 Monday"></a>6.20 Monday</h2><p>Flying in the dark sky<br>Riding that shining star,<br>With your long sleep<br>If you could take me with you,</p>
-<p>Even if you go around the sky, day and night,<br>If only I could see you<br>Even my sweet sleep<br>You can throw everything away and fly up</p>
-<p>Follow the light, become a comet, fly in the sky<br>Take my heart to you<br>Lower the stars, burn more light so that I can see you<br>Even if it disappears one day, I’ll give you my heart</p>
+        <h3 id="csv-파일-불러오기"><a href="#csv-파일-불러오기" class="headerlink" title="csv 파일 불러오기"></a>csv 파일 불러오기</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mpg1 <span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;mpg1.csv&quot;</span><span class="punctuation">)</span></span><br><span class="line">str<span class="punctuation">(</span>mpg1<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## &#x27;data.frame&#x27;:	234 obs. of  5 variables:</span><br><span class="line">##  $ manufacturer: chr  &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; ...</span><br><span class="line">##  $ trans       : chr  &quot;auto&quot; &quot;manual&quot; &quot;manual&quot; &quot;auto&quot; ...</span><br><span class="line">##  $ drv         : chr  &quot;f&quot; &quot;f&quot; &quot;f&quot; &quot;f&quot; ...</span><br><span class="line">##  $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...</span><br><span class="line">##  $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="데이터-시각화-하기"><a href="#데이터-시각화-하기" class="headerlink" title="데이터 시각화 하기"></a>데이터 시각화 하기</h3><ul>
+<li>cty, hwy 산점도를 그려본다.</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">ggplot<span class="punctuation">(</span>mpg1<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> cty<span class="punctuation">,</span> y <span class="operator">=</span> hwy<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p><img src="/../images/rmd_0620/unnamed-chunk-2-1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hongseungzz.github.io/2022/06/20/June-20,-2022,-Day3/" data-id="cl4lyrmyh0000cctra4jedk1k" data-title="June 20, 2022, Monday" class="article-share-link">Share</a>
+      <a data-url="https://hongseungzz.github.io/2022/06/20/test/" data-id="cl4mfy8ba00003wtrd3whdyvr" data-title="20220620 시각화 테스트" class="article-share-link">Share</a>
       
       
       
@@ -157,7 +165,7 @@
       <ul>
         
           <li>
-            <a href="/2022/06/20/June-20,-2022,-Day3/">June 20, 2022, Monday</a>
+            <a href="/2022/06/20/test/">20220620 시각화 테스트</a>
           </li>
         
           <li>
