@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>June 21, 2022, Day04 | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Chapter.5통계 통계 공부 방법 빈도주의자 VS 베이지안 주의자    -&gt; 일반적으로는 빈도주의 &#x3D; Counting(숫자를 세는 것)      ex) 평균   -&gt; 베이지안 주의자 &#x3D; Percentage(확률 누적, Counting X) 산술연산 수치 데이터를 계산할 때 이용12345678910# 사칙연산자는 알기 때문에">
+<meta property="og:type" content="article">
+<meta property="og:title" content="June 21, 2022, Day04">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/06/21/June-21,-2022,-Day04/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="Chapter.5통계 통계 공부 방법 빈도주의자 VS 베이지안 주의자    -&gt; 일반적으로는 빈도주의 &#x3D; Counting(숫자를 세는 것)      ex) 평균   -&gt; 베이지안 주의자 &#x3D; Percentage(확률 누적, Counting X) 산술연산 수치 데이터를 계산할 때 이용12345678910# 사칙연산자는 알기 때문에">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-21T03:02:48.510Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SeungZZang&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">For Happy Life</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hongseungzz.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-June-21,-2022,-Day04" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/21/June-21,-2022,-Day04/" class="article-date">
+  <time class="dt-published" datetime="2022-06-21T00:00:00.000Z" itemprop="datePublished">2022-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      June 21, 2022, Day04
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Chapter-5"><a href="#Chapter-5" class="headerlink" title="Chapter.5"></a>Chapter.5</h2><h3 id="통계"><a href="#통계" class="headerlink" title="통계"></a>통계</h3><ul>
+<li>통계 공부 방법</li>
+<li>빈도주의자 VS 베이지안 주의자</li>
+</ul>
+<p>  -&gt; 일반적으로는 빈도주의 &#x3D; Counting(숫자를 세는 것)<br>      ex) 평균</p>
+<p>  -&gt; 베이지안 주의자 &#x3D; Percentage(확률 누적, Counting X)</p>
+<h3 id="산술연산"><a href="#산술연산" class="headerlink" title="산술연산"></a>산술연산</h3><ul>
+<li>수치 데이터를 계산할 때 이용<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 사칙연산자는 알기 때문에 제외</span><br><span class="line">1) %/% = 나누기의 몫   </span><br><span class="line">ex. 5%/%2</span><br><span class="line">    [1] 2</span><br><span class="line">2) %% = 나누기의 나머지</span><br><span class="line">ex. 5%%2</span><br><span class="line">    [1] 1</span><br><span class="line">3) ^ 또는 ** = 제곱</span><br><span class="line">ex. 5^2 or 5**2</span><br><span class="line">    [1] 25</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="비교연산"><a href="#비교연산" class="headerlink" title="비교연산"></a>비교연산</h3><ul>
+<li>여러 데이터를 비교<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1) == -&gt; 같다</span><br><span class="line">2) != -&gt; 다르다</span><br><span class="line">3) &gt; -&gt; 크다</span><br><span class="line">4) &gt;= -&gt; 크거나 같다</span><br><span class="line">5) &lt; -&gt; 작다</span><br><span class="line">6) &lt;= -&gt; 작거나 같다</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="숫자-연산-문법"><a href="#숫자-연산-문법" class="headerlink" title="숫자 연산 문법"></a>숫자 연산 문법</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1) a:z = a부터 z까지</span><br><span class="line">ex. 1:5</span><br><span class="line">    [1] 1 2 3 4 5</span><br><span class="line">    5:1</span><br><span class="line">    [1] 5 4 3 2 1</span><br><span class="line">    x &lt;- c(1,3,5,7,9)</span><br><span class="line">    x[1:3]</span><br><span class="line">    [1] 1 3 5</span><br><span class="line">2) seq(from, to, by=) = a부커 z까지 증가 또는 감소하는 숫자나 색인</span><br><span class="line">ex. seq(1,9)</span><br><span class="line">    [1] 1 2 3 4 5 6 7 8 9</span><br><span class="line">    seq(9,1)</span><br><span class="line">    [1] 9 8 7 6 5 4 3 2 1</span><br><span class="line">    seq(1,9,by=2)   # 1부터 9까지 2씩 증가</span><br><span class="line">    [1] 1 3 5 7 9</span><br><span class="line">    seq(9,1,by=2)   # 9부터 1까지 2씩 감소</span><br><span class="line">    [1] 9 7 5 3 1</span><br><span class="line">3) rep(x, each, times=) = x값을 반복해서 출력</span><br><span class="line">ex. rep(c(1,2), each=2)   # (1,2)를 각각 두 번 반복 출력</span><br><span class="line">    [1] 1 1 2 2</span><br><span class="line">    rep(c(1,2), times=)   # (1,2)를 통째 두 번 반복 출력</span><br><span class="line">    [1] 1 2 1 2</span><br><span class="line">    rep(c(1,2), each=2, times=3)</span><br><span class="line">    [1] 1 1 2 2 1 1 2 2 1 1 2 2</span><br><span class="line">4) 논리 연산자</span><br><span class="line">    - |(ctrl+\, 또는-&gt;합집합)/&amp;(그리고-&gt;교집합)/!(아니다)</span><br></pre></td></tr></table></figure>
+
+<h3 id="데이터-구조를-알아보는-함수"><a href="#데이터-구조를-알아보는-함수" class="headerlink" title="데이터 구조를 알아보는 함수"></a>데이터 구조를 알아보는 함수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1) head() -&gt; 데이터세트에서 행의 앞부분 6개 행만 출력</span><br><span class="line"></span><br><span class="line">2) tail() -&gt; 데이터세트에서 행의 뒷부분 6개 행만 출력</span><br><span class="line"></span><br><span class="line">3) str() -&gt; 데이터세트의 구조와 유형 출력</span><br><span class="line"></span><br><span class="line">4) View() -&gt; 데이터세트를 엑셀 형식으로 출력</span><br><span class="line"></span><br><span class="line">5) dim() -&gt; 데이터세트의 행과 열의 개수 출력</span><br><span class="line"></span><br><span class="line">6) length() -&gt; 데이터세트의 열의 개수 출력</span><br><span class="line"></span><br><span class="line">7) class() -&gt; 데이터세트의 유형 출력</span><br><span class="line"></span><br><span class="line">8) ls() -&gt; 데이터세트의 벡터 이름 출력</span><br></pre></td></tr></table></figure>
+
+<h3 id="기본-통계-함수"><a href="#기본-통계-함수" class="headerlink" title="기본 통계 함수"></a>기본 통계 함수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 분산, var()</span><br><span class="line">  = 데이터들이 평균을 기준으로 떨어져 있는 정도</span><br><span class="line">    -&gt; 편차의 제곱의 합을 전체 수로 나눈 것</span><br><span class="line">    -&gt; 여기서 편차는 각 데이터들의 평균으로부터의 오차</span><br><span class="line">    -&gt; 분산이 클수록 데이터들이 넓게 분포되어 있음</span><br><span class="line"></span><br><span class="line"># 표준편차, sd() = 분산을 제곱근한 것</span><br><span class="line"></span><br><span class="line"># 사분위수, quantile() = 전체 수를 4등분한 수</span><br><span class="line"></span><br><span class="line"># IQR = 1사분위수와 3사분위수 사이의 거리</span><br><span class="line"></span><br><span class="line"># 통계분석/머신러닝 -&gt; 이상치 제거할 때 활용</span><br></pre></td></tr></table></figure>
+
+<h3 id="통계-요약-구하기-gt-summary"><a href="#통계-요약-구하기-gt-summary" class="headerlink" title="통계 요약 구하기 -&gt; summary()"></a>통계 요약 구하기 -&gt; summary()</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>iris<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span><br><span class="line">##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span><br><span class="line">##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span><br><span class="line">##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span><br><span class="line">##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span><br><span class="line">##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span><br><span class="line">##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span><br><span class="line">##        Species  </span><br><span class="line">##  setosa    :50  </span><br><span class="line">##  versicolor:50  </span><br><span class="line">##  virginica :50  </span><br><span class="line">##                 </span><br><span class="line">##                 </span><br><span class="line">## </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>iris<span class="operator">$</span>Sepal.Length<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">##   4.300   5.100   5.800   5.843   6.400   7.900</span><br></pre></td></tr></table></figure>
+
+<h3 id="빈도분석-빈도-구하기"><a href="#빈도분석-빈도-구하기" class="headerlink" title="빈도분석 - 빈도 구하기"></a>빈도분석 - 빈도 구하기</h3><ul>
+<li>빈도분석: 범주형 변수에서 범주별 빈도를 계산하는 것<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">빈도분석: table(데이터세트$범주형 변수)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#예시</span></span><br><span class="line">mpg1 <span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;mpg1.csv&quot;</span><span class="punctuation">,</span> stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line">str<span class="punctuation">(</span>mpg1<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## &#x27;data.frame&#x27;:	234 obs. of  5 variables:</span><br><span class="line">##  $ manufacturer: chr  &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; ...</span><br><span class="line">##  $ trans       : chr  &quot;auto&quot; &quot;manual&quot; &quot;manual&quot; &quot;auto&quot; ...</span><br><span class="line">##  $ drv         : chr  &quot;f&quot; &quot;f&quot; &quot;f&quot; &quot;f&quot; ...</span><br><span class="line">##  $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...</span><br><span class="line">##  $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#stringAsFactors -&gt; 문자열을 범주로 바꾸느냐를 묻는 명령어</span></span><br><span class="line"></span><br><span class="line">table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">)</span>   <span class="comment">#단일 벡터 분석</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">##   auto manual </span><br><span class="line">##    157     77</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table<span class="punctuation">(</span>mpg1<span class="operator">$</span>manufacturer<span class="punctuation">,</span> mpg1<span class="operator">$</span>trans<span class="punctuation">)</span> <span class="comment"># 교차 분석</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">##             </span><br><span class="line">##              auto manual</span><br><span class="line">##   audi         11      7</span><br><span class="line">##   chevrolet    16      3</span><br><span class="line">##   dodge        30      7</span><br><span class="line">##   ford         17      8</span><br><span class="line">##   honda         4      5</span><br><span class="line">##   hyundai       7      7</span><br><span class="line">##   jeep          8      0</span><br><span class="line">##   land rover    4      0</span><br><span class="line">##   lincoln       3      0</span><br><span class="line">##   mercury       4      0</span><br><span class="line">##   nissan        8      5</span><br><span class="line">##   pontiac       5      0</span><br><span class="line">##   subaru        7      7</span><br><span class="line">##   toyota       20     14</span><br><span class="line">##   volkswagen   13     14</span><br></pre></td></tr></table></figure>
+
+<h3 id="빈도의-비율-구하기"><a href="#빈도의-비율-구하기" class="headerlink" title="빈도의 비율 구하기"></a>빈도의 비율 구하기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1단계: a &lt;- talbe()</span><br><span class="line">2단계: prop.table(a)   #prop.table(table())과 같음</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#예시</span></span><br><span class="line">a <span class="operator">&lt;-</span> table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">)</span>   <span class="comment"># 빈도분석</span></span><br><span class="line">prop.table<span class="punctuation">(</span>a<span class="punctuation">)</span>   <span class="comment"># 빈도 비율 구하기</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">##      auto    manual </span><br><span class="line">## 0.6709402 0.3290598</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b <span class="operator">&lt;-</span> table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span>   <span class="comment"># 교차분석</span></span><br><span class="line">prop.table<span class="punctuation">(</span>b<span class="punctuation">)</span>   <span class="comment"># 빈도 비율 구하기</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##                   4          f          r</span><br><span class="line">##   auto   0.32051282 0.27777778 0.07264957</span><br><span class="line">##   manual 0.11965812 0.17521368 0.03418803</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">##      auto    manual </span><br><span class="line">## 0.6709402 0.3290598</span><br></pre></td></tr></table></figure>
+
+<h3 id="행과-열의-비율-형식-맞추기"><a href="#행과-열의-비율-형식-맞추기" class="headerlink" title="행과 열의 비율 형식 맞추기"></a>행과 열의 비율 형식 맞추기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prop.table(table(), margin = 1)</span><br><span class="line">  -&gt; 행의 합이 1이 되도록 비율 표시</span><br><span class="line">prop.table(table(), margin = 2)</span><br><span class="line">  -&gt; 열의 합이 1이 되도록 비율 표시</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 예시</span></span><br><span class="line">prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">,</span> margin <span class="operator">=</span> <span class="number">1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##                  4         f         r</span><br><span class="line">##   auto   0.4777070 0.4140127 0.1082803</span><br><span class="line">##   manual 0.3636364 0.5324675 0.1038961</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">,</span> margin <span class="operator">=</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##                  4         f         r</span><br><span class="line">##   auto   0.7281553 0.6132075 0.6800000</span><br><span class="line">##   manual 0.2718447 0.3867925 0.3200000</span><br></pre></td></tr></table></figure>
+
+<h3 id="소수점-아래-자리수-지정"><a href="#소수점-아래-자리수-지정" class="headerlink" title="소수점 아래 자리수 지정"></a>소수점 아래 자리수 지정</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">round(숫자 또는 계산함수, 소수점 자리수)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#예시</span></span><br><span class="line"><span class="built_in">round</span><span class="punctuation">(</span><span class="number">0.32051282</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 0.32</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span><span class="punctuation">(</span>prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">##   auto manual </span><br><span class="line">##   0.67   0.33</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongseungzz.github.io/2022/06/21/June-21,-2022,-Day04/" data-id="cl4nktyru0000mctr3u2l2o04" data-title="June 21, 2022, Day04" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/20/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">20220620 시각화 테스트</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/21/June-21,-2022,-Day04/">June 21, 2022, Day04</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/test/">20220620 시각화 테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/June-20,-2022,-Day03/">June 20, 2022, Day03</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/17/6%EC%9B%9417%EC%9D%BC_%EA%B0%95%EC%9D%98%EB%82%B4%EC%9A%A9/">June 17, 2022, Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/16/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/">로컬PC↔github 연결</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>로컬PC↔github 연결 | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Git Bash 실행 폴더 생성: mkdir 폴더명    폴더로 진입: cd 두 글자 입력 후 TAB키, 폴더 우클릭 후 git bash here 클릭 제대로 진입했을 경우           2. 제대로 진입하지 않은 경우 ← cd만 입력한 경우                         → 위치가 Desktop에서 최상위폴더인 사용자로 변경       3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="로컬PC↔github 연결">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/06/16/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="Git Bash 실행 폴더 생성: mkdir 폴더명    폴더로 진입: cd 두 글자 입력 후 TAB키, 폴더 우클릭 후 git bash here 클릭 제대로 진입했을 경우           2. 제대로 진입하지 않은 경우 ← cd만 입력한 경우                         → 위치가 Desktop에서 최상위폴더인 사용자로 변경       3">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%201.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%202.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%203.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%204.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%205.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%206.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%207.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%208.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%209.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2010.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2011.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2012.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2013.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2014.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2015.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2016.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2017.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2018.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2019.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2020.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2021.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2022.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2023.png">
+<meta property="article:published_time" content="2022-06-16T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-21T03:13:27.243Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hongseungzz.github.io/images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SeungZZang&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">For Happy Life</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hongseungzz.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-로컬PC_github_연결" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/16/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-06-16T00:00:00.000Z" itemprop="datePublished">2022-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      로컬PC↔github 연결
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-Bash-실행"><a href="#Git-Bash-실행" class="headerlink" title="Git Bash 실행"></a>Git Bash 실행</h1><ul>
+<li>폴더 생성: mkdir 폴더명</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled.png"></p>
+<ul>
+<li>폴더로 진입: cd 두 글자 입력 후 TAB키, 폴더 우클릭 후 git bash here 클릭<ol>
+<li>제대로 진입했을 경우</li>
+</ol>
+</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%201.png"></p>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%202.png"></p>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%203.png"></p>
+<pre><code>    2. 제대로 진입하지 않은 경우 ← cd만 입력한 경우
+</code></pre>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%204.png"></p>
+<pre><code>                      → 위치가 Desktop에서 최상위폴더인 사용자로 변경
+
+     3. 상위폴더로 진입하고 싶은 경우 ← cd ..
+</code></pre>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%205.png"></p>
+<h2 id="기본-코드"><a href="#기본-코드" class="headerlink" title="기본 코드"></a>기본 코드</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# blog&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/hongseungzz/blog.gitgit push -u origin main</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>echo “텍스트” &gt;&gt; <a target="_blank" rel="noopener" href="http://readme.md/">README.md</a> ← README.md 파일에 해당 텍스트를 출력하라</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%206.png"></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="http://readme.md/">README.md</a> 파일 열기 → 파일 우클릭 → 연결 프로그램 클릭</p>
+<p>  <img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%207.png"></p>
+<p>  <img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%208.png"></p>
+</li>
+<li><p>git init ← 새로운 git 저장소 생성</p>
+</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%209.png"></p>
+<ul>
+<li>git add 파일명 ← 파일 하나 업로드</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2010.png"></p>
+<ul>
+<li><p>git add. (x)</p>
+<pre><code>git add . (o) ← 모든 파일 업로드
+</code></pre>
+</li>
+<li><p>git commit -m “메시지 내용(ex. “FIX : ?? file bugs fixed”, 파일 이름 아님)”</p>
+<ul>
+<li>사용자 메일과 이름 세팅 X</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2011.png"></p>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2012.png"></p>
+<ul>
+<li>git config –global user.emali, git config –global <a target="_blank" rel="noopener" href="http://user.name/">user.name</a> ← 메일과 이름 세팅(한 번만 입력하면 OK)</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2013.png"></p>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2014.png"></p>
+<ul>
+<li><p>git commit -m “메시지 내용(ex. “FIX : ?? file bugs fixed”)”</p>
+<ul>
+<li>사용자 메일과 이름 세팅 O</li>
+</ul>
+<p>  <img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2015.png"></p>
+</li>
+<li><p>git branch -M main ← 메인 브랜치 만들기(main이 브랜치명)</p>
+</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2016.png"></p>
+<ul>
+<li>git remote add origin 링크 주소 ← 원격 저장소 추가(origin이 저장소명)</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2017.png"></p>
+<ul>
+<li>git push -u origin main</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2018.png"></p>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2019.png"></p>
+<h2 id="파일-업로드-업데이트-방법"><a href="#파일-업로드-업데이트-방법" class="headerlink" title="파일 업로드(업데이트) 방법"></a>파일 업로드(업데이트) 방법</h2><ul>
+<li>git add .</li>
+<li>git commit -m “메시지” 또는 git commit -m “UPDATED : <a target="_blank" rel="noopener" href="http://readme.md/">README.md</a> .”</li>
+<li>git push<ol>
+<li>git commit -m “메시지”를 입력한 경우</li>
+</ol>
+</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2020.png"></p>
+<ol>
+<li>git commit -m “UPDATED : 파일명. 확장자 .”를 입력한 경우</li>
+</ol>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2021.png"></p>
+<h2 id="폴더-복구-방법"><a href="#폴더-복구-방법" class="headerlink" title="폴더 복구 방법"></a>폴더 복구 방법</h2><ul>
+<li>git clone 링크 주소(폴더가 없을 경우에 한해서, 폴더 이름x, git clone만 입력하는 것도x)</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2022.png"></p>
+<h2 id="파일-동기화-다운로드-방법"><a href="#파일-동기화-다운로드-방법" class="headerlink" title="파일 동기화(다운로드) 방법"></a>파일 동기화(다운로드) 방법</h2><p>★ 무조건 가장 먼저 해야 할 아주 중요한 명령 → git pull(폴더가 저장되어 있다면 할 필요 X) </p>
+<h2 id="파일-리스트-확인-방법"><a href="#파일-리스트-확인-방법" class="headerlink" title="파일 리스트 확인 방법"></a>파일 리스트 확인 방법</h2><ul>
+<li>ls 입력</li>
+</ul>
+<p><img src="/../images/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/Untitled%2023.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongseungzz.github.io/2022/06/16/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/" data-id="cl4ngn83m0002sstr6o78gw1k" data-title="로컬PC↔github 연결" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/17/6%EC%9B%9417%EC%9D%BC_%EA%B0%95%EC%9D%98%EB%82%B4%EC%9A%A9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          June 17, 2022, Day02
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/21/June-21,-2022,-Day04/">June 21, 2022, Day04</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/test/">20220620 시각화 테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/June-20,-2022,-Day03/">June 20, 2022, Day03</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/17/6%EC%9B%9417%EC%9D%BC_%EA%B0%95%EC%9D%98%EB%82%B4%EC%9A%A9/">June 17, 2022, Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/16/%EB%A1%9C%EC%BB%ACPC_github_%EC%97%B0%EA%B2%B0/">로컬PC↔github 연결</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
