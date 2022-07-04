@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>배운 내용 개인 테스트_0629 | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="123456#@title# 라이브러리 청크import pandas as pdimport numpy as npprint(&quot;pandas version : &quot;, pd.__version__)print(&quot;numpy version : &quot;, np.__version__)  pandas version :  1.3.5 numpy versi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="배운 내용 개인 테스트_0629">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/06/29/My_Test_0629/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="123456#@title# 라이브러리 청크import pandas as pdimport numpy as npprint(&quot;pandas version : &quot;, pd.__version__)print(&quot;numpy version : &quot;, np.__version__)  pandas version :  1.3.5 numpy versi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hongseungzz.github.io/images/My_Test_0629/output_34_0.png">
+<meta property="article:published_time" content="2022-06-28T23:22:22.000Z">
+<meta property="article:modified_time" content="2022-07-04T07:44:59.719Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hongseungzz.github.io/images/My_Test_0629/output_34_0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="SeungZZang&#39;s Blog" rel="home"> SeungZZang&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-My_Test_0629" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      배운 내용 개인 테스트_0629
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/06/29/My_Test_0629/" class="article-date">
+	  <time datetime="2022-06-28T23:22:22.000Z" itemprop="datePublished">June 29, 2022</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#@title</span></span><br><span class="line"><span class="comment"># 라이브러리 청크</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;pandas version : &quot;</span>, pd.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;numpy version : &quot;</span>, np.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>pandas version :  1.3.5
+numpy version :  1.21.6
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict_data = &#123;</span><br><span class="line">    <span class="string">&#x27;x&#x27;</span> : <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;y&#x27;</span> : <span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;z&#x27;</span> : <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line">series_data = pd.Series(dict_data)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(series_data))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\n&#x27;</span>)    <span class="comment"># &#x27;\n&#x27; : 줄바꿈</span></span><br><span class="line"><span class="built_in">print</span>(series_data)</span><br><span class="line"></span><br><span class="line">a = <span class="string">&quot;Doosan\nBears&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;Doosan\tBears&quot;</span>    <span class="comment"># &#x27;\t&#x27; : tap키</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+
+
+x    1
+y    2
+z    3
+dtype: int64
+Doosan
+Bears
+Doosan	Bears
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(series_data.index)     <span class="comment"># 인덱스 확인</span></span><br><span class="line"><span class="built_in">print</span>(series_data.values)    <span class="comment"># 값 확인</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
+[1 2 3]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&quot;/content/drive/MyDrive/Colab Notebooks/human_ai/Basic/Chapter 3. pandas/data/&quot;</span></span><br><span class="line">lemonade = pd.read_csv(DATA_PATH + <span class="string">&quot;Lemonade2016.csv&quot;</span>)</span><br><span class="line">lemonade.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Date         31 non-null     object 
+ 1   Location     32 non-null     object 
+ 2   Lemon        32 non-null     int64  
+ 3   Orange       32 non-null     int64  
+ 4   Temperature  32 non-null     int64  
+ 5   Leaflets     31 non-null     float64
+ 6   Price        32 non-null     float64
+dtypes: float64(2), int64(3), object(2)
+memory usage: 1.9+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[[<span class="string">&#x27;Lemon&#x27;</span>, <span class="string">&#x27;Orange&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>]].describe())</span><br></pre></td></tr></table></figure>
+
+<pre><code>            Lemon      Orange  Temperature
+count   32.000000   32.000000    32.000000
+mean   116.156250   80.000000    78.968750
+std     25.823357   21.863211     4.067847
+min     71.000000   42.000000    70.000000
+25%     98.000000   66.750000    77.000000
+50%    113.500000   76.500000    80.500000
+75%    131.750000   95.000000    82.000000
+max    176.000000  129.000000    84.000000
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;num_legs&#x27;</span>: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">6</span>],</span><br><span class="line">                   <span class="string">&#x27;num_wings&#x27;</span>: [<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]&#125;,</span><br><span class="line">                  index=[<span class="string">&#x27;falcon&#x27;</span>, <span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;cat&#x27;</span>, <span class="string">&#x27;ant&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>        num_legs  num_wings
+falcon         2          2
+dog            4          0
+cat            4          0
+ant            6          0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>num_legs  num_wings
+4         0            2
+2         2            1
+6         0            1
+dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[[<span class="string">&#x27;Location&#x27;</span>, <span class="string">&#x27;Date&#x27;</span>]].value_counts())</span><br></pre></td></tr></table></figure>
+
+<pre><code>Location  Date     
+Beach     7/6/2016     2
+          7/10/2016    1
+Park      7/18/2016    1
+          7/29/2016    1
+          7/28/2016    1
+          7/27/2016    1
+          7/26/2016    1
+          7/25/2016    1
+          7/24/2016    1
+          7/23/2016    1
+          7/22/2016    1
+          7/21/2016    1
+          7/20/2016    1
+          7/2/2016     1
+          7/19/2016    1
+          7/1/2016     1
+Beach     7/11/2016    1
+          7/9/2016     1
+          7/7/2016     1
+          7/5/2016     1
+          7/4/2016     1
+          7/31/2016    1
+          7/30/2016    1
+          7/17/2016    1
+          7/16/2016    1
+          7/15/2016    1
+          7/14/2016    1
+          7/13/2016    1
+          7/12/2016    1
+Park      7/3/2016     1
+dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Sold&#x27;</span>] = lemonade[<span class="string">&#x27;Orange&#x27;</span>] + lemonade[<span class="string">&#x27;Lemon&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25   164
+1  7/2/2016     Park     98      67           72      90.0   0.25   165
+2  7/3/2016     Park    110      77           71     104.0   0.25   187
+3  7/4/2016    Beach    134      99           76      98.0   0.25   233
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Revenue&#x27;</span>] = lemonade[<span class="string">&#x27;Sold&#x27;</span>] * lemonade[<span class="string">&#x27;Price&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(lemonade.head(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+0  7/1/2016     Park     97      67           70      90.0   0.25   164   
+1  7/2/2016     Park     98      67           72      90.0   0.25   165   
+2  7/3/2016     Park    110      77           71     104.0   0.25   187   
+3  7/4/2016    Beach    134      99           76      98.0   0.25   233   
+4  7/5/2016    Beach    159     118           78     135.0   0.25   277   
+
+   Revenue  
+0    41.00  
+1    41.25  
+2    46.75  
+3    58.25  
+4    69.25  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[[<span class="string">&#x27;Revenue&#x27;</span>, <span class="string">&#x27;Sold&#x27;</span>]].head(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Revenue  Sold
+0    41.00   164
+1    41.25   165
+2    46.75   187
+3    58.25   233
+4    69.25   277
+5    43.00   172
+6    43.00   172
+7    61.00   244
+8    52.25   209
+9    57.25   229
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 차이 확인</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(lemonade[<span class="string">&#x27;Revenue&#x27;</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(lemonade[[<span class="string">&#x27;Revenue&#x27;</span>]]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">col_drop = lemonade.drop(<span class="string">&#x27;Revenue&#x27;</span>, axis = <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(col_drop.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25   164
+1  7/2/2016     Park     98      67           72      90.0   0.25   165
+2  7/3/2016     Park    110      77           71     104.0   0.25   187
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">row_drop = lemonade.drop([<span class="number">0</span>, <span class="number">2</span>, <span class="number">5</span>], axis = <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(row_drop.head(<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>         Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+1    7/2/2016     Park     98      67           72      90.0   0.25   165   
+3    7/4/2016    Beach    134      99           76      98.0   0.25   233   
+4    7/5/2016    Beach    159     118           78     135.0   0.25   277   
+6    7/6/2016    Beach    103      69           82      90.0   0.25   172   
+7    7/7/2016    Beach    143     101           81     135.0   0.25   244   
+8         NaN    Beach    123      86           82     113.0   0.25   209   
+9    7/9/2016    Beach    134      95           80     126.0   0.25   229   
+10  7/10/2016    Beach    140      98           82     131.0   0.25   238   
+
+    Revenue  
+1     41.25  
+3     58.25  
+4     69.25  
+6     43.00  
+7     61.00  
+8     52.25  
+9     57.25  
+10    59.50  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[<span class="number">2</span>:<span class="number">11</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>         Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+2    7/3/2016     Park    110      77           71     104.0   0.25   187   
+3    7/4/2016    Beach    134      99           76      98.0   0.25   233   
+4    7/5/2016    Beach    159     118           78     135.0   0.25   277   
+5    7/6/2016    Beach    103      69           82      90.0   0.25   172   
+6    7/6/2016    Beach    103      69           82      90.0   0.25   172   
+7    7/7/2016    Beach    143     101           81     135.0   0.25   244   
+8         NaN    Beach    123      86           82     113.0   0.25   209   
+9    7/9/2016    Beach    134      95           80     126.0   0.25   229   
+10  7/10/2016    Beach    140      98           82     131.0   0.25   238   
+
+    Revenue  
+2     46.75  
+3     58.25  
+4     69.25  
+5     43.00  
+6     43.00  
+7     61.00  
+8     52.25  
+9     57.25  
+10    59.50  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[lemonade[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&#x27;Park&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>         Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+0    7/1/2016     Park     97      67           70      90.0   0.25   164   
+1    7/2/2016     Park     98      67           72      90.0   0.25   165   
+2    7/3/2016     Park    110      77           71     104.0   0.25   187   
+18  7/18/2016     Park    131      92           81     122.0   0.50   223   
+19  7/19/2016     Park    122      85           78     113.0   0.50   207   
+20  7/20/2016     Park     71      42           70       NaN   0.50   113   
+21  7/21/2016     Park     83      50           77      90.0   0.50   133   
+22  7/22/2016     Park    112      75           80     108.0   0.50   187   
+23  7/23/2016     Park    120      82           81     117.0   0.50   202   
+24  7/24/2016     Park    121      82           82     117.0   0.50   203   
+25  7/25/2016     Park    156     113           84     135.0   0.50   269   
+26  7/26/2016     Park    176     129           83     158.0   0.35   305   
+27  7/27/2016     Park    104      68           80      99.0   0.35   172   
+28  7/28/2016     Park     96      63           82      90.0   0.35   159   
+29  7/29/2016     Park    100      66           81      95.0   0.35   166   
+
+    Revenue  
+0     41.00  
+1     41.25  
+2     46.75  
+18   111.50  
+19   103.50  
+20    56.50  
+21    66.50  
+22    93.50  
+23   101.00  
+24   101.50  
+25   134.50  
+26   106.75  
+27    60.20  
+28    55.65  
+29    58.10  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade[<span class="string">&#x27;Sold&#x27;</span>] &gt;= <span class="number">180</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0     False
+1     False
+2      True
+3      True
+4      True
+5     False
+6     False
+7      True
+8      True
+9      True
+10     True
+11     True
+12     True
+13     True
+14     True
+15    False
+16    False
+17     True
+18     True
+19     True
+20    False
+21    False
+22     True
+23     True
+24     True
+25     True
+26     True
+27    False
+28    False
+29    False
+30    False
+31    False
+Name: Sold, dtype: bool
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade[lemonade[<span class="string">&#x27;Sold&#x27;</span>] &gt;= <span class="number">180</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade[(lemonade[<span class="string">&#x27;Sold&#x27;</span>] &gt;= <span class="number">180</span>) &amp; (lemonade[<span class="string">&#x27;Temperature&#x27;</span>] &gt; <span class="number">75</span>) &amp; (lemonade[<span class="string">&#x27;Lemon&#x27;</span>] &gt;= <span class="number">130</span>)]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.loc[lemonade[<span class="string">&#x27;Temperature&#x27;</span>] &gt;= <span class="number">80</span>, [<span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>    Sold  Revenue
+5    172    43.00
+6    172    43.00
+7    244    61.00
+8    209    52.25
+9    229    57.25
+10   238    59.50
+11   282    70.50
+12   225    56.25
+18   223   111.50
+22   187    93.50
+23   202   101.00
+24   203   101.50
+25   269   134.50
+26   305   106.75
+27   172    60.20
+28   159    55.65
+29   166    58.10
+30   145    50.75
+31   123    43.05
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.loc[(lemonade[<span class="string">&#x27;Temperature&#x27;</span>] &gt;= <span class="number">80</span>) &amp; (lemonade[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&#x27;Beach&#x27;</span>), [<span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>    Sold  Revenue
+5    172    43.00
+6    172    43.00
+7    244    61.00
+8    209    52.25
+9    229    57.25
+10   238    59.50
+11   282    70.50
+12   225    56.25
+30   145    50.75
+31   123    43.05
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.iloc[<span class="number">0</span>:<span class="number">10</span>, <span class="number">0</span>:<span class="number">5</span>])      <span class="comment"># 숫자만 들어감</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature
+0  7/1/2016     Park     97      67           70
+1  7/2/2016     Park     98      67           72
+2  7/3/2016     Park    110      77           71
+3  7/4/2016    Beach    134      99           76
+4  7/5/2016    Beach    159     118           78
+5  7/6/2016    Beach    103      69           82
+6  7/6/2016    Beach    103      69           82
+7  7/7/2016    Beach    143     101           81
+8       NaN    Beach    123      86           82
+9  7/9/2016    Beach    134      95           80
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.loc[[<span class="number">0</span> ,<span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>], [<span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>    Sold  Revenue
+0    164    41.00
+4    277    69.25
+7    244    61.00
+10   238    59.50
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.sort_values(by = [<span class="string">&#x27;Sold&#x27;</span>]).head(<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>         Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+20  7/20/2016     Park     71      42           70       NaN   0.50   113   
+31  7/31/2016    Beach     76      47           82      68.0   0.35   123   
+16  7/16/2016    Beach     81      50           74      90.0   0.50   131   
+21  7/21/2016     Park     83      50           77      90.0   0.50   133   
+30  7/30/2016    Beach     88      57           82      81.0   0.35   145   
+28  7/28/2016     Park     96      63           82      90.0   0.35   159   
+15  7/15/2016    Beach     98      62           75     108.0   0.50   160   
+0    7/1/2016     Park     97      67           70      90.0   0.25   164   
+
+    Revenue  
+20    56.50  
+31    43.05  
+16    65.50  
+21    66.50  
+30    50.75  
+28    55.65  
+15    80.00  
+0     41.00  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade.sort_values(by = [<span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>], ascending = [<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>]).head(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[[<span class="string">&#x27;Date&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>]].sort_values(by = [<span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>], </span><br><span class="line">                                                                       ascending = [<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>]).head(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lemonade[[<span class="string">&#x27;Date&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>, <span class="string">&#x27;Price&#x27;</span>]].sort_values(by=[<span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Price&#x27;</span>, <span class="string">&#x27;Revenue&#x27;</span>], ascending = [<span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>] ).head(<span class="number">25</span>))</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = lemonade.groupby(by = [<span class="string">&#x27;Location&#x27;</span>]).count()</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>          Date  Lemon  Orange  Temperature  Leaflets  Price  Sold  Revenue
+Location                                                                  
+Beach       16     17      17           17        17     17    17       17
+Park        15     15      15           15        14     15    15       15
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df1 = lemonade.groupby(by = [<span class="string">&#x27;Location&#x27;</span>, <span class="string">&#x27;Date&#x27;</span>]).count()</span><br><span class="line"><span class="built_in">print</span>(df1)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df[[<span class="string">&#x27;Lemon&#x27;</span>, <span class="string">&#x27;Orange&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>]]</span><br><span class="line"><span class="built_in">print</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>, <span class="number">0</span>:<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(df.loc[<span class="string">&#x27;Park&#x27;</span>, [<span class="string">&#x27;Lemon&#x27;</span>, <span class="string">&#x27;Orange&#x27;</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df.iloc[<span class="number">0</span>:<span class="number">2</span>, <span class="number">0</span>:<span class="number">1</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df.loc[<span class="string">&#x27;Park&#x27;</span>, [<span class="string">&#x27;Lemon&#x27;</span>, <span class="string">&#x27;Orange&#x27;</span>]]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>          Date
+Location      
+Beach       16
+Park        15
+Lemon     15
+Orange    15
+Name: Park, dtype: int64
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lemonade.groupby(by = <span class="string">&#x27;Location&#x27;</span>)[[<span class="string">&#x27;Revenue&#x27;</span>, <span class="string">&#x27;Sold&#x27;</span>, <span class="string">&#x27;Leaflets&#x27;</span>]].agg([<span class="built_in">max</span>, <span class="built_in">min</span>, <span class="built_in">sum</span>, np.mean])</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-100a4032-f649-4f3b-aabf-6c1f6b5b4ff1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead tr th &#123;
+    text-align: left;
+&#125;
+
+.dataframe thead tr:last-of-type th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="4" halign="left">Revenue</th>
+      <th colspan="4" halign="left">Sold</th>
+      <th colspan="4" halign="left">Leaflets</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beach</th>
+      <td>95.5</td>
+      <td>43.0</td>
+      <td>1002.8</td>
+      <td>58.988235</td>
+      <td>282</td>
+      <td>123</td>
+      <td>3422</td>
+      <td>201.294118</td>
+      <td>135.0</td>
+      <td>68.0</td>
+      <td>1837.0</td>
+      <td>108.058824</td>
+    </tr>
+    <tr>
+      <th>Park</th>
+      <td>134.5</td>
+      <td>41.0</td>
+      <td>1178.2</td>
+      <td>78.546667</td>
+      <td>305</td>
+      <td>113</td>
+      <td>2855</td>
+      <td>190.333333</td>
+      <td>158.0</td>
+      <td>90.0</td>
+      <td>1528.0</td>
+      <td>109.142857</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-100a4032-f649-4f3b-aabf-6c1f6b5b4ff1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-100a4032-f649-4f3b-aabf-6c1f6b5b4ff1 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-100a4032-f649-4f3b-aabf-6c1f6b5b4ff1&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bream_length = [<span class="number">25.4</span>, <span class="number">26.3</span>, <span class="number">26.5</span>, <span class="number">29.0</span>, <span class="number">29.0</span>, <span class="number">29.7</span>, <span class="number">29.7</span>, <span class="number">30.0</span>, <span class="number">30.0</span>, <span class="number">30.7</span>, <span class="number">31.0</span>, <span class="number">31.0</span>, <span class="number">31.5</span>, <span class="number">32.0</span>, <span class="number">32.0</span>, <span class="number">32.0</span>, <span class="number">33.0</span>, <span class="number">33.0</span>, <span class="number">33.5</span>, <span class="number">33.5</span>, <span class="number">34.0</span>, <span class="number">34.0</span>, <span class="number">34.5</span>, <span class="number">35.0</span>, <span class="number">35.0</span>, <span class="number">35.0</span>, <span class="number">35.0</span>, <span class="number">36.0</span>, <span class="number">36.0</span>, <span class="number">37.0</span>, <span class="number">38.5</span>, <span class="number">38.5</span>, <span class="number">39.5</span>, <span class="number">41.0</span>, <span class="number">41.0</span>]</span><br><span class="line">bream_weight = [<span class="number">242.0</span>, <span class="number">290.0</span>, <span class="number">340.0</span>, <span class="number">363.0</span>, <span class="number">430.0</span>, <span class="number">450.0</span>, <span class="number">500.0</span>, <span class="number">390.0</span>, <span class="number">450.0</span>, <span class="number">500.0</span>, <span class="number">475.0</span>, <span class="number">500.0</span>, <span class="number">500.0</span>, <span class="number">340.0</span>, <span class="number">600.0</span>, <span class="number">600.0</span>, <span class="number">700.0</span>, <span class="number">700.0</span>, <span class="number">610.0</span>, <span class="number">650.0</span>, <span class="number">575.0</span>, <span class="number">685.0</span>, <span class="number">620.0</span>, <span class="number">680.0</span>, <span class="number">700.0</span>, <span class="number">725.0</span>, <span class="number">720.0</span>, <span class="number">714.0</span>, <span class="number">850.0</span>, <span class="number">1000.0</span>, <span class="number">920.0</span>, <span class="number">955.0</span>, <span class="number">925.0</span>, <span class="number">975.0</span>, <span class="number">950.0</span>]</span><br><span class="line">smelt_length = [<span class="number">9.8</span>, <span class="number">10.5</span>, <span class="number">10.6</span>, <span class="number">11.0</span>, <span class="number">11.2</span>, <span class="number">11.3</span>, <span class="number">11.8</span>, <span class="number">11.8</span>, <span class="number">12.0</span>, <span class="number">12.2</span>, <span class="number">12.4</span>, <span class="number">13.0</span>, <span class="number">14.3</span>, <span class="number">15.0</span>]</span><br><span class="line">smelt_weight = [<span class="number">6.7</span>, <span class="number">7.5</span>, <span class="number">7.0</span>, <span class="number">9.7</span>, <span class="number">9.8</span>, <span class="number">8.7</span>, <span class="number">10.0</span>, <span class="number">9.9</span>, <span class="number">9.8</span>, <span class="number">12.2</span>, <span class="number">13.4</span>, <span class="number">12.2</span>, <span class="number">19.7</span>, <span class="number">19.9</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax.scatter(bream_length, bream_weight)</span><br><span class="line">ax.scatter(smelt_length, smelt_weight)</span><br><span class="line">ax.set_xlabel = [<span class="string">&#x27;length&#x27;</span>]</span><br><span class="line">ax.set_ylabel = [<span class="string">&#x27;weight&#x27;</span>]</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../images/My_Test_0629/output_34_0.png">    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">length = bream_length + smelt_length</span><br><span class="line">weight = bream_weight + smelt_weight</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fish_data = [[<span class="built_in">len</span>, wei] <span class="keyword">for</span> <span class="built_in">len</span>, wei <span class="keyword">in</span> <span class="built_in">zip</span>(length, weight)]</span><br><span class="line">fish_data[<span class="number">0</span>:<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[[25.4, 242.0],
+ [26.3, 290.0],
+ [26.5, 340.0],
+ [29.0, 363.0],
+ [29.0, 430.0],
+ [29.7, 450.0],
+ [29.7, 500.0],
+ [30.0, 390.0],
+ [30.0, 450.0],
+ [30.7, 500.0]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fish_target = [<span class="number">1</span>] * <span class="number">35</span> + [<span class="number">0</span>] * <span class="number">14</span></span><br><span class="line"><span class="built_in">print</span>(fish_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line">kn = KNeighborsClassifier()</span><br><span class="line"></span><br><span class="line">kn.fit(fish_data, fish_target)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>KNeighborsClassifier()
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kn.score(fish_data, fish_target)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kn.predict([[<span class="number">10</span>, <span class="number">400</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([1])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">x_length = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;물고기 길이는?&quot;</span>))</span><br><span class="line">y_weight = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;물고기 무게는?&quot;</span>))</span><br><span class="line"></span><br><span class="line">preds = <span class="built_in">int</span>(kn.predict([[x_length, y_weight]]))</span><br><span class="line"><span class="built_in">print</span>(preds)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> predicts == <span class="number">1</span> : </span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;도미&quot;</span>)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;빙어&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>물고기 길이는?5
+물고기 무게는?20
+0
+도미
+</code></pre>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/29/Day10_20220629_pandas/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          June 29, 2022, Day10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/28/Day09_20220628/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">June 28, 2022, Day09</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav">None</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 SeungZZang&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
