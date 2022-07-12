@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>House Prices Practice | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined by the kaggle&#x2F;python Docker image: https:&#x2F;&#x2F;github.com&#x2F;kaggle&#x2F;docker-python# Fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="House Prices Practice">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/07/08/house-prices-lec%20(1)/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined by the kaggle&#x2F;python Docker image: https:&#x2F;&#x2F;github.com&#x2F;kaggle&#x2F;docker-python# Fo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-07T23:22:22.000Z">
+<meta property="article:modified_time" content="2022-07-12T03:29:17.141Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="SeungZZang&#39;s Blog" rel="home"> SeungZZang&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-house-prices-lec (1)" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      House Prices Practice
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/07/08/house-prices-lec%20(1)/" class="article-date">
+	  <time datetime="2022-07-07T23:22:22.000Z" itemprop="datePublished">July 8, 2022</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here&#x27;s several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only &quot;../input/&quot; directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> dirname, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;/kaggle/input&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        <span class="built_in">print</span>(os.path.join(dirname, filename))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using &quot;Save &amp; Run All&quot; </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won&#x27;t be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>/kaggle/input/house-prices-advanced-regression-techniques/sample_submission.csv
+/kaggle/input/house-prices-advanced-regression-techniques/data_description.txt
+/kaggle/input/house-prices-advanced-regression-techniques/train.csv
+/kaggle/input/house-prices-advanced-regression-techniques/test.csv
+</code></pre>
+<h2 id="라이브러리-불러오기"><a href="#라이브러리-불러오기" class="headerlink" title="라이브러리 불러오기"></a>라이브러리 불러오기</h2><ul>
+<li>주요 라이브러리 버전을 확인한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl </span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns </span><br><span class="line"><span class="keyword">import</span> sklearn</span><br><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb </span><br><span class="line"><span class="keyword">import</span> lightgbm <span class="keyword">as</span> lgb</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;pandas version :&quot;</span>, pd.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;numpy version :&quot;</span>, np.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;matplotlib version :&quot;</span>, mpl.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;seaborn version :&quot;</span>, sns.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;scikit-learn version :&quot;</span>, sklearn.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;xgboost version :&quot;</span>, xgb.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;lightgbm version :&quot;</span>, lgb.__version__)</span><br></pre></td></tr></table></figure>
+
+
+<style type='text/css'>
+.datatable table.frame { margin-bottom: 0; }
+.datatable table.frame thead { border-bottom: none; }
+.datatable table.frame tr.coltypes td {  color: #FFFFFF;  line-height: 6px;  padding: 0 0.5em;}
+.datatable .bool    { background: #DDDD99; }
+.datatable .object  { background: #565656; }
+.datatable .int     { background: #5D9E5D; }
+.datatable .float   { background: #4040CC; }
+.datatable .str     { background: #CC4040; }
+.datatable .time    { background: #40CC40; }
+.datatable .row_index {  background: var(--jp-border-color3);  border-right: 1px solid var(--jp-border-color0);  color: var(--jp-ui-font-color3);  font-size: 9px;}
+.datatable .frame tbody td { text-align: left; }
+.datatable .frame tr.coltypes .row_index {  background: var(--jp-border-color0);}
+.datatable th:nth-child(2) { padding-left: 12px; }
+.datatable .hellipsis {  color: var(--jp-cell-editor-border-color);}
+.datatable .vellipsis {  background: var(--jp-layout-color0);  color: var(--jp-cell-editor-border-color);}
+.datatable .na {  color: var(--jp-cell-editor-border-color);  font-size: 80%;}
+.datatable .sp {  opacity: 0.25;}
+.datatable .footer { font-size: 9px; }
+.datatable .frame_dimensions {  background: var(--jp-border-color3);  border-top: 1px solid var(--jp-border-color0);  color: var(--jp-ui-font-color3);  display: inline-block;  opacity: 0.6;  padding: 1px 10px 1px 5px;}
+</style>
+
+
+
+<pre><code>pandas version : 1.3.5
+numpy version : 1.21.6
+matplotlib version : 3.5.2
+seaborn version : 0.11.2
+scikit-learn version : 1.0.2
+xgboost version : 1.6.1
+lightgbm version : 3.3.2
+</code></pre>
+<h2 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h2><ul>
+<li>pandas 활용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/kaggle/input/house-prices-advanced-regression-techniques/&#x27;</span></span><br><span class="line">train = pd.read_csv(DATA_PATH + <span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(DATA_PATH + <span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;데이터 불러오기 완료!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>데이터 불러오기 완료!
+</code></pre>
+<h2 id="데이터-둘러보기"><a href="#데이터-둘러보기" class="headerlink" title="데이터 둘러보기"></a>데이터 둘러보기</h2><ul>
+<li>데이터를 둘러봅니다. </li>
+<li>train : 행 갯수 1460 열 갯수 81 (SalePrice 존재)</li>
+<li>test : 행 갯수 1459, 열 갯수 80 (SalePrice 컬럼 미 존재)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.shape, test.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>((1460, 81), (1459, 80))
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1460 entries, 0 to 1459
+Data columns (total 81 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Id             1460 non-null   int64  
+ 1   MSSubClass     1460 non-null   int64  
+ 2   MSZoning       1460 non-null   object 
+ 3   LotFrontage    1201 non-null   float64
+ 4   LotArea        1460 non-null   int64  
+ 5   Street         1460 non-null   object 
+ 6   Alley          91 non-null     object 
+ 7   LotShape       1460 non-null   object 
+ 8   LandContour    1460 non-null   object 
+ 9   Utilities      1460 non-null   object 
+ 10  LotConfig      1460 non-null   object 
+ 11  LandSlope      1460 non-null   object 
+ 12  Neighborhood   1460 non-null   object 
+ 13  Condition1     1460 non-null   object 
+ 14  Condition2     1460 non-null   object 
+ 15  BldgType       1460 non-null   object 
+ 16  HouseStyle     1460 non-null   object 
+ 17  OverallQual    1460 non-null   int64  
+ 18  OverallCond    1460 non-null   int64  
+ 19  YearBuilt      1460 non-null   int64  
+ 20  YearRemodAdd   1460 non-null   int64  
+ 21  RoofStyle      1460 non-null   object 
+ 22  RoofMatl       1460 non-null   object 
+ 23  Exterior1st    1460 non-null   object 
+ 24  Exterior2nd    1460 non-null   object 
+ 25  MasVnrType     1452 non-null   object 
+ 26  MasVnrArea     1452 non-null   float64
+ 27  ExterQual      1460 non-null   object 
+ 28  ExterCond      1460 non-null   object 
+ 29  Foundation     1460 non-null   object 
+ 30  BsmtQual       1423 non-null   object 
+ 31  BsmtCond       1423 non-null   object 
+ 32  BsmtExposure   1422 non-null   object 
+ 33  BsmtFinType1   1423 non-null   object 
+ 34  BsmtFinSF1     1460 non-null   int64  
+ 35  BsmtFinType2   1422 non-null   object 
+ 36  BsmtFinSF2     1460 non-null   int64  
+ 37  BsmtUnfSF      1460 non-null   int64  
+ 38  TotalBsmtSF    1460 non-null   int64  
+ 39  Heating        1460 non-null   object 
+ 40  HeatingQC      1460 non-null   object 
+ 41  CentralAir     1460 non-null   object 
+ 42  Electrical     1459 non-null   object 
+ 43  1stFlrSF       1460 non-null   int64  
+ 44  2ndFlrSF       1460 non-null   int64  
+ 45  LowQualFinSF   1460 non-null   int64  
+ 46  GrLivArea      1460 non-null   int64  
+ 47  BsmtFullBath   1460 non-null   int64  
+ 48  BsmtHalfBath   1460 non-null   int64  
+ 49  FullBath       1460 non-null   int64  
+ 50  HalfBath       1460 non-null   int64  
+ 51  BedroomAbvGr   1460 non-null   int64  
+ 52  KitchenAbvGr   1460 non-null   int64  
+ 53  KitchenQual    1460 non-null   object 
+ 54  TotRmsAbvGrd   1460 non-null   int64  
+ 55  Functional     1460 non-null   object 
+ 56  Fireplaces     1460 non-null   int64  
+ 57  FireplaceQu    770 non-null    object 
+ 58  GarageType     1379 non-null   object 
+ 59  GarageYrBlt    1379 non-null   float64
+ 60  GarageFinish   1379 non-null   object 
+ 61  GarageCars     1460 non-null   int64  
+ 62  GarageArea     1460 non-null   int64  
+ 63  GarageQual     1379 non-null   object 
+ 64  GarageCond     1379 non-null   object 
+ 65  PavedDrive     1460 non-null   object 
+ 66  WoodDeckSF     1460 non-null   int64  
+ 67  OpenPorchSF    1460 non-null   int64  
+ 68  EnclosedPorch  1460 non-null   int64  
+ 69  3SsnPorch      1460 non-null   int64  
+ 70  ScreenPorch    1460 non-null   int64  
+ 71  PoolArea       1460 non-null   int64  
+ 72  PoolQC         7 non-null      object 
+ 73  Fence          281 non-null    object 
+ 74  MiscFeature    54 non-null     object 
+ 75  MiscVal        1460 non-null   int64  
+ 76  MoSold         1460 non-null   int64  
+ 77  YrSold         1460 non-null   int64  
+ 78  SaleType       1460 non-null   object 
+ 79  SaleCondition  1460 non-null   object 
+ 80  SalePrice      1460 non-null   int64  
+dtypes: float64(3), int64(35), object(43)
+memory usage: 924.0+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1459 entries, 0 to 1458
+Data columns (total 80 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Id             1459 non-null   int64  
+ 1   MSSubClass     1459 non-null   int64  
+ 2   MSZoning       1455 non-null   object 
+ 3   LotFrontage    1232 non-null   float64
+ 4   LotArea        1459 non-null   int64  
+ 5   Street         1459 non-null   object 
+ 6   Alley          107 non-null    object 
+ 7   LotShape       1459 non-null   object 
+ 8   LandContour    1459 non-null   object 
+ 9   Utilities      1457 non-null   object 
+ 10  LotConfig      1459 non-null   object 
+ 11  LandSlope      1459 non-null   object 
+ 12  Neighborhood   1459 non-null   object 
+ 13  Condition1     1459 non-null   object 
+ 14  Condition2     1459 non-null   object 
+ 15  BldgType       1459 non-null   object 
+ 16  HouseStyle     1459 non-null   object 
+ 17  OverallQual    1459 non-null   int64  
+ 18  OverallCond    1459 non-null   int64  
+ 19  YearBuilt      1459 non-null   int64  
+ 20  YearRemodAdd   1459 non-null   int64  
+ 21  RoofStyle      1459 non-null   object 
+ 22  RoofMatl       1459 non-null   object 
+ 23  Exterior1st    1458 non-null   object 
+ 24  Exterior2nd    1458 non-null   object 
+ 25  MasVnrType     1443 non-null   object 
+ 26  MasVnrArea     1444 non-null   float64
+ 27  ExterQual      1459 non-null   object 
+ 28  ExterCond      1459 non-null   object 
+ 29  Foundation     1459 non-null   object 
+ 30  BsmtQual       1415 non-null   object 
+ 31  BsmtCond       1414 non-null   object 
+ 32  BsmtExposure   1415 non-null   object 
+ 33  BsmtFinType1   1417 non-null   object 
+ 34  BsmtFinSF1     1458 non-null   float64
+ 35  BsmtFinType2   1417 non-null   object 
+ 36  BsmtFinSF2     1458 non-null   float64
+ 37  BsmtUnfSF      1458 non-null   float64
+ 38  TotalBsmtSF    1458 non-null   float64
+ 39  Heating        1459 non-null   object 
+ 40  HeatingQC      1459 non-null   object 
+ 41  CentralAir     1459 non-null   object 
+ 42  Electrical     1459 non-null   object 
+ 43  1stFlrSF       1459 non-null   int64  
+ 44  2ndFlrSF       1459 non-null   int64  
+ 45  LowQualFinSF   1459 non-null   int64  
+ 46  GrLivArea      1459 non-null   int64  
+ 47  BsmtFullBath   1457 non-null   float64
+ 48  BsmtHalfBath   1457 non-null   float64
+ 49  FullBath       1459 non-null   int64  
+ 50  HalfBath       1459 non-null   int64  
+ 51  BedroomAbvGr   1459 non-null   int64  
+ 52  KitchenAbvGr   1459 non-null   int64  
+ 53  KitchenQual    1458 non-null   object 
+ 54  TotRmsAbvGrd   1459 non-null   int64  
+ 55  Functional     1457 non-null   object 
+ 56  Fireplaces     1459 non-null   int64  
+ 57  FireplaceQu    729 non-null    object 
+ 58  GarageType     1383 non-null   object 
+ 59  GarageYrBlt    1381 non-null   float64
+ 60  GarageFinish   1381 non-null   object 
+ 61  GarageCars     1458 non-null   float64
+ 62  GarageArea     1458 non-null   float64
+ 63  GarageQual     1381 non-null   object 
+ 64  GarageCond     1381 non-null   object 
+ 65  PavedDrive     1459 non-null   object 
+ 66  WoodDeckSF     1459 non-null   int64  
+ 67  OpenPorchSF    1459 non-null   int64  
+ 68  EnclosedPorch  1459 non-null   int64  
+ 69  3SsnPorch      1459 non-null   int64  
+ 70  ScreenPorch    1459 non-null   int64  
+ 71  PoolArea       1459 non-null   int64  
+ 72  PoolQC         3 non-null      object 
+ 73  Fence          290 non-null    object 
+ 74  MiscFeature    51 non-null     object 
+ 75  MiscVal        1459 non-null   int64  
+ 76  MoSold         1459 non-null   int64  
+ 77  YrSold         1459 non-null   int64  
+ 78  SaleType       1458 non-null   object 
+ 79  SaleCondition  1459 non-null   object 
+dtypes: float64(11), int64(26), object(43)
+memory usage: 912.0+ KB
+</code></pre>
+<h2 id="데이터-시각화"><a href="#데이터-시각화" class="headerlink" title="데이터 시각화"></a>데이터 시각화</h2><ul>
+<li><p>여기에서는 생략</p>
+</li>
+<li><p>종속변수 분포 확인</p>
+</li>
+<li><p>샤피로 검정</p>
+</li>
+<li><p>정규분포인가요? </p>
+<ul>
+<li>정규분포가 아님! –&gt; 로그변환, 박스콕스 변환 등등</li>
+<li>정규분포로 만들어 줘야 함.</li>
+</ul>
+</li>
+<li><p>선형모델의 성능을 올리기 위해서는</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm </span><br><span class="line">(mu, sigma) = norm.fit(train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;평균:&quot;</span>, mu)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;표준편차:&quot;</span>, sigma)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">sns.histplot(train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line">ax.<span class="built_in">set</span>(title=<span class="string">&quot;SalePrice Distribution&quot;</span>)</span><br><span class="line">ax.axvline(mu, color = <span class="string">&#x27;r&#x27;</span>, linestyle = <span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">ax.text(mu + <span class="number">10000</span>, <span class="number">160</span>, <span class="string">&#x27;Mean of SalePrice&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>평균: 180921.19589041095
+표준편차: 79415.29188606751
+</code></pre>
+<p>![png](..&#x2F;images&#x2F;house-prices-lec (1)&#x2F;output__11_1.png)</p>
+<ul>
+<li>로그변환을 해서 정규분포로 변환해준다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 로그변환을 함. </span></span><br><span class="line">train[<span class="string">&#x27;SalePrice&#x27;</span>] = np.log1p(train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line"></span><br><span class="line">(mu, sigma) = norm.fit(train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;평균:&quot;</span>, mu)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;표준편차:&quot;</span>, sigma)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">sns.histplot(train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br><span class="line">ax.<span class="built_in">set</span>(title=<span class="string">&quot;SalePrice Distribution&quot;</span>)</span><br><span class="line">ax.axvline(mu, color = <span class="string">&#x27;r&#x27;</span>, linestyle = <span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">ax.text(mu + <span class="number">0.0001</span>, <span class="number">160</span>, <span class="string">&#x27;Mean of SalePrice&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">ax.set_ylim(<span class="number">0</span>, <span class="number">170</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>평균: 12.024057394918406
+표준편차: 0.39931245219387496
+</code></pre>
+<p>![png](..&#x2F;images&#x2F;house-prices-lec (1)&#x2F;output__13_1.png)</p>
+<h2 id="데이터-전처리"><a href="#데이터-전처리" class="headerlink" title="데이터 전처리"></a>데이터 전처리</h2><ul>
+<li>컬럼 갯수가 많다?, 어떤 컬럼을 없앨 것인가? </li>
+<li>머신러닝 연산 속도부터 높여야 함.</li>
+</ul>
+<h3 id="데이터-ID값-제거"><a href="#데이터-ID값-제거" class="headerlink" title="데이터 ID값 제거"></a>데이터 ID값 제거</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_ID = train[<span class="string">&#x27;Id&#x27;</span>]</span><br><span class="line">test_ID = test[<span class="string">&#x27;Id&#x27;</span>]</span><br><span class="line"></span><br><span class="line">train = train.drop([<span class="string">&#x27;Id&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">train.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1460, 80)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test = test.drop([<span class="string">&#x27;Id&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">test.shape </span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1459, 79)
+</code></pre>
+<h3 id="Y값-추출"><a href="#Y값-추출" class="headerlink" title="Y값 추출"></a>Y값 추출</h3><ul>
+<li>train데이터에 SalePrice만 따로 저장한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = train[<span class="string">&#x27;SalePrice&#x27;</span>]</span><br><span class="line">train = train.drop(<span class="string">&#x27;SalePrice&#x27;</span>, axis = <span class="number">1</span>)</span><br><span class="line">train.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1460, 79)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(1459, 79)
+</code></pre>
+<h3 id="데이터-합치기"><a href="#데이터-합치기" class="headerlink" title="데이터 합치기"></a>데이터 합치기</h3><ul>
+<li>강의 목적</li>
+<li>원칙<ul>
+<li>train, 따로 정리</li>
+<li>test, 따로 정리</li>
+</ul>
+</li>
+<li>Data Leakage 오류를 범할 가능성이 높음.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df = pd.concat([train, test]).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">all_df.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2919, 79)
+</code></pre>
+<h2 id="결측치-확인"><a href="#결측치-확인" class="headerlink" title="결측치 확인"></a>결측치 확인</h2><ul>
+<li>결측치의 비율 확인하는 사용자 정의 함수 작성</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1460 entries, 0 to 1459
+Data columns (total 79 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   MSSubClass     1460 non-null   int64  
+ 1   MSZoning       1460 non-null   object 
+ 2   LotFrontage    1201 non-null   float64
+ 3   LotArea        1460 non-null   int64  
+ 4   Street         1460 non-null   object 
+ 5   Alley          91 non-null     object 
+ 6   LotShape       1460 non-null   object 
+ 7   LandContour    1460 non-null   object 
+ 8   Utilities      1460 non-null   object 
+ 9   LotConfig      1460 non-null   object 
+ 10  LandSlope      1460 non-null   object 
+ 11  Neighborhood   1460 non-null   object 
+ 12  Condition1     1460 non-null   object 
+ 13  Condition2     1460 non-null   object 
+ 14  BldgType       1460 non-null   object 
+ 15  HouseStyle     1460 non-null   object 
+ 16  OverallQual    1460 non-null   int64  
+ 17  OverallCond    1460 non-null   int64  
+ 18  YearBuilt      1460 non-null   int64  
+ 19  YearRemodAdd   1460 non-null   int64  
+ 20  RoofStyle      1460 non-null   object 
+ 21  RoofMatl       1460 non-null   object 
+ 22  Exterior1st    1460 non-null   object 
+ 23  Exterior2nd    1460 non-null   object 
+ 24  MasVnrType     1452 non-null   object 
+ 25  MasVnrArea     1452 non-null   float64
+ 26  ExterQual      1460 non-null   object 
+ 27  ExterCond      1460 non-null   object 
+ 28  Foundation     1460 non-null   object 
+ 29  BsmtQual       1423 non-null   object 
+ 30  BsmtCond       1423 non-null   object 
+ 31  BsmtExposure   1422 non-null   object 
+ 32  BsmtFinType1   1423 non-null   object 
+ 33  BsmtFinSF1     1460 non-null   int64  
+ 34  BsmtFinType2   1422 non-null   object 
+ 35  BsmtFinSF2     1460 non-null   int64  
+ 36  BsmtUnfSF      1460 non-null   int64  
+ 37  TotalBsmtSF    1460 non-null   int64  
+ 38  Heating        1460 non-null   object 
+ 39  HeatingQC      1460 non-null   object 
+ 40  CentralAir     1460 non-null   object 
+ 41  Electrical     1459 non-null   object 
+ 42  1stFlrSF       1460 non-null   int64  
+ 43  2ndFlrSF       1460 non-null   int64  
+ 44  LowQualFinSF   1460 non-null   int64  
+ 45  GrLivArea      1460 non-null   int64  
+ 46  BsmtFullBath   1460 non-null   int64  
+ 47  BsmtHalfBath   1460 non-null   int64  
+ 48  FullBath       1460 non-null   int64  
+ 49  HalfBath       1460 non-null   int64  
+ 50  BedroomAbvGr   1460 non-null   int64  
+ 51  KitchenAbvGr   1460 non-null   int64  
+ 52  KitchenQual    1460 non-null   object 
+ 53  TotRmsAbvGrd   1460 non-null   int64  
+ 54  Functional     1460 non-null   object 
+ 55  Fireplaces     1460 non-null   int64  
+ 56  FireplaceQu    770 non-null    object 
+ 57  GarageType     1379 non-null   object 
+ 58  GarageYrBlt    1379 non-null   float64
+ 59  GarageFinish   1379 non-null   object 
+ 60  GarageCars     1460 non-null   int64  
+ 61  GarageArea     1460 non-null   int64  
+ 62  GarageQual     1379 non-null   object 
+ 63  GarageCond     1379 non-null   object 
+ 64  PavedDrive     1460 non-null   object 
+ 65  WoodDeckSF     1460 non-null   int64  
+ 66  OpenPorchSF    1460 non-null   int64  
+ 67  EnclosedPorch  1460 non-null   int64  
+ 68  3SsnPorch      1460 non-null   int64  
+ 69  ScreenPorch    1460 non-null   int64  
+ 70  PoolArea       1460 non-null   int64  
+ 71  PoolQC         7 non-null      object 
+ 72  Fence          281 non-null    object 
+ 73  MiscFeature    54 non-null     object 
+ 74  MiscVal        1460 non-null   int64  
+ 75  MoSold         1460 non-null   int64  
+ 76  YrSold         1460 non-null   int64  
+ 77  SaleType       1460 non-null   object 
+ 78  SaleCondition  1460 non-null   object 
+dtypes: float64(3), int64(33), object(43)
+memory usage: 901.2+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_na</span>(<span class="params">data, head_num = <span class="number">6</span></span>):</span><br><span class="line">  isnull_na = (data.isnull().<span class="built_in">sum</span>() / <span class="built_in">len</span>(data)) * <span class="number">100</span></span><br><span class="line">  data_na = isnull_na.drop(isnull_na[isnull_na == <span class="number">0</span>].index).sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">  missing_data = pd.DataFrame(&#123;<span class="string">&#x27;Missing Ratio&#x27;</span> :data_na, </span><br><span class="line">                               <span class="string">&#x27;Data Type&#x27;</span>: data.dtypes[data_na.index]&#125;)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;결측치 데이터 컬럼과 건수:\n&quot;</span>, missing_data.head(head_num))</span><br><span class="line"></span><br><span class="line">check_na(all_df, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>결측치 데이터 컬럼과 건수:
+               Missing Ratio Data Type
+PoolQC            99.657417    object
+MiscFeature       96.402878    object
+Alley             93.216855    object
+Fence             80.438506    object
+FireplaceQu       48.646797    object
+LotFrontage       16.649538   float64
+GarageFinish       5.447071    object
+GarageQual         5.447071    object
+GarageCond         5.447071    object
+GarageYrBlt        5.447071   float64
+GarageType         5.378554    object
+BsmtExposure       2.809181    object
+BsmtCond           2.809181    object
+BsmtQual           2.774923    object
+BsmtFinType2       2.740665    object
+BsmtFinType1       2.706406    object
+MasVnrType         0.822199    object
+MasVnrArea         0.787941   float64
+MSZoning           0.137033    object
+BsmtFullBath       0.068517   float64
+</code></pre>
+<ul>
+<li>결측치 제거</li>
+<li>결측치 비율이 높은 변수들을 모두 제거하기로 했다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">all_df = all_df.drop([<span class="string">&#x27;PoolQC&#x27;</span>, <span class="string">&#x27;MiscFeature&#x27;</span>, <span class="string">&#x27;Alley&#x27;</span>, <span class="string">&#x27;Fence&#x27;</span>, <span class="string">&#x27;FireplaceQu&#x27;</span>, <span class="string">&#x27;LotFrontage&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(all_df.shape)</span><br><span class="line">check_na(all_df, <span class="number">40</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(2919, 73)
+결측치 데이터 컬럼과 건수:
+               Missing Ratio Data Type
+GarageCond         5.447071    object
+GarageQual         5.447071    object
+GarageYrBlt        5.447071   float64
+GarageFinish       5.447071    object
+GarageType         5.378554    object
+BsmtCond           2.809181    object
+BsmtExposure       2.809181    object
+BsmtQual           2.774923    object
+BsmtFinType2       2.740665    object
+BsmtFinType1       2.706406    object
+MasVnrType         0.822199    object
+MasVnrArea         0.787941   float64
+MSZoning           0.137033    object
+Functional         0.068517    object
+Utilities          0.068517    object
+BsmtFullBath       0.068517   float64
+BsmtHalfBath       0.068517   float64
+GarageArea         0.034258   float64
+GarageCars         0.034258   float64
+TotalBsmtSF        0.034258   float64
+KitchenQual        0.034258    object
+Electrical         0.034258    object
+BsmtUnfSF          0.034258   float64
+BsmtFinSF2         0.034258   float64
+BsmtFinSF1         0.034258   float64
+Exterior2nd        0.034258    object
+Exterior1st        0.034258    object
+SaleType           0.034258    object
+</code></pre>
+<h2 id="결측치-채우기"><a href="#결측치-채우기" class="headerlink" title="결측치 채우기"></a>결측치 채우기</h2><ul>
+<li>train 데이터와 test 데이터가 섞이면 안됨. </li>
+<li>train &#x2F; test 분리해서 진행해야 함. </li>
+<li>문자데이터 : 자주 등장하는 빈도 값으로 채움</li>
+<li>숫자데이터 : 평균이 아니라, 중간값으로 채울 예정</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># all_df[&#x27;SaleType&#x27;].value_counts()</span></span><br><span class="line">all_df[<span class="string">&#x27;SaleType&#x27;</span>].mode()[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;WD&#39;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">check_na(all_df, <span class="number">40</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>결측치 데이터 컬럼과 건수:
+               Missing Ratio Data Type
+GarageCond         5.447071    object
+GarageQual         5.447071    object
+GarageYrBlt        5.447071   float64
+GarageFinish       5.447071    object
+GarageType         5.378554    object
+BsmtCond           2.809181    object
+BsmtExposure       2.809181    object
+BsmtQual           2.774923    object
+BsmtFinType2       2.740665    object
+BsmtFinType1       2.706406    object
+MasVnrType         0.822199    object
+MasVnrArea         0.787941   float64
+MSZoning           0.137033    object
+Functional         0.068517    object
+Utilities          0.068517    object
+BsmtFullBath       0.068517   float64
+BsmtHalfBath       0.068517   float64
+GarageArea         0.034258   float64
+GarageCars         0.034258   float64
+TotalBsmtSF        0.034258   float64
+KitchenQual        0.034258    object
+Electrical         0.034258    object
+BsmtUnfSF          0.034258   float64
+BsmtFinSF2         0.034258   float64
+BsmtFinSF1         0.034258   float64
+Exterior2nd        0.034258    object
+Exterior1st        0.034258    object
+SaleType           0.034258    object
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 문자열 데이터만 추출</span></span><br><span class="line">cat_all_vars = train.select_dtypes(exclude=[np.number])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The whole number of all_vars&quot;</span>, <span class="built_in">len</span>(<span class="built_in">list</span>(cat_all_vars)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 문자열 데이터 중에서 이미 기 삭제했던 Feature들이 있었기 때문에, </span></span><br><span class="line"><span class="comment"># 한번 더 Feature를 정리하는 코드를 작성한다. </span></span><br><span class="line"><span class="comment"># 따라서 38개의 Feature만 추출했다. </span></span><br><span class="line">final_cat_vars = []</span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> cat_all_vars:</span><br><span class="line">    <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">&#x27;PoolQC&#x27;</span>, <span class="string">&#x27;MiscFeature&#x27;</span>, <span class="string">&#x27;Alley&#x27;</span>, <span class="string">&#x27;Fence&#x27;</span>, <span class="string">&#x27;FireplaceQu&#x27;</span>]:</span><br><span class="line">        final_cat_vars.append(v)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The whole number of final_cat_vars&quot;</span>, <span class="built_in">len</span>(final_cat_vars))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 이제 각 Feature 마다 빈도수가 가장 많이 나타나는 값을 추가하는 코드를 작성한다. </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> final_cat_vars:</span><br><span class="line">  all_df[i] = all_df[i].fillna(all_df[i].mode()[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 이제 수치형 데이터만 남은 것을 확인한다. </span></span><br><span class="line">check_na(all_df, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>The whole number of all_vars 43
+The whole number of final_cat_vars 38
+결측치 데이터 컬럼과 건수:
+               Missing Ratio Data Type
+GarageYrBlt        5.447071   float64
+MasVnrArea         0.787941   float64
+BsmtFullBath       0.068517   float64
+BsmtHalfBath       0.068517   float64
+BsmtFinSF1         0.034258   float64
+BsmtFinSF2         0.034258   float64
+BsmtUnfSF          0.034258   float64
+TotalBsmtSF        0.034258   float64
+GarageCars         0.034258   float64
+GarageArea         0.034258   float64
+</code></pre>
+<ul>
+<li>수치형 데이터의 결측치를 추가할 수 있다. </li>
+<li>평균이 아닌 중간값으로 진행한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 방법은 기존과 동일하다. </span></span><br><span class="line"><span class="comment"># 이번에는 수치형 데이터만 추출한다. </span></span><br><span class="line">num_all_vars = <span class="built_in">list</span>(train.select_dtypes(include=[np.number]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The whole number of all_vars&quot;</span>, <span class="built_in">len</span>(num_all_vars))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 수치형 데이터 중, 결측치가 많았던 `LotFrontage`만 처리한다. </span></span><br><span class="line">num_all_vars.remove(<span class="string">&#x27;LotFrontage&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The whole number of final_cat_vars&quot;</span>, <span class="built_in">len</span>(num_all_vars))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 이번에는 수치형 데이터의 평균이 아닌 중간값을 지정했다. </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> num_all_vars:</span><br><span class="line">  all_df[i].fillna(value=all_df[i].median(), inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">check_na(all_df, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>The whole number of all_vars 36
+The whole number of final_cat_vars 35
+결측치 데이터 컬럼과 건수:
+ Empty DataFrame
+Columns: [Missing Ratio, Data Type]
+Index: []
+</code></pre>
+<h2 id="도출-변수"><a href="#도출-변수" class="headerlink" title="도출 변수"></a>도출 변수</h2><ul>
+<li><p>새로운 도출 변수를 작성 (기존 변수 활용)</p>
+</li>
+<li><p>기존 변수 제거 </p>
+</li>
+<li><p>각 층의 면적으로 모두 더해 전체 면적으로 계산한 새로운 변수를 작성한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;TotalSF&#x27;</span>] = all_df[<span class="string">&#x27;TotalBsmtSF&#x27;</span>] + all_df[<span class="string">&#x27;1stFlrSF&#x27;</span>] + all_df[<span class="string">&#x27;2ndFlrSF&#x27;</span>]</span><br><span class="line">all_df = all_df.drop([<span class="string">&#x27;TotalBsmtSF&#x27;</span>, <span class="string">&#x27;1stFlrSF&#x27;</span>, <span class="string">&#x27;2ndFlrSF&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(all_df.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(2919, 71)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;Total_Bathrooms&#x27;</span>] = (all_df[<span class="string">&#x27;FullBath&#x27;</span>] + (<span class="number">0.5</span> * all_df[<span class="string">&#x27;HalfBath&#x27;</span>]) + all_df[<span class="string">&#x27;BsmtFullBath&#x27;</span>] + (<span class="number">0.5</span> * all_df[<span class="string">&#x27;BsmtHalfBath&#x27;</span>]))</span><br><span class="line">all_df[<span class="string">&#x27;Total_porch_sf&#x27;</span>] = (all_df[<span class="string">&#x27;OpenPorchSF&#x27;</span>] + all_df[<span class="string">&#x27;3SsnPorch&#x27;</span>] + all_df[<span class="string">&#x27;EnclosedPorch&#x27;</span>] + all_df[<span class="string">&#x27;ScreenPorch&#x27;</span>])</span><br><span class="line">all_df = all_df.drop([<span class="string">&#x27;FullBath&#x27;</span>, <span class="string">&#x27;HalfBath&#x27;</span>, <span class="string">&#x27;BsmtFullBath&#x27;</span>, <span class="string">&#x27;BsmtHalfBath&#x27;</span>, <span class="string">&#x27;OpenPorchSF&#x27;</span>, <span class="string">&#x27;3SsnPorch&#x27;</span>, <span class="string">&#x27;EnclosedPorch&#x27;</span>, <span class="string">&#x27;ScreenPorch&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(all_df.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(2919, 65)
+</code></pre>
+<ul>
+<li>연도와 관련된 변수를 추출하는 코드 작성.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num_all_vars = <span class="built_in">list</span>(train.select_dtypes(include=[np.number]))</span><br><span class="line">year_feature = []</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> num_all_vars:</span><br><span class="line">  <span class="keyword">if</span> <span class="string">&#x27;Yr&#x27;</span> <span class="keyword">in</span> var:</span><br><span class="line">    year_feature.append(var)</span><br><span class="line">  <span class="keyword">elif</span> <span class="string">&#x27;Year&#x27;</span> <span class="keyword">in</span> var:</span><br><span class="line">    year_feature.append(var)</span><br><span class="line">  <span class="keyword">else</span>:  </span><br><span class="line">    <span class="built_in">print</span>(var, <span class="string">&quot;is not related with Year&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(year_feature)</span><br></pre></td></tr></table></figure>
+
+<pre><code>MSSubClass is not related with Year
+LotFrontage is not related with Year
+LotArea is not related with Year
+OverallQual is not related with Year
+OverallCond is not related with Year
+MasVnrArea is not related with Year
+BsmtFinSF1 is not related with Year
+BsmtFinSF2 is not related with Year
+BsmtUnfSF is not related with Year
+TotalBsmtSF is not related with Year
+1stFlrSF is not related with Year
+2ndFlrSF is not related with Year
+LowQualFinSF is not related with Year
+GrLivArea is not related with Year
+BsmtFullBath is not related with Year
+BsmtHalfBath is not related with Year
+FullBath is not related with Year
+HalfBath is not related with Year
+BedroomAbvGr is not related with Year
+KitchenAbvGr is not related with Year
+TotRmsAbvGrd is not related with Year
+Fireplaces is not related with Year
+GarageCars is not related with Year
+GarageArea is not related with Year
+WoodDeckSF is not related with Year
+OpenPorchSF is not related with Year
+EnclosedPorch is not related with Year
+3SsnPorch is not related with Year
+ScreenPorch is not related with Year
+PoolArea is not related with Year
+MiscVal is not related with Year
+MoSold is not related with Year
+[&#39;YearBuilt&#39;, &#39;YearRemodAdd&#39;, &#39;GarageYrBlt&#39;, &#39;YrSold&#39;]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(<span class="number">3</span>, <span class="number">1</span>, figsize=(<span class="number">10</span>, <span class="number">6</span>), sharex=<span class="literal">True</span>, sharey=<span class="literal">True</span>)</span><br><span class="line"><span class="keyword">for</span> i, var <span class="keyword">in</span> <span class="built_in">enumerate</span>(year_feature):</span><br><span class="line">  <span class="keyword">if</span> var != <span class="string">&#x27;YrSold&#x27;</span>:</span><br><span class="line">    ax[i].scatter(train[var], y, alpha=<span class="number">0.3</span>)</span><br><span class="line">    ax[i].set_title(<span class="string">&#x27;&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(var), size=<span class="number">15</span>)</span><br><span class="line">    ax[i].set_ylabel(<span class="string">&#x27;SalePrice&#x27;</span>, size=<span class="number">15</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>![png](..&#x2F;images&#x2F;house-prices-lec (1)&#x2F;output__41_0.png)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df = all_df.drop([<span class="string">&#x27;YearBuilt&#x27;</span>, <span class="string">&#x27;GarageYrBlt&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(all_df.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(2919, 63)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">YearsSinceRemodel = train[<span class="string">&#x27;YrSold&#x27;</span>].astype(<span class="built_in">int</span>) - train[<span class="string">&#x27;YearRemodAdd&#x27;</span>].astype(<span class="built_in">int</span>)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">ax.scatter(YearsSinceRemodel, y, alpha=<span class="number">0.3</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>![png](..&#x2F;images&#x2F;house-prices-lec (1)&#x2F;output__43_0.png)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;YearsSinceRemodel&#x27;</span>] = all_df[<span class="string">&#x27;YrSold&#x27;</span>].astype(<span class="built_in">int</span>) - all_df[<span class="string">&#x27;YearRemodAdd&#x27;</span>].astype(<span class="built_in">int</span>)</span><br><span class="line">all_df = all_df.drop([<span class="string">&#x27;YrSold&#x27;</span>, <span class="string">&#x27;YearRemodAdd&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(all_df.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(2919, 62)
+</code></pre>
+<h2 id="더미변수"><a href="#더미변수" class="headerlink" title="더미변수"></a>더미변수</h2><ul>
+<li>더미변수란 원 데이터 독립변수를 0과 1로 변환하는 변수를 말함.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;PoolArea&#x27;</span>].value_counts() </span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0      2906
+512       1
+648       1
+576       1
+555       1
+480       1
+519       1
+738       1
+144       1
+368       1
+444       1
+228       1
+561       1
+800       1
+Name: PoolArea, dtype: int64
+</code></pre>
+<ul>
+<li>사용자 정의 함수 만들기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count_dummy</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;PoolArea&#x27;</span>] = all_df[<span class="string">&#x27;PoolArea&#x27;</span>].apply(count_dummy) </span><br><span class="line">all_df[<span class="string">&#x27;PoolArea&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0    2906
+1      13
+Name: PoolArea, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;GarageArea&#x27;</span>] = all_df[<span class="string">&#x27;GarageArea&#x27;</span>].apply(count_dummy)</span><br><span class="line">all_df[<span class="string">&#x27;GarageArea&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1    2762
+0     157
+Name: GarageArea, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df[<span class="string">&#x27;Fireplaces&#x27;</span>] = all_df[<span class="string">&#x27;Fireplaces&#x27;</span>].apply(count_dummy)</span><br><span class="line">all_df[<span class="string">&#x27;Fireplaces&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>1    1499
+0    1420
+Name: Fireplaces, dtype: int64
+</code></pre>
+<h2 id="인코딩"><a href="#인코딩" class="headerlink" title="인코딩"></a>인코딩</h2><ul>
+<li>문자를 숫자로 변환해주는 코드를 인코딩 변환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_df.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2919, 62)
+</code></pre>
+<h2 id="Label-Encoding-Ordinal-Encoding-One-Hot-Encoding"><a href="#Label-Encoding-Ordinal-Encoding-One-Hot-Encoding" class="headerlink" title="Label Encoding, Ordinal Encoding, One-Hot Encoding"></a>Label Encoding, Ordinal Encoding, One-Hot Encoding</h2><ul>
+<li>인코딩은 문자 데이터를 수치로 변환하는 방법론 중의 하나이다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 분류모형</span></span><br><span class="line"><span class="comment"># 종속변수 (양성, 음성)</span></span><br><span class="line"><span class="comment"># Label Encoder는 종속변수에만 적용</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">temp = pd.DataFrame(&#123;<span class="string">&#x27;Food_Name&#x27;</span>: [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], </span><br><span class="line">                     <span class="string">&#x27;Calories&#x27;</span>: [<span class="number">95</span>, <span class="number">231</span>, <span class="number">50</span>]&#125;)</span><br><span class="line"></span><br><span class="line">encoder = LabelEncoder()</span><br><span class="line">encoder.fit(temp[<span class="string">&#x27;Food_Name&#x27;</span>])</span><br><span class="line">labels = encoder.transform(temp[<span class="string">&#x27;Food_Name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(temp[<span class="string">&#x27;Food_Name&#x27;</span>]), <span class="string">&quot;==&gt;&quot;</span>, labels)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;Apple&#39;, &#39;Chicken&#39;, &#39;Broccoli&#39;] ==&gt; [0 2 1]
+</code></pre>
+<ul>
+<li>OrdinalEncoder는 독립변수에만 쓴다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OrdinalEncoder</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">temp = pd.DataFrame(&#123;<span class="string">&#x27;Food_Name&#x27;</span>: [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], </span><br><span class="line">                     <span class="string">&#x27;Calories&#x27;</span>: [<span class="number">95</span>, <span class="number">231</span>, <span class="number">50</span>]&#125;)</span><br><span class="line"></span><br><span class="line">encoder = OrdinalEncoder()</span><br><span class="line">labels = encoder.fit_transform(temp[[<span class="string">&#x27;Food_Name&#x27;</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(temp[<span class="string">&#x27;Food_Name&#x27;</span>]), <span class="string">&quot;==&gt;&quot;</span>, labels.tolist())</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;Apple&#39;, &#39;Chicken&#39;, &#39;Broccoli&#39;] ==&gt; [[0.0], [2.0], [1.0]]
+</code></pre>
+<ul>
+<li>pandas 메서드 통해서 직접 숫자로 변환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp = pd.DataFrame(&#123;<span class="string">&#x27;Food_Name&#x27;</span>: [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], </span><br><span class="line">                     <span class="string">&#x27;Calories&#x27;</span>: [<span class="number">95</span>, <span class="number">231</span>, <span class="number">50</span>]&#125;)</span><br><span class="line"></span><br><span class="line">temp[<span class="string">&#x27;Food_No&#x27;</span>] = temp[<span class="string">&#x27;Food_Name&#x27;</span>].replace(to_replace = [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], value = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(temp[[<span class="string">&#x27;Food_Name&#x27;</span>, <span class="string">&#x27;Food_No&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>  Food_Name  Food_No
+0     Apple        1
+1   Chicken        2
+2  Broccoli        3
+</code></pre>
+<ul>
+<li>원핫 인코딩<ul>
+<li>scikit-learn 방식이 조금 복잡함. </li>
+<li>그래서 보통은 pandas get_dummies() 함수를 활</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelBinarizer</span><br><span class="line"></span><br><span class="line">temp = pd.DataFrame(&#123;<span class="string">&#x27;Food_Name&#x27;</span>: [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], </span><br><span class="line">                     <span class="string">&#x27;Calories&#x27;</span>: [<span class="number">95</span>, <span class="number">231</span>, <span class="number">50</span>]&#125;)</span><br><span class="line"></span><br><span class="line">encoder = LabelBinarizer()</span><br><span class="line">encoder.fit(temp[<span class="string">&#x27;Food_Name&#x27;</span>])</span><br><span class="line">transformed = encoder.transform(temp[<span class="string">&#x27;Food_Name&#x27;</span>])</span><br><span class="line">ohe_df = pd.DataFrame(transformed)</span><br><span class="line">temp = pd.concat([temp, ohe_df], axis=<span class="number">1</span>).drop([<span class="string">&#x27;Food_Name&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line">temp.columns = [<span class="string">&#x27;Calories&#x27;</span>, <span class="string">&#x27;Food_Name_Apple&#x27;</span>, <span class="string">&#x27;Food_Name_Broccoli&#x27;</span>, <span class="string">&#x27;Food_Name_Chicken&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(temp)</span><br><span class="line"><span class="built_in">print</span>(temp.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Calories  Food_Name_Apple  Food_Name_Broccoli  Food_Name_Chicken
+0        95                1                   0                  0
+1       231                0                   0                  1
+2        50                0                   1                  0
+(3, 4)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">temp = pd.DataFrame(&#123;<span class="string">&#x27;Food_Name&#x27;</span>: [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Chicken&#x27;</span>, <span class="string">&#x27;Broccoli&#x27;</span>], </span><br><span class="line">                     <span class="string">&#x27;Calories&#x27;</span>: [<span class="number">95</span>, <span class="number">231</span>, <span class="number">50</span>]&#125;)</span><br><span class="line"></span><br><span class="line">temp = pd.get_dummies(temp)</span><br><span class="line"><span class="built_in">print</span>(temp)</span><br><span class="line"><span class="built_in">print</span>(temp.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Calories  Food_Name_Apple  Food_Name_Broccoli  Food_Name_Chicken
+0        95                1                   0                  0
+1       231                0                   0                  1
+2        50                0                   1                  0
+(3, 4)
+</code></pre>
+<ul>
+<li>본 데이터 적용<ul>
+<li>여기서는 Ordinal Encoding 적용 안함. (단, 실전에서는 꼭 찾아서 해야함).</li>
+</ul>
+</li>
+<li>원핫 인코딩 적용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_df = pd.get_dummies(all_df).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">all_df.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(2919, 258)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_df.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MSSubClass</th>
+      <th>LotArea</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>MasVnrArea</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinSF2</th>
+      <th>BsmtUnfSF</th>
+      <th>LowQualFinSF</th>
+      <th>GrLivArea</th>
+      <th>...</th>
+      <th>SaleType_ConLw</th>
+      <th>SaleType_New</th>
+      <th>SaleType_Oth</th>
+      <th>SaleType_WD</th>
+      <th>SaleCondition_Abnorml</th>
+      <th>SaleCondition_AdjLand</th>
+      <th>SaleCondition_Alloca</th>
+      <th>SaleCondition_Family</th>
+      <th>SaleCondition_Normal</th>
+      <th>SaleCondition_Partial</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>60</td>
+      <td>8450</td>
+      <td>7</td>
+      <td>5</td>
+      <td>196.0</td>
+      <td>706.0</td>
+      <td>0.0</td>
+      <td>150.0</td>
+      <td>0</td>
+      <td>1710</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20</td>
+      <td>9600</td>
+      <td>6</td>
+      <td>8</td>
+      <td>0.0</td>
+      <td>978.0</td>
+      <td>0.0</td>
+      <td>284.0</td>
+      <td>0</td>
+      <td>1262</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>60</td>
+      <td>11250</td>
+      <td>7</td>
+      <td>5</td>
+      <td>162.0</td>
+      <td>486.0</td>
+      <td>0.0</td>
+      <td>434.0</td>
+      <td>0</td>
+      <td>1786</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>70</td>
+      <td>9550</td>
+      <td>7</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>216.0</td>
+      <td>0.0</td>
+      <td>540.0</td>
+      <td>0</td>
+      <td>1717</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>60</td>
+      <td>14260</td>
+      <td>8</td>
+      <td>5</td>
+      <td>350.0</td>
+      <td>655.0</td>
+      <td>0.0</td>
+      <td>490.0</td>
+      <td>0</td>
+      <td>2198</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 258 columns</p>
+</div>
+
+
+
+<ul>
+<li>train, test 데이터 합쳐서 진행. </li>
+<li>train, test 데이터 재분리</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = all_df.iloc[:<span class="built_in">len</span>(y), :]</span><br><span class="line">test = all_df.iloc[<span class="built_in">len</span>(y):, :]</span><br><span class="line"></span><br><span class="line">X.shape, y.shape, test.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>((1460, 258), (1460,), (1459, 258))
+</code></pre>
+<ul>
+<li>머신러닝을 위한 데이터 전처리가 끝이 남.</li>
+</ul>
+<h2 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h2><ul>
+<li>남은 시간동안 교제를 보고 머신러닝 학습 및 RMSE 구하세요. </li>
+<li>데이터셋 분리<ul>
+<li>X 데이터를 X_train, X_test, y_train, y_test로 분리</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split </span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(</span><br><span class="line">    <span class="comment"># 독립변수, 종속변수 </span></span><br><span class="line">    X,         y, test_size = <span class="number">0.3</span>, random_state=<span class="number">0</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">X_train.shape, X_test.shape, y_train.shape, y_test.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>((1022, 258), (438, 258), (1022,), (438,))
+</code></pre>
+<h2 id="평가지표"><a href="#평가지표" class="headerlink" title="평가지표"></a>평가지표</h2><ul>
+<li>MAE, MSE, RMSE</li>
+</ul>
+<h3 id="MAE"><a href="#MAE" class="headerlink" title="MAE"></a>MAE</h3><ul>
+<li>실젯값과 예측값의 차이, 오차, 오차들의 절댓값 평균을 말함.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mean_absolute_error</span>(<span class="params">y_true, y_pred</span>):</span><br><span class="line">    error = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">for</span> yt, yp <span class="keyword">in</span> <span class="built_in">zip</span>(y_true, y_pred):</span><br><span class="line">        <span class="comment"># yt : 실젯값</span></span><br><span class="line">        <span class="comment"># yp : 예측값</span></span><br><span class="line">        error = error + np.<span class="built_in">abs</span>(yt - yp)</span><br><span class="line">        <span class="comment"># 절댓값 오차의 평균</span></span><br><span class="line">    mae = error / <span class="built_in">len</span>(y_true)</span><br><span class="line">    <span class="keyword">return</span> mae</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mean_squared_error</span>(<span class="params">y_true, y_pred</span>):</span><br><span class="line">    error = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">for</span> yt, yp <span class="keyword">in</span> <span class="built_in">zip</span>(y_true, y_pred):</span><br><span class="line">        <span class="comment"># yt : 실젯값</span></span><br><span class="line">        <span class="comment"># yp : 예측값</span></span><br><span class="line">        error = error + (yt - yp) ** <span class="number">2</span></span><br><span class="line">        <span class="comment"># 제곱값 오차의 평균</span></span><br><span class="line">    mse = error / <span class="built_in">len</span>(y_true)</span><br><span class="line">    <span class="keyword">return</span> mse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">root_mean_squared_error</span>(<span class="params">y_true, y_pred</span>):</span><br><span class="line">    error = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">for</span> yt, yp <span class="keyword">in</span> <span class="built_in">zip</span>(y_true, y_pred):</span><br><span class="line">        <span class="comment"># yt : 실젯값</span></span><br><span class="line">        <span class="comment"># yp : 예측값</span></span><br><span class="line">        error = error + (yt - yp) ** <span class="number">2</span></span><br><span class="line">        <span class="comment"># 제곱값 오차의 평균</span></span><br><span class="line">    mse = error / <span class="built_in">len</span>(y_true)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 제곱근 추가</span></span><br><span class="line">    rmse = np.<span class="built_in">round</span>(np.sqrt(mse), <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> rmse</span><br><span class="line"></span><br><span class="line">y_true = [<span class="number">400</span>, <span class="number">300</span>, <span class="number">800</span>]</span><br><span class="line">y_pred = [<span class="number">380</span>, <span class="number">320</span>, <span class="number">777</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;MAE:&quot;</span>, mean_absolute_error(y_true, y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;MSE:&quot;</span>, mean_squared_error(y_true, y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;RMSE:&quot;</span>, root_mean_squared_error(y_true, y_pred))</span><br></pre></td></tr></table></figure>
+
+<pre><code>MAE: 21.0
+MSE: 443.0
+RMSE: 21.048
+</code></pre>
+<p>sklearn 참고 자료</p>
+<ul>
+<li>URL : <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rmse</span>(<span class="params">y_true, y_pred</span>):</span><br><span class="line">    <span class="keyword">return</span> np.sqrt(mean_squared_error(y_true, y_pred))</span><br></pre></td></tr></table></figure>
+
+<h2 id="머신러닝-모형-정의-검증-평가"><a href="#머신러닝-모형-정의-검증-평가" class="headerlink" title="머신러닝 모형 정의, 검증 평가"></a>머신러닝 모형 정의, 검증 평가</h2><ul>
+<li>교차 검증 함수 만들기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold, cross_val_score</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cv_rmse</span>(<span class="params">model, n_folds=<span class="number">5</span></span>):</span><br><span class="line">    cv = KFold(n_splits=n_folds, random_state=<span class="number">42</span>, shuffle=<span class="literal">True</span>)</span><br><span class="line">    rmse_list = np.sqrt(-cross_val_score(model, X, y, scoring=<span class="string">&#x27;neg_mean_squared_error&#x27;</span>, cv=cv))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;CV RMSE value list:&#x27;</span>, np.<span class="built_in">round</span>(rmse_list, <span class="number">4</span>))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;CV RMSE mean value:&#x27;</span>, np.<span class="built_in">round</span>(np.mean(rmse_list), <span class="number">4</span>))</span><br><span class="line">    <span class="keyword">return</span> (rmse_list)</span><br><span class="line"></span><br><span class="line">n_folds = <span class="number">5</span></span><br><span class="line">rmse_scores = &#123;&#125;</span><br><span class="line">lr_model = LinearRegression()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">score = cv_rmse(lr_model, n_folds)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;linear regression - mean: &#123;:.4f&#125; (std: &#123;:.4f&#125;)&quot;</span>.<span class="built_in">format</span>(score.mean(), score.std()))</span><br><span class="line">rmse_scores[<span class="string">&#x27;linear regression&#x27;</span>] = (score.mean(), score.std())</span><br></pre></td></tr></table></figure>
+
+<pre><code>CV RMSE value list: [1.27900000e-01 1.95604200e+02 9.55274100e+02 1.16409952e+04
+ 1.11300000e-01]
+CV RMSE mean value: 2558.4225
+linear regression - mean: 2558.4225 (std: 4554.9083)
+</code></pre>
+<h2 id="제출-방법"><a href="#제출-방법" class="headerlink" title="제출 방법"></a>제출 방법</h2><p>- </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_predict</span><br><span class="line"></span><br><span class="line"><span class="comment"># X = all_df.iloc[:len(y), :]</span></span><br><span class="line"><span class="comment"># X_test = all_df.iloc[len(y):, :]</span></span><br><span class="line"><span class="comment"># X.shape, y.shape, X_test.shape</span></span><br><span class="line"></span><br><span class="line">lr_model_fit = lr_model.fit(X_train, y_train)</span><br><span class="line">final_preds = np.floor(np.expm1(lr_model_fit.predict(test)))</span><br><span class="line"><span class="built_in">print</span>(final_preds)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[109087. 160506. 181350. ... 167204. 109941. 204493.]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">submission = pd.read_csv(DATA_PATH + <span class="string">&quot;sample_submission.csv&quot;</span>)</span><br><span class="line">submission.iloc[:,<span class="number">1</span>] = final_preds</span><br><span class="line"><span class="built_in">print</span>(submission.head())</span><br><span class="line">submission.to_csv(<span class="string">&quot;submission.csv&quot;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>     Id  SalePrice
+0  1461   109087.0
+1  1462   160506.0
+2  1463   181350.0
+3  1464   195112.0
+4  1465   189181.0
+</code></pre>
+<h2 id="모형-만들기"><a href="#모형-만들기" class="headerlink" title="모형 만들기"></a>모형 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># from sklearn.linear_model import LinearRegression</span></span><br><span class="line"><span class="comment"># lr_model = LinearRegression()</span></span><br><span class="line"><span class="comment"># lr_model.fit(X_train, y_train) </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(lr_model.score(X_train, y_train))</span></span><br><span class="line"><span class="comment"># print(lr_model.score(X_test, y_test))</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/08/bike-sharing-training/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bike Sharing Demand Training
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/06/Day15_20220706/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">July 6, 2022, Day15</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="nav-number">1.</span> <span class="nav-text">라이브러리 불러오기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="nav-number">2.</span> <span class="nav-text">데이터 불러오기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">데이터 둘러보기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8B%9C%EA%B0%81%ED%99%94"><span class="nav-number">4.</span> <span class="nav-text">데이터 시각화</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC"><span class="nav-number">5.</span> <span class="nav-text">데이터 전처리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-ID%EA%B0%92-%EC%A0%9C%EA%B1%B0"><span class="nav-number">5.1.</span> <span class="nav-text">데이터 ID값 제거</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Y%EA%B0%92-%EC%B6%94%EC%B6%9C"><span class="nav-number">5.2.</span> <span class="nav-text">Y값 추출</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%A9%EC%B9%98%EA%B8%B0"><span class="nav-number">5.3.</span> <span class="nav-text">데이터 합치기</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%ED%99%95%EC%9D%B8"><span class="nav-number">6.</span> <span class="nav-text">결측치 확인</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%B1%84%EC%9A%B0%EA%B8%B0"><span class="nav-number">7.</span> <span class="nav-text">결측치 채우기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8F%84%EC%B6%9C-%EB%B3%80%EC%88%98"><span class="nav-number">8.</span> <span class="nav-text">도출 변수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%94%EB%AF%B8%EB%B3%80%EC%88%98"><span class="nav-number">9.</span> <span class="nav-text">더미변수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9D%B8%EC%BD%94%EB%94%A9"><span class="nav-number">10.</span> <span class="nav-text">인코딩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Label-Encoding-Ordinal-Encoding-One-Hot-Encoding"><span class="nav-number">11.</span> <span class="nav-text">Label Encoding, Ordinal Encoding, One-Hot Encoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%BC%EC%A0%9C"><span class="nav-number">12.</span> <span class="nav-text">과제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8F%89%EA%B0%80%EC%A7%80%ED%91%9C"><span class="nav-number">13.</span> <span class="nav-text">평가지표</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAE"><span class="nav-number">13.1.</span> <span class="nav-text">MAE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%AA%A8%ED%98%95-%EC%A0%95%EC%9D%98-%EA%B2%80%EC%A6%9D-%ED%8F%89%EA%B0%80"><span class="nav-number">14.</span> <span class="nav-text">머신러닝 모형 정의, 검증 평가</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A0%9C%EC%B6%9C-%EB%B0%A9%EB%B2%95"><span class="nav-number">15.</span> <span class="nav-text">제출 방법</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AA%A8%ED%98%95-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="nav-number">16.</span> <span class="nav-text">모형 만들기</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 SeungZZang&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

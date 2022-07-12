@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bike Sharing Demand Training | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="양식을 강사님께서 주실 예정 날짜 수강생 이름  1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined by the kaggle&#x2F;python Docker image: https:&#x2F;&#x2F;github.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bike Sharing Demand Training">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/07/08/bike-sharing-training/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="양식을 강사님께서 주실 예정 날짜 수강생 이름  1234567891011121314151617# This Python 3 environment comes with many helpful analytics libraries installed# It is defined by the kaggle&#x2F;python Docker image: https:&#x2F;&#x2F;github.c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-08T00:22:22.000Z">
+<meta property="article:modified_time" content="2022-07-12T03:26:47.258Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="SeungZZang&#39;s Blog" rel="home"> SeungZZang&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-bike-sharing-training" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Bike Sharing Demand Training
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/07/08/bike-sharing-training/" class="article-date">
+	  <time datetime="2022-07-08T00:22:22.000Z" itemprop="datePublished">July 8, 2022</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="양식을-강사님께서-주실-예정"><a href="#양식을-강사님께서-주실-예정" class="headerlink" title="양식을 강사님께서 주실 예정"></a>양식을 강사님께서 주실 예정</h1><ul>
+<li>날짜</li>
+<li>수강생 이름</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here&#x27;s several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only &quot;../input/&quot; directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> dirname, _, filenames <span class="keyword">in</span> os.walk(<span class="string">&#x27;/kaggle/input&#x27;</span>):</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        <span class="built_in">print</span>(os.path.join(dirname, filename))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using &quot;Save &amp; Run All&quot; </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won&#x27;t be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="chapter-01-필수-라이브러리-불러오기"><a href="#chapter-01-필수-라이브러리-불러오기" class="headerlink" title="chapter 01. 필수 라이브러리 불러오기"></a>chapter 01. 필수 라이브러리 불러오기</h1><h2 id="※-필수-라이브러리를-불러오는-작업"><a href="#※-필수-라이브러리를-불러오는-작업" class="headerlink" title="※ 필수 라이브러리를 불러오는 작업"></a>※ 필수 라이브러리를 불러오는 작업</h2><ul>
+<li>데이터 가공을 위한 Pandas</li>
+<li>수치 연산을 위한 Numpy</li>
+<li>시각화를 위한<br>  matplotlib<br>  seaborn</li>
+<li>머신러닝 기본 라이브러리인 sklearn<ul>
+<li>이후 머신러닝 모델 라이브러리는 그때마다 입력</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd   <span class="comment"># 데이터 가공</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np    <span class="comment"># 수치 연산</span></span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl           <span class="comment"># 시각화</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt    <span class="comment"># 시각화</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns              <span class="comment"># 시각화</span></span><br><span class="line"><span class="keyword">import</span> sklearn   <span class="comment"># 머신러닝</span></span><br><span class="line"><span class="comment"># pyplot은 matplotlib 안에 속한 클래스이므로 따로 버전 확인을 할 필요가 없음</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;pandas version : &quot;</span>, pd.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;numpy version : &quot;</span>, np.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;matplotlib version : &quot;</span>, mpl.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;seaborn version : &quot;</span>, sns.__version__)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;sklearn version : &quot;</span>, sklearn.__version__)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Chapter-02-데이터-불러오기"><a href="#Chapter-02-데이터-불러오기" class="headerlink" title="Chapter 02. 데이터 불러오기"></a>Chapter 02. 데이터 불러오기</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/kaggle/input/bike-sharing-demand/&#x27;</span></span><br><span class="line">train = pd.read_csv(DATA_PATH + <span class="string">&#x27;train.csv&#x27;</span>)   <span class="comment"># 훈련 데이터</span></span><br><span class="line">test = pd.read_csv(DATA_PATH + <span class="string">&#x27;test.csv&#x27;</span>)     <span class="comment"># 테스트 데이터</span></span><br><span class="line">submission = pd.read_csv(DATA_PATH + <span class="string">&#x27;sampleSubmission.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line">train.shape, test.shape, submission.shape</span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터-확인"><a href="#데이터-확인" class="headerlink" title="데이터 확인"></a>데이터 확인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train.head(<span class="number">10</span>))</span><br><span class="line">train.info()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(test.head(<span class="number">10</span>))</span><br><span class="line">test.info()</span><br></pre></td></tr></table></figure>
+
+<h2 id="결측치"><a href="#결측치" class="headerlink" title="결측치"></a>결측치</h2><ul>
+<li>현재 판단으로는 결측치가 없어 보임</li>
+</ul>
+<h1 id="Chapter-03-탐색적-자료-분석"><a href="#Chapter-03-탐색적-자료-분석" class="headerlink" title="Chapter 03. 탐색적 자료 분석"></a>Chapter 03. 탐색적 자료 분석</h1><ul>
+<li>시각화</li>
+<li>날짜 기반 데이터</li>
+<li>train 데이터를 다이렉트로 변화를 주면 전처리 시 헷갈림</li>
+<li>복제본 뜨기 (탐색적 자료 분석)</li>
+<li>데이터 셋이 매우 작다면<ul>
+<li>전체를 다 써도 큰 상관 없음</li>
+<li>But, 데이터 셋이 크다면 전체 데이터에서 일부 샘플링</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 원본이 망가질 우려가 있어 복제본을 뜬다</span></span><br><span class="line">temp_train = train.copy()</span><br><span class="line">temp_train.info()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>시각화를 위한 날짜 데이터 처리</li>
+<li>연도, 월, 일, 시간, 분, 초</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;datetime&#x27;</span>][:<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">0</span>].split()[<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">0</span>].split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">year = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">month = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">day = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">2</span>]</span><br><span class="line">hour = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">minutes = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">seconds = temp_train[<span class="string">&#x27;datetime&#x27;</span>][<span class="number">100</span>].split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">year, month, day, hour, minutes, seconds</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;date&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># apply 메서드 : 반복문 코드를 안 써도 반복문 효과를 주는 메서드</span></span><br><span class="line">temp_train[<span class="string">&#x27;date&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>시간 데이터 전처리 방법론 (1)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시간 테스트</span></span><br><span class="line">start_time = time.time()</span><br><span class="line"></span><br><span class="line">temp_train[<span class="string">&#x27;year&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">0</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;month&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">1</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;day&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">0</span>].split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">2</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;hour&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">0</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;minutes&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">1</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;seconds&#x27;</span>] = temp_train[<span class="string">&#x27;datetime&#x27;</span>].apply(<span class="keyword">lambda</span> x : x.split()[<span class="number">1</span>].split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># temp_train[[&#x27;year&#x27;, &#x27;month&#x27;, &#x27;day&#x27;]]</span></span><br><span class="line"><span class="comment"># temp_train[[&#x27;hour&#x27;, &#x27;minutes&#x27;, &#x27;seconds&#x27;]]</span></span><br><span class="line"></span><br><span class="line">end_time = time.time()</span><br><span class="line">lambda_ctime = end_time - start_time</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;실행시간(second) : &quot;</span>, np.<span class="built_in">round</span>(lambda_ctime, <span class="number">3</span>))</span><br><span class="line">temp_train[[<span class="string">&#x27;datetime&#x27;</span>, <span class="string">&#x27;year&#x27;</span>, <span class="string">&#x27;month&#x27;</span>, <span class="string">&#x27;day&#x27;</span>, <span class="string">&#x27;hour&#x27;</span>, <span class="string">&#x27;minutes&#x27;</span>, <span class="string">&#x27;seconds&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>시간 데이터 전처리 방법론 (2)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;date&#x27;</span>] = pd.to_datetime(temp_train[<span class="string">&#x27;datetime&#x27;</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;year&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.year</span><br><span class="line">temp_train[<span class="string">&#x27;year&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시간 테스트</span></span><br><span class="line">start_time = time.time()</span><br><span class="line"></span><br><span class="line">temp_train[<span class="string">&#x27;date&#x27;</span>] = pd.to_datetime(temp_train[<span class="string">&#x27;datetime&#x27;</span>])</span><br><span class="line">temp_train[<span class="string">&#x27;year&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.year</span><br><span class="line">temp_train[<span class="string">&#x27;month&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.month</span><br><span class="line">temp_train[<span class="string">&#x27;day&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.day</span><br><span class="line">temp_train[<span class="string">&#x27;hour&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.hour</span><br><span class="line"><span class="comment"># temp_train[[&#x27;year&#x27;, &#x27;month&#x27;, &#x27;day&#x27;]]</span></span><br><span class="line"><span class="comment"># temp_train[[&#x27;hour&#x27;, &#x27;minutes&#x27;, &#x27;seconds&#x27;]]</span></span><br><span class="line"></span><br><span class="line">end_time = time.time()</span><br><span class="line">lambda_ctime = end_time - start_time</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;실행시간(second) : &quot;</span>, np.<span class="built_in">round</span>(lambda_ctime, <span class="number">3</span>))</span><br><span class="line">temp_train[[<span class="string">&#x27;datetime&#x27;</span>, <span class="string">&#x27;year&#x27;</span>, <span class="string">&#x27;month&#x27;</span>, <span class="string">&#x27;day&#x27;</span>, <span class="string">&#x27;hour&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>요일 추출하기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;date&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;weekday&#x27;</span>] = temp_train[<span class="string">&#x27;date&#x27;</span>].dt.day_name()</span><br><span class="line">temp_train[<span class="string">&#x27;weekday&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>계절 문자로 변환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;season&#x27;</span>] = temp_train[<span class="string">&#x27;season&#x27;</span>].<span class="built_in">map</span>(&#123;</span><br><span class="line">    <span class="number">1</span> : <span class="string">&#x27;Spring&#x27;</span>,</span><br><span class="line">    <span class="number">2</span> : <span class="string">&#x27;Summer&#x27;</span>,</span><br><span class="line">    <span class="number">3</span> : <span class="string">&#x27;Fall&#x27;</span>,</span><br><span class="line">    <span class="number">4</span> : <span class="string">&#x27;Winter&#x27;</span>    </span><br><span class="line">&#125;)</span><br><span class="line">temp_train[<span class="string">&#x27;season&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;weather&#x27;</span>] = temp_train[<span class="string">&#x27;weather&#x27;</span>].<span class="built_in">map</span>(&#123;</span><br><span class="line">    <span class="number">1</span> : <span class="string">&#x27;Clear&#x27;</span>,</span><br><span class="line">    <span class="number">2</span> : <span class="string">&#x27;Few clouds&#x27;</span>,</span><br><span class="line">    <span class="number">3</span> : <span class="string">&#x27;Light snow, Rain&#x27;</span>,</span><br><span class="line">    <span class="number">4</span> : <span class="string">&#x27;Heavy snow, Rain&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">temp_train[<span class="string">&#x27;weather&#x27;</span>]</span><br><span class="line"></span><br><span class="line">temp_train.info()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_train.head()</span><br></pre></td></tr></table></figure>
+
+<h1 id="Chapter-04-데이터-시각화"><a href="#Chapter-04-데이터-시각화" class="headerlink" title="Chapter 04. 데이터 시각화"></a>Chapter 04. 데이터 시각화</h1><ul>
+<li>수치를 예측하는 대회</li>
+<li>종속변수를 시각화해야 함</li>
+<li>분포 확인 후, 로그변환을 줄지 말지를 결정해야 함</li>
+<li>시각화를 하는 이유 : 어떤 컬럼을 삭제할 지 고민하기 위해서</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fix, ax = plt.subplots(nrows = <span class="number">1</span>, ncols = <span class="number">2</span>, figsize = (<span class="number">10</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">sns.histplot(train[<span class="string">&#x27;count&#x27;</span>], ax = ax[<span class="number">0</span>])   <span class="comment"># ax[0] = 그래프 도화지의 인덱스 위치</span></span><br><span class="line">sns.histplot(np.log1p(train[<span class="string">&#x27;count&#x27;</span>]), ax = ax[<span class="number">1</span>])   <span class="comment"># 로그변환 --&gt; np.log1p(컬럼명)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 제목 옵션</span></span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Normal Graph&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Log Transformed Graph&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>막대 그래프<ul>
+<li>year, count</li>
+<li>month, count</li>
+<li>day, count</li>
+<li>hour, count</li>
+</ul>
+</li>
+<li>각 그래프의 타이틀 추가</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(nrows = <span class="number">2</span>, ncols = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 1단계 : 전체 그래프 기본 설정</span></span><br><span class="line"><span class="comment"># 그래프 사이 간격 띄우기</span></span><br><span class="line">fig.tight_layout()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 전체 그래프 사이즈 관리</span></span><br><span class="line">fig.set_size_inches(<span class="number">15</span>, <span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2단계 : 각 개별 그래프 입력</span></span><br><span class="line">sns.barplot(x = <span class="string">&#x27;year&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;season&#x27;</span>, data = temp_train, ax = ax[<span class="number">0</span>, <span class="number">0</span>], capsize=<span class="number">.01</span>)</span><br><span class="line">sns.barplot(x = <span class="string">&#x27;month&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">0</span>, <span class="number">1</span>], capsize=<span class="number">.01</span>)</span><br><span class="line">sns.barplot(x = <span class="string">&#x27;day&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">1</span>, <span class="number">0</span>], capsize=<span class="number">.01</span>)</span><br><span class="line">sns.barplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">1</span>, <span class="number">1</span>], capsize=<span class="number">.01</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3단계 : 디테일 옵션</span></span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Year&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by Month&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Day&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by Hour&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].tick_params(axis = <span class="string">&#x27;x&#x27;</span>, labelrotation = <span class="number">90</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>boxplot<ul>
+<li>season, count</li>
+<li>weather, count</li>
+<li>holiday, count</li>
+<li>workingholiday, count</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(nrows = <span class="number">2</span>, ncols = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 1단계 : 전체 그래프 기본 설정</span></span><br><span class="line"><span class="comment"># 그래프 사이 간격 띄우기</span></span><br><span class="line">fig.tight_layout()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 전체 그래프 사이즈 관리</span></span><br><span class="line">fig.set_size_inches(<span class="number">15</span>, <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2단계 : 각 개별 그래프 입력</span></span><br><span class="line">sns.boxplot(x = <span class="string">&#x27;season&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sns.boxplot(x = <span class="string">&#x27;weather&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">sns.boxplot(x = <span class="string">&#x27;holiday&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">sns.boxplot(x = <span class="string">&#x27;workingday&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, data = temp_train, ax = ax[<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3단계 : 디테일 옵션</span></span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Season&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by Weather&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Holiday&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by Workingday&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].tick_params(axis = <span class="string">&#x27;x&#x27;</span>, labelrotation = <span class="number">90</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>포인트플롯</li>
+<li>5개의 행 그래프 작성<ul>
+<li>workingday, holiday, weekday, season, weather</li>
+</ul>
+</li>
+<li>5개의 그래프를 한 이미지로 그리기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;season&#x27;</span>, data = temp_train)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(nrows = <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">fig.tight_layout()</span><br><span class="line"></span><br><span class="line">fig.set_size_inches(<span class="number">12</span>, <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;workingday&#x27;</span>, data = temp_train, ax = ax[<span class="number">0</span>])</span><br><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;holiday&#x27;</span>, data = temp_train, ax = ax[<span class="number">1</span>])</span><br><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;weekday&#x27;</span>,  data = temp_train, ax = ax[<span class="number">2</span>])</span><br><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;season&#x27;</span>,  data = temp_train, ax = ax[<span class="number">3</span>])</span><br><span class="line">sns.pointplot(x = <span class="string">&#x27;hour&#x27;</span>, y = <span class="string">&#x27;count&#x27;</span>, hue = <span class="string">&#x27;weather&#x27;</span>,  data = temp_train, ax = ax[<span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>회귀선을 포함한 산점도 그래프</li>
+<li>총 4개의 그래프가 나와야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># (scatter_kws = &#123;&#x27;alpha : 0.2&#x27;&#125;, line_kws = &#123;&#x27;color&#x27; : &#x27;blue&#x27;&#125;)</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_train.head()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(nrows = <span class="number">2</span>, ncols = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.tight_layout()</span><br><span class="line"></span><br><span class="line">fig.set_size_inches(<span class="number">12</span>, <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">sns.regplot(x =<span class="string">&#x27;temp&#x27;</span>, y =<span class="string">&#x27;count&#x27;</span>, data = temp_train, scatter_kws = &#123;<span class="string">&#x27;alpha&#x27;</span> : <span class="number">0.2</span>&#125;, line_kws = &#123;<span class="string">&#x27;color&#x27;</span> : <span class="string">&#x27;blue&#x27;</span>&#125;, ax = ax[<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sns.regplot(x =<span class="string">&#x27;atemp&#x27;</span>, y =<span class="string">&#x27;count&#x27;</span>, data = temp_train, scatter_kws = &#123;<span class="string">&#x27;alpha&#x27;</span> : <span class="number">0.2</span>&#125;, line_kws = &#123;<span class="string">&#x27;color&#x27;</span> : <span class="string">&#x27;blue&#x27;</span>&#125;, ax = ax[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">sns.regplot(x =<span class="string">&#x27;humidity&#x27;</span>, y =<span class="string">&#x27;count&#x27;</span>, data = temp_train, scatter_kws = &#123;<span class="string">&#x27;alpha&#x27;</span> : <span class="number">0.2</span>&#125;, line_kws = &#123;<span class="string">&#x27;color&#x27;</span> : <span class="string">&#x27;blue&#x27;</span>&#125;, ax = ax[<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">sns.regplot(x =<span class="string">&#x27;windspeed&#x27;</span>, y =<span class="string">&#x27;count&#x27;</span>, data = temp_train, scatter_kws = &#123;<span class="string">&#x27;alpha&#x27;</span> : <span class="number">0.2</span>&#125;, line_kws = &#123;<span class="string">&#x27;color&#x27;</span> : <span class="string">&#x27;blue&#x27;</span>&#125;, ax = ax[<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Temp&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by aTemp&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Rental amounts by Humidity&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Rental amounts by Windspeed&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_train[<span class="string">&#x27;windspeed&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>히트맵 그래프 그리기</li>
+<li>상관계수 해석<ul>
+<li>수치가 양수다 (양의 관계)</li>
+<li>수치가 음수다 (음의 관계)</li>
+<li>0 ~ +-0.2 : 두 변수 사이의 상관관계는 없다.</li>
+<li>+-0.2 ~ +-1 : 값이 커지면 커질수록 두 변수 간 상관관계는 크다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">corrMat = temp_train[[<span class="string">&#x27;temp&#x27;</span>, <span class="string">&#x27;atemp&#x27;</span>, <span class="string">&#x27;humidity&#x27;</span>, <span class="string">&#x27;windspeed&#x27;</span>, <span class="string">&#x27;count&#x27;</span>]].corr()</span><br><span class="line">corrMat</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.heatmap(corrMat, annot = <span class="literal">True</span>)</span><br><span class="line"><span class="comment"># Count와 컬럼들의 상관관계 비</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터-전처리"><a href="#데이터-전처리" class="headerlink" title="데이터 전처리"></a>데이터 전처리</h2><ul>
+<li><p>첫번째 : train 데이터의 casual, registered 컬럼 제거할 것</p>
+</li>
+<li><p>두번째 : 날짜 데이터 처리, dt.month &lt;– 이렇게 할 것</p>
+</li>
+<li><p>세번째 : season 컬럼 처리 필요 (숫자를 문자로 변환)</p>
+<ul>
+<li>인코딩 변환(라벨 인코딩, 원핫 인코딩)</li>
+</ul>
+</li>
+<li><p>네번째 : weather 컬럼 처리 필요 (숫자를 문자로 변환)</p>
+<ul>
+<li>인코딩 변환(라벨 인코딩, 원핫 인코딩)</li>
+</ul>
+</li>
+<li><p>다섯번째 : month, day 컬럼 삭제 예정</p>
+</li>
+<li><p>여섯번째 : weather가 4인 데이터 삭제 (이상치)</p>
+</li>
+<li><p>일곱번째 : windspeed 컬럼 삭제 (놔둬도 상관없음)</p>
+</li>
+<li><p>여덟번째 : temp, atemp 중 하나 삭제 (옵션)</p>
+</li>
+<li><p>마지막 : 모든 문자를 숫자로 인코딩 (원핫 인코딩)</p>
+</li>
+<li><p>3시 10분까지</p>
+</li>
+<li><p>위 내용 처리 완료</p>
+</li>
+</ul>
+<h3 id="첫번째-train-데이터의-casual-registered-컬럼-제거"><a href="#첫번째-train-데이터의-casual-registered-컬럼-제거" class="headerlink" title="첫번째 : train 데이터의 casual, registered 컬럼 제거"></a>첫번째 : train 데이터의 casual, registered 컬럼 제거</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.shape</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train = train.drop([<span class="string">&#x27;casual&#x27;</span>, <span class="string">&#x27;registered&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">train.shape</span><br></pre></td></tr></table></figure>
+
+<h2 id="weather-컬럼-삭제"><a href="#weather-컬럼-삭제" class="headerlink" title="weather 컬럼 삭제"></a>weather 컬럼 삭제</h2><ul>
+<li>4인 데이터는 삭제</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train = train[train[<span class="string">&#x27;weather&#x27;</span>] != <span class="number">4</span>].reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">train.shape</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.info()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>데이터 합치기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_data = pd.concat([train, test]).reset_index(drop = <span class="literal">True</span>)</span><br><span class="line">all_data.info()</span><br></pre></td></tr></table></figure>
+
+<h3 id="두번째-날짜-데이터-처리-dt-year-형태로"><a href="#두번째-날짜-데이터-처리-dt-year-형태로" class="headerlink" title="두번째 : 날짜 데이터 처리, dt.year 형태로!"></a>두번째 : 날짜 데이터 처리, dt.year 형태로!</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">all_data[<span class="string">&#x27;date&#x27;</span>] = pd.to_datetime(all_data[<span class="string">&#x27;datetime&#x27;</span>])</span><br><span class="line">all_data[<span class="string">&#x27;year&#x27;</span>] = all_data[<span class="string">&#x27;date&#x27;</span>].dt.year</span><br><span class="line">all_data[<span class="string">&#x27;hour&#x27;</span>] = all_data[<span class="string">&#x27;date&#x27;</span>].dt.hour</span><br><span class="line">all_data[<span class="string">&#x27;weekday&#x27;</span>] = all_data[<span class="string">&#x27;date&#x27;</span>].dt.day_name()</span><br><span class="line"></span><br><span class="line">all_data.shape</span><br><span class="line">all_data.info()   <span class="comment"># date 컬럼의 dtype이 datetime64로 변경됐는지 확인</span></span><br><span class="line"><span class="comment"># all_data[&#x27;year&#x27;], all_data[&#x27;hour&#x27;], all_data[&#x27;weekday&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="세번째-season-컬럼-처리-숫자를-문자로-변환-라벨-인코딩-or-원핫-인코딩"><a href="#세번째-season-컬럼-처리-숫자를-문자로-변환-라벨-인코딩-or-원핫-인코딩" class="headerlink" title="세번째 : season 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩)"></a>세번째 : season 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">all_data[<span class="string">&#x27;season&#x27;</span>] = all_data[<span class="string">&#x27;season&#x27;</span>].replace(to_replace = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">                                               value = [<span class="string">&#x27;Spring&#x27;</span>, <span class="string">&#x27;Summer&#x27;</span>, <span class="string">&#x27;Fall&#x27;</span>, <span class="string">&#x27;Winter&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(all_data[<span class="string">&#x27;season&#x27;</span>])</span><br><span class="line"></span><br><span class="line">all_data.shape</span><br><span class="line">all_data.info()</span><br></pre></td></tr></table></figure>
+
+<h3 id="네번째-weather-컬럼-처리-숫자를-문자로-변환-라벨-인코딩-or-원핫-인코딩"><a href="#네번째-weather-컬럼-처리-숫자를-문자로-변환-라벨-인코딩-or-원핫-인코딩" class="headerlink" title="네번째 : weather 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩"></a>네번째 : weather 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">all_data[<span class="string">&#x27;weather&#x27;</span>] = all_data[<span class="string">&#x27;weather&#x27;</span>].<span class="built_in">map</span>(&#123;</span><br><span class="line">        <span class="number">1</span> : <span class="string">&#x27;Clear&#x27;</span>,</span><br><span class="line">        <span class="number">2</span> : <span class="string">&#x27;Few Cloud&#x27;</span>,</span><br><span class="line">        <span class="number">3</span> : <span class="string">&#x27;Light rain, snow&#x27;</span>,</span><br><span class="line">        <span class="number">4</span> : <span class="string">&#x27;Heavy rain, snow&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_data[<span class="string">&#x27;weather&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="다섯번째-month-day-컬럼-삭제"><a href="#다섯번째-month-day-컬럼-삭제" class="headerlink" title="다섯번째 : month, day 컬럼 삭제"></a>다섯번째 : month, day 컬럼 삭제</h3><ul>
+<li>두번째 과정에서 함께 진행했음</li>
+</ul>
+<h3 id="여섯번째-weather가-4인-데이터-삭제-이상치"><a href="#여섯번째-weather가-4인-데이터-삭제-이상치" class="headerlink" title="여섯번째 : weather가 4인 데이터 삭제 (이상치)"></a>여섯번째 : weather가 4인 데이터 삭제 (이상치)</h3><ul>
+<li>all_data가 아니라 train에서 삭제해야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># all_data.drop(all_data.loc[all_data[&#x27;weather&#x27;] == &#x27;Heavy rain, snow&#x27;].index, inplace =True)</span></span><br><span class="line"><span class="comment"># all_data = all_data[all_data[&#x27;weather&#x27;] != &#x27;Heavy rain, snow&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># all_data.shape</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="일곱번째-windspeed-컬럼-삭제-놔둬도-상관없음"><a href="#일곱번째-windspeed-컬럼-삭제-놔둬도-상관없음" class="headerlink" title="일곱번째 : windspeed 컬럼 삭제 (놔둬도 상관없음)"></a>일곱번째 : windspeed 컬럼 삭제 (놔둬도 상관없음)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_data = all_data.drop([<span class="string">&#x27;windspeed&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">all_data.shape</span><br></pre></td></tr></table></figure>
+
+<h3 id="여덟번째-temp-atemp-중-하나-삭제-옵션"><a href="#여덟번째-temp-atemp-중-하나-삭제-옵션" class="headerlink" title="여덟번째 : temp, atemp 중 하나 삭제 (옵션)"></a>여덟번째 : temp, atemp 중 하나 삭제 (옵션)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_data = all_data.drop([<span class="string">&#x27;atemp&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">all_data.shape</span><br></pre></td></tr></table></figure>
+
+<h3 id="아홉번째-datetime과-date-컬럼-제거하기"><a href="#아홉번째-datetime과-date-컬럼-제거하기" class="headerlink" title="아홉번째 : datetime과 date 컬럼 제거하기"></a>아홉번째 : datetime과 date 컬럼 제거하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_data = all_data.drop([<span class="string">&#x27;datetime&#x27;</span>, <span class="string">&#x27;date&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">all_data.shape</span><br></pre></td></tr></table></figure>
+
+<h3 id="마지막-모든-문자를-숫자로-인코딩-원핫-인코딩"><a href="#마지막-모든-문자를-숫자로-인코딩-원핫-인코딩" class="headerlink" title="마지막 : 모든 문자를 숫자로 인코딩 (원핫 인코딩)"></a>마지막 : 모든 문자를 숫자로 인코딩 (원핫 인코딩)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">all_data = pd.get_dummies(all_data).reset_index(drop = <span class="literal">True</span>)</span><br><span class="line">all_data.shape</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_data.info()</span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터셋-나누기"><a href="#데이터셋-나누기" class="headerlink" title="데이터셋 나누기"></a>데이터셋 나누기</h2><ul>
+<li>훈련데이터와 테스트데이터로 재분리</li>
+<li>count : 타킷 데이터(&#x3D;종속 데이터)<ul>
+<li>타킷 데이터가 있으면 훈련 데이터</li>
+<li>타킷 데이터가 없으면 테스트 데이터</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train = all_data[~pd.isnull(all_data[<span class="string">&#x27;count&#x27;</span>])]</span><br><span class="line">test = all_data[pd.isnull(all_data[<span class="string">&#x27;count&#x27;</span>])]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train.shape, test.shape</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>count 컬럼 제거</li>
+<li>타킷 데이터이기 때문</li>
+<li>타깃 데이터만 y로 추출<ul>
+<li>train, test count 컬럼 제거</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = train[<span class="string">&#x27;count&#x27;</span>] <span class="comment"># 타깃 데이터</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = train.drop([<span class="string">&#x27;count&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line">test = test.drop([<span class="string">&#x27;count&#x27;</span>], axis = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">X.shape, test.shape</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X.shape, y.shape, test.shape</span><br></pre></td></tr></table></figure>
+
+<h2 id="모델-훈련"><a href="#모델-훈련" class="headerlink" title="모델 훈련"></a>모델 훈련</h2><ul>
+<li>LinearRegression 모형만 학습</li>
+</ul>
+<h3 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h3><ul>
+<li>교차검증</li>
+<li>모형추가</li>
+<li>하이퍼파라미터 튜닝</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lr_model = LinearRegression()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모형 학습 전</span></span><br><span class="line"><span class="comment"># 로그변환을 해준다.</span></span><br><span class="line">log_y = np.log(y)</span><br><span class="line">lr_model.fit(X, log_y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모형 예측</span></span><br><span class="line">lr_preds = lr_model.predict(test)</span><br><span class="line">lr_preds[:<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="모형-예측"><a href="#모형-예측" class="headerlink" title="모형 예측"></a>모형 예측</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 지수변환</span></span><br><span class="line">final_preds = np.exp(lr_preds)</span><br><span class="line">final_preds</span><br></pre></td></tr></table></figure>
+
+<h2 id="제출"><a href="#제출" class="headerlink" title="제출"></a>제출</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">submission[<span class="string">&#x27;count&#x27;</span>] = final_preds </span><br><span class="line">submission.to_csv(<span class="string">&#x27;submission.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/08/house-prices-lec%20(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">House Prices Practice</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%96%91%EC%8B%9D%EC%9D%84-%EA%B0%95%EC%82%AC%EB%8B%98%EA%BB%98%EC%84%9C-%EC%A3%BC%EC%8B%A4-%EC%98%88%EC%A0%95"><span class="nav-number">1.</span> <span class="nav-text">양식을 강사님께서 주실 예정</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter-01-%ED%95%84%EC%88%98-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="nav-number">2.</span> <span class="nav-text">chapter 01. 필수 라이브러리 불러오기</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%BB-%ED%95%84%EC%88%98-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A5%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EB%8A%94-%EC%9E%91%EC%97%85"><span class="nav-number">2.1.</span> <span class="nav-text">※ 필수 라이브러리를 불러오는 작업</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-02-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">Chapter 02. 데이터 불러오기</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%99%95%EC%9D%B8"><span class="nav-number">3.1.</span> <span class="nav-text">데이터 확인</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98"><span class="nav-number">3.2.</span> <span class="nav-text">결측치</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-03-%ED%83%90%EC%83%89%EC%A0%81-%EC%9E%90%EB%A3%8C-%EB%B6%84%EC%84%9D"><span class="nav-number">4.</span> <span class="nav-text">Chapter 03. 탐색적 자료 분석</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-04-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8B%9C%EA%B0%81%ED%99%94"><span class="nav-number">5.</span> <span class="nav-text">Chapter 04. 데이터 시각화</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC"><span class="nav-number">5.1.</span> <span class="nav-text">데이터 전처리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%B2%AB%EB%B2%88%EC%A7%B8-train-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-casual-registered-%EC%BB%AC%EB%9F%BC-%EC%A0%9C%EA%B1%B0"><span class="nav-number">5.1.1.</span> <span class="nav-text">첫번째 : train 데이터의 casual, registered 컬럼 제거</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weather-%EC%BB%AC%EB%9F%BC-%EC%82%AD%EC%A0%9C"><span class="nav-number">5.2.</span> <span class="nav-text">weather 컬럼 삭제</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%91%90%EB%B2%88%EC%A7%B8-%EB%82%A0%EC%A7%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC-dt-year-%ED%98%95%ED%83%9C%EB%A1%9C"><span class="nav-number">5.2.1.</span> <span class="nav-text">두번째 : 날짜 데이터 처리, dt.year 형태로!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%84%B8%EB%B2%88%EC%A7%B8-season-%EC%BB%AC%EB%9F%BC-%EC%B2%98%EB%A6%AC-%EC%88%AB%EC%9E%90%EB%A5%BC-%EB%AC%B8%EC%9E%90%EB%A1%9C-%EB%B3%80%ED%99%98-%EB%9D%BC%EB%B2%A8-%EC%9D%B8%EC%BD%94%EB%94%A9-or-%EC%9B%90%ED%95%AB-%EC%9D%B8%EC%BD%94%EB%94%A9"><span class="nav-number">5.2.2.</span> <span class="nav-text">세번째 : season 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%84%A4%EB%B2%88%EC%A7%B8-weather-%EC%BB%AC%EB%9F%BC-%EC%B2%98%EB%A6%AC-%EC%88%AB%EC%9E%90%EB%A5%BC-%EB%AC%B8%EC%9E%90%EB%A1%9C-%EB%B3%80%ED%99%98-%EB%9D%BC%EB%B2%A8-%EC%9D%B8%EC%BD%94%EB%94%A9-or-%EC%9B%90%ED%95%AB-%EC%9D%B8%EC%BD%94%EB%94%A9"><span class="nav-number">5.2.3.</span> <span class="nav-text">네번째 : weather 컬럼 처리 (숫자를 문자로 변환, 라벨 인코딩 or 원핫 인코딩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%8B%A4%EC%84%AF%EB%B2%88%EC%A7%B8-month-day-%EC%BB%AC%EB%9F%BC-%EC%82%AD%EC%A0%9C"><span class="nav-number">5.2.4.</span> <span class="nav-text">다섯번째 : month, day 컬럼 삭제</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%97%AC%EC%84%AF%EB%B2%88%EC%A7%B8-weather%EA%B0%80-4%EC%9D%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AD%EC%A0%9C-%EC%9D%B4%EC%83%81%EC%B9%98"><span class="nav-number">5.2.5.</span> <span class="nav-text">여섯번째 : weather가 4인 데이터 삭제 (이상치)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9D%BC%EA%B3%B1%EB%B2%88%EC%A7%B8-windspeed-%EC%BB%AC%EB%9F%BC-%EC%82%AD%EC%A0%9C-%EB%86%94%EB%91%AC%EB%8F%84-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%8C"><span class="nav-number">5.2.6.</span> <span class="nav-text">일곱번째 : windspeed 컬럼 삭제 (놔둬도 상관없음)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%97%AC%EB%8D%9F%EB%B2%88%EC%A7%B8-temp-atemp-%EC%A4%91-%ED%95%98%EB%82%98-%EC%82%AD%EC%A0%9C-%EC%98%B5%EC%85%98"><span class="nav-number">5.2.7.</span> <span class="nav-text">여덟번째 : temp, atemp 중 하나 삭제 (옵션)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%95%84%ED%99%89%EB%B2%88%EC%A7%B8-datetime%EA%B3%BC-date-%EC%BB%AC%EB%9F%BC-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0"><span class="nav-number">5.2.8.</span> <span class="nav-text">아홉번째 : datetime과 date 컬럼 제거하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%A7%88%EC%A7%80%EB%A7%89-%EB%AA%A8%EB%93%A0-%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%88%AB%EC%9E%90%EB%A1%9C-%EC%9D%B8%EC%BD%94%EB%94%A9-%EC%9B%90%ED%95%AB-%EC%9D%B8%EC%BD%94%EB%94%A9"><span class="nav-number">5.2.9.</span> <span class="nav-text">마지막 : 모든 문자를 숫자로 인코딩 (원핫 인코딩)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EB%82%98%EB%88%84%EA%B8%B0"><span class="nav-number">5.3.</span> <span class="nav-text">데이터셋 나누기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AA%A8%EB%8D%B8-%ED%9B%88%EB%A0%A8"><span class="nav-number">5.4.</span> <span class="nav-text">모델 훈련</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B3%BC%EC%A0%9C"><span class="nav-number">5.4.1.</span> <span class="nav-text">과제</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AA%A8%ED%98%95-%EC%98%88%EC%B8%A1"><span class="nav-number">5.5.</span> <span class="nav-text">모형 예측</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A0%9C%EC%B6%9C"><span class="nav-number">5.6.</span> <span class="nav-text">제출</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 SeungZZang&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
