@@ -104,6 +104,319 @@
         
           <section id="main">
   
+    <article id="post-June-20,-2022,-Day03"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/06/20/June-20,-2022,-Day03/">June 20, 2022, Day03</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/06/20/June-20,-2022,-Day03/" class="article-date">
+	  <time datetime="2022-06-20T05:43:07.000Z" itemprop="datePublished">June 20, 2022</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3."></a>Chapter 3.</h2><ul>
+<li>변수에 데이터 넣기<br>변수에 데이터를 넣을 때는 ‘&lt;-‘ 기호를 사용<br>ex) a &lt;- 1<br>여기서 ‘a’는 변수(객체)에 해당<br>‘&lt;-‘ 대신 ‘&#x3D;’를 사용하기도 하는데 &#x3D; 기호가 더 상위 수준</li>
+</ul>
+<h3 id="변수에-숫자-넣기"><a href="#변수에-숫자-넣기" class="headerlink" title="변수에 숫자 넣기"></a>변수에 숫자 넣기</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> 1</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> 2</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 2</span><br></pre></td></tr></table></figure>
+<h3 id="변수에-문자-넣기-큰따옴표-“”-활용"><a href="#변수에-문자-넣기-큰따옴표-“”-활용" class="headerlink" title="변수에 문자 넣기(큰따옴표 “” 활용)"></a>변수에 문자 넣기(큰따옴표 “” 활용)</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b <span class="operator">&lt;-</span> <span class="string">&quot;안녕&quot;</span></span><br><span class="line">b </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;안녕&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c &lt;- 나는</span><br><span class="line">Error: object &#x27;나는&#x27; not found</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="복수의-데이터를-입력하는-함수"><a href="#복수의-데이터를-입력하는-함수" class="headerlink" title="복수의 데이터를 입력하는 함수"></a>복수의 데이터를 입력하는 함수</h3><p>  -&gt; c(), 여기서 c는 ‘combine’</p>
+<ul>
+<li><p>패키지 이용 방법</p>
+<p>-&gt; install.packages() 함수를 이용하여 설치<br>  library() 함수를 이용하여 구동</p>
+<p>-&gt; 설치는 한 번만 해도 되지만 library()는<br>  시작할 때마다 해야 한다</p>
+</li>
+</ul>
+<h3 id="데이터-구조"><a href="#데이터-구조" class="headerlink" title="데이터 구조"></a>데이터 구조</h3><ul>
+<li>벡터<br>  -&gt; 단일 유형으로 구성되는 1차원 데이터 구조</li>
+</ul>
+<h3 id="숫자형-벡터"><a href="#숫자형-벡터" class="headerlink" title="숫자형 벡터"></a>숫자형 벡터</h3><ul>
+<li>정수, 실수 모두 포함하는 데이터</li>
+<li>사칙연산 가능</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> 3</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span></span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 1 3 5</span><br></pre></td></tr></table></figure>
+<p>  ※ 여기서 [1]은 데이터의 위치가 벡터 중<br>    첫 번째라는 것을 의미</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b<span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b<span class="punctuation">[</span><span class="number">3</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="문자형-벡터"><a href="#문자형-벡터" class="headerlink" title="문자형 벡터"></a>문자형 벡터</h3><ul>
+<li>문자를 넣을 때는 큰따옴표를 넣고 입력</li>
+<li>출력 역시 큰따옴표가 입력됨</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">c</span> <span class="operator">&lt;-</span> <span class="string">&quot;Younha&quot;</span></span><br><span class="line"><span class="built_in">c</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;Younha&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;comet&quot;</span><span class="punctuation">,</span><span class="string">&quot;event horizon&quot;</span><span class="punctuation">)</span></span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;comet&quot;         &quot;event horizon&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>변수에 숫자와 문자 데이터를 함께 넣으면<br>데이터 속성이 모두 문자로 변환</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="string">&quot;broker&quot;</span><span class="punctuation">)</span></span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;3&quot;      &quot;5&quot;      &quot;broker&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>e<span class="punctuation">)</span> <span class="comment"># class() -&gt; 벡터의 유형 확인</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;character&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>a<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;numeric&quot;</span><br></pre></td></tr></table></figure>
+<p>  ※ 타인이 만든 함수를 쓰려면, 입력 조건이 존재<br>  -&gt; 입력 조건이 맞지 않을 때, 에러 발생</p>
+<h3 id="논리형-벡터"><a href="#논리형-벡터" class="headerlink" title="논리형 벡터"></a>논리형 벡터</h3><ul>
+<li>TRUE와 FALSE라는 논리값으로 구성된 벡터</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">TRUE</span><span class="punctuation">,</span><span class="literal">FALSE</span><span class="punctuation">)</span></span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1]  TRUE FALSE</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>f<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;logical&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>논리형과 문자형이 같이 있으면 문자형 벡터</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">TRUE</span><span class="punctuation">,</span><span class="literal">FALSE</span><span class="punctuation">,</span><span class="string">&quot;RUN&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>g<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;character&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>논리형과 숫자형이 같이 있으면 숫자형 벡터</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">TRUE</span><span class="punctuation">,</span><span class="literal">FALSE</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">)</span></span><br><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>h<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;numeric&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="범주형-벡터"><a href="#범주형-벡터" class="headerlink" title="범주형 벡터"></a>범주형 벡터</h3><ul>
+<li>상황에 따라 변수의 성질이 변함<br>-&gt; 그 판단은 분석하는 본인이 해야 하는 것</li>
+<li>데이터가 일정 범위나 기준에 따라 유형으로<br>분류되는 벡터가 바로 ‘범주형 벡터’</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">do <span class="operator">&lt;-</span> factor<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span><span class="string">&quot;b&quot;</span><span class="punctuation">,</span><span class="string">&quot;a&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">do</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## [1] 1 2 2 a b a</span><br><span class="line">## Levels: 1 2 a b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>do<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;factor&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">levels<span class="punctuation">(</span>do<span class="punctuation">)</span>       <span class="comment"># do의 범주 확인</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot; &quot;b&quot;</span><br></pre></td></tr></table></figure>
+<p>  ※ Levels: 범주 유형 확인</p>
+<ul>
+<li>범주형 벡터 예시</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 명목형 자료형 Factor</span></span><br><span class="line">locaiton_vector <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;서울&quot;</span><span class="punctuation">,</span> <span class="string">&quot;인천&quot;</span><span class="punctuation">,</span> <span class="string">&quot;부산&quot;</span><span class="punctuation">)</span></span><br><span class="line">factor_location_vector <span class="operator">&lt;-</span> factor<span class="punctuation">(</span>locaiton_vector<span class="punctuation">)</span></span><br><span class="line">factor_location_vector</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## [1] 서울 인천 부산</span><br><span class="line">## Levels: 부산 서울 인천</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>factor_location_vector<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;factor&quot;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 순서형 자료형 Factor</span></span><br><span class="line">temperature_factor <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;기온높음&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                        <span class="string">&quot;기온보통&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                        <span class="string">&quot;기온낮음&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                        <span class="string">&quot;기온높음&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                        <span class="string">&quot;기온보통&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                        <span class="string">&quot;기온보통&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">temperature_factor</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;기온높음&quot; &quot;기온보통&quot; &quot;기온낮음&quot; &quot;기온높음&quot; &quot;기온보통&quot; &quot;기온보통&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">factor_temperature_factor <span class="operator">&lt;-</span> factor<span class="punctuation">(</span>temperature_factor<span class="punctuation">,</span> </span><br><span class="line">                                    ordered <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> </span><br><span class="line">                                    levels  <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;기온보통&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                                                <span class="string">&quot;기온낮음&quot;</span><span class="punctuation">,</span> </span><br><span class="line">                                                <span class="string">&quot;기온높음&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">factor_temperature_factor</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## [1] 기온높음 기온보통 기온낮음 기온높음 기온보통 기온보통</span><br><span class="line">## Levels: 기온보통 &lt; 기온낮음 &lt; 기온높음</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>factor_temperature_factor<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;ordered&quot; &quot;factor&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">levels<span class="punctuation">(</span>factor_temperature_factor<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;기온보통&quot; &quot;기온낮음&quot; &quot;기온높음&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="데이터-프레임"><a href="#데이터-프레임" class="headerlink" title="데이터 프레임"></a>데이터 프레임</h3><ul>
+<li>데이터 프레임 만들기</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># - 엑셀 데이터</span></span><br><span class="line">no <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span></span><br><span class="line">sex <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;male&quot;</span><span class="punctuation">,</span><span class="string">&quot;female&quot;</span><span class="punctuation">,</span><span class="string">&quot;male&quot;</span><span class="punctuation">,</span><span class="string">&quot;male&quot;</span><span class="punctuation">,</span><span class="string">&quot;female&quot;</span><span class="punctuation">)</span></span><br><span class="line">korean <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">87</span><span class="punctuation">,</span><span class="number">92</span><span class="punctuation">,</span><span class="number">95</span><span class="punctuation">,</span><span class="number">81</span><span class="punctuation">,</span><span class="number">87</span><span class="punctuation">)</span></span><br><span class="line">english <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">88</span><span class="punctuation">,</span><span class="number">95</span><span class="punctuation">,</span><span class="number">92</span><span class="punctuation">,</span><span class="number">84</span><span class="punctuation">,</span><span class="number">86</span><span class="punctuation">)</span></span><br><span class="line">math <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">82</span><span class="punctuation">,</span><span class="number">93</span><span class="punctuation">,</span><span class="number">90</span><span class="punctuation">,</span><span class="number">80</span><span class="punctuation">,</span><span class="number">88</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">exam <span class="operator">=</span> data.frame<span class="punctuation">(</span>no<span class="punctuation">,</span> sex<span class="punctuation">,</span> korean<span class="punctuation">,</span> english<span class="punctuation">,</span> math<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">exam     <span class="comment">#출력</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean english math</span><br><span class="line">## 1  1   male     87      88   82</span><br><span class="line">## 2  2 female     92      95   93</span><br><span class="line">## 3  3   male     95      92   90</span><br><span class="line">## 4  4   male     81      84   80</span><br><span class="line">## 5  5 female     87      86   88</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam<span class="operator">$</span>no<span class="punctuation">[</span><span class="number">3</span><span class="punctuation">]</span>   <span class="comment"># $ 기호를 통해 특정 변수 출력</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam<span class="operator">$</span>sex<span class="punctuation">[</span><span class="number">4</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;male&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데이터 타입</span></span><br><span class="line"><span class="built_in">class</span><span class="punctuation">(</span>exam<span class="operator">$</span>sex<span class="punctuation">)</span>   <span class="comment"># 데이터가 많아지면 일일이 확인 불가</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;character&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str<span class="punctuation">(</span>exam<span class="punctuation">)</span>  <span class="comment"># 벡터 구조를 효율적으로 파악 가능</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## &#x27;data.frame&#x27;:	5 obs. of  5 variables:</span><br><span class="line">##  $ no     : num  1 2 3 4 5</span><br><span class="line">##  $ sex    : chr  &quot;male&quot; &quot;female&quot; &quot;male&quot; &quot;male&quot; ...</span><br><span class="line">##  $ korean : num  87 92 95 81 87</span><br><span class="line">##  $ english: num  88 95 92 84 86</span><br><span class="line">##  $ math   : num  82 93 90 80 88</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="데이터-내보내기-amp-불러오기"><a href="#데이터-내보내기-amp-불러오기" class="headerlink" title="데이터 내보내기 &amp; 불러오기"></a>데이터 내보내기 &amp; 불러오기</h3><ul>
+<li>현재 경로 확인</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getwd<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] &quot;C:/Users/human/Desktop/R_lecture/source&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>데이터 내보내기</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">write.csv<span class="punctuation">(</span>exam<span class="punctuation">,</span> file<span class="operator">=</span><span class="string">&quot;exam01.csv&quot;</span><span class="punctuation">)</span>   <span class="comment"># write.csv(객체, file=&quot;파일명&quot;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>데이터 불러오기</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam01 <span class="operator">=</span> read.csv<span class="punctuation">(</span><span class="string">&quot;temp.csv&quot;</span><span class="punctuation">)</span>   <span class="comment"># 객체 = read.csv(&quot;파일명&quot;)</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="열-추가하기"><a href="#열-추가하기" class="headerlink" title="열 추가하기"></a>열 추가하기</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">science <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">85</span><span class="punctuation">,</span><span class="number">90</span><span class="punctuation">,</span><span class="number">93</span><span class="punctuation">,</span><span class="number">82</span><span class="punctuation">,</span><span class="number">86</span><span class="punctuation">)</span></span><br><span class="line">exam_a <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>no<span class="punctuation">,</span>sex<span class="punctuation">,</span>korean<span class="punctuation">,</span>english<span class="punctuation">,</span>math<span class="punctuation">,</span>science<span class="punctuation">)</span></span><br><span class="line">        <span class="comment"># data.frame(exam,science)로 해도 동일 결과 출력</span></span><br><span class="line">exam_a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean english math science</span><br><span class="line">## 1  1   male     87      88   82      85</span><br><span class="line">## 2  2 female     92      95   93      90</span><br><span class="line">## 3  3   male     95      92   90      93</span><br><span class="line">## 4  4   male     81      84   80      82</span><br><span class="line">## 5  5 female     87      86   88      86</span><br></pre></td></tr></table></figure>
+
+<h3 id="특정-데이터-출력하기"><a href="#특정-데이터-출력하기" class="headerlink" title="특정 데이터 출력하기"></a>특정 데이터 출력하기</h3><ul>
+<li>1개 데이터 출력</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">]</span>      <span class="comment"># [행 번호, 열 번호]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 95</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>복수 데이터 출력</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="number">3</span><span class="punctuation">,</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span>     <span class="comment"># c() 함수를 이용, 행과 열 모두 적용 가능</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">##    sex math</span><br><span class="line">## 3 male   90</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">##    sex english</span><br><span class="line">## 1 male      88</span><br><span class="line">## 3 male      92</span><br></pre></td></tr></table></figure>
+<ul>
+<li>전체 데이터 출력</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">,</span><span class="punctuation">]</span>    <span class="comment"># exam_a[2,c(1,2,3,4,5,6)]와 같음</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean english math science</span><br><span class="line">## 2  2 female     92      95   93      90</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">]</span>    <span class="comment"># exam_a[c(1,2,3,4,5),5]와 같음</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 82 93 90 80 88</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="punctuation">,</span><span class="punctuation">]</span>     <span class="comment"># exam_a와 같음</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean english math science</span><br><span class="line">## 1  1   male     87      88   82      85</span><br><span class="line">## 2  2 female     92      95   93      90</span><br><span class="line">## 3  3   male     95      92   90      93</span><br><span class="line">## 4  4   male     81      84   80      82</span><br><span class="line">## 5  5 female     87      86   88      86</span><br></pre></td></tr></table></figure>
+<ul>
+<li>연속 데이터 출력</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#연속 데이터 출력은 &#x27;:&#x27; 기호를 이용</span></span><br><span class="line">exam_a<span class="punctuation">[</span><span class="number">2</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">,</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span>   <span class="comment"># exam_a[c(2,3,4),c(1,2,3,4)]와 같고, 2:4/1:4 같은 경우는 1개의 숫자로 인식되어 c()를 쓰지 않아도 됨</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean english</span><br><span class="line">## 2  2 female     92      95</span><br><span class="line">## 3  3   male     95      92</span><br><span class="line">## 4  4   male     81      84</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">)</span><span class="punctuation">]</span>   <span class="comment"># exam_a[c(1,2,3,5),c(2,3,4,6)]와 같음</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">##      sex korean english science</span><br><span class="line">## 1   male     87      88      85</span><br><span class="line">## 2 female     92      95      90</span><br><span class="line">## 3   male     95      92      93</span><br><span class="line">## 5 female     87      86      86</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>필요 없는 데이터 제거</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#선택할 데이터가 많을 경우 필요 없는 데이터를 제거</span></span><br><span class="line">exam_a<span class="punctuation">[</span><span class="operator">-</span><span class="number">2</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">4</span><span class="punctuation">]</span>    <span class="comment"># - 명령어 이용</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">##   no    sex korean math science</span><br><span class="line">## 1  1   male     87   82      85</span><br><span class="line">## 3  3   male     95   90      93</span><br><span class="line">## 4  4   male     81   80      82</span><br><span class="line">## 5  5 female     87   88      86</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exam_a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">2</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">4</span><span class="punctuation">)</span><span class="punctuation">]</span>    <span class="comment"># exam_a[-c(2,3),-c(1,4)]와 같음</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##      sex korean math science</span><br><span class="line">## 1   male     87   82      85</span><br><span class="line">## 4   male     81   80      82</span><br><span class="line">## 5 female     87   88      86</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4."></a>Chapter 4.</h2><h3 id="ggplot2-패키지-제공-데이터세트-불러오기"><a href="#ggplot2-패키지-제공-데이터세트-불러오기" class="headerlink" title="ggplot2 패키지 제공 데이터세트 불러오기"></a>ggplot2 패키지 제공 데이터세트 불러오기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">library(&quot;ggplot2&quot;)</span><br><span class="line"></span><br><span class="line">economics &lt;- ggplot2::economics</span><br><span class="line"></span><br><span class="line">str(economics)</span><br><span class="line">spec_tbl_df [574 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)</span><br><span class="line"> $ date    : Date[1:574], format: &quot;1967-07-01&quot; ...</span><br><span class="line"> $ pce     : num [1:574] 507 510 516 512 517 ...</span><br><span class="line"> $ pop     : num [1:574] 198712 198911 199113 199311 199498 ...</span><br><span class="line"> $ psavert : num [1:574] 12.6 12.6 11.9 12.9 12.8 11.8 11.7 12.3 11.7 12.3 ...</span><br><span class="line"> $ uempmed : num [1:574] 4.5 4.7 4.6 4.9 4.7 4.8 5.1 4.5 4.1 4.6 ...</span><br><span class="line"> $ unemploy: num [1:574] 2944 2945 2958 3143 3066 ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="p-66-여기서-잠깐-gt-실무-패키지"><a href="#p-66-여기서-잠깐-gt-실무-패키지" class="headerlink" title="p.66 여기서 잠깐 -&gt; 실무 패키지"></a>p.66 여기서 잠깐 -&gt; 실무 패키지</h3><ul>
+<li>데이터 분량이 많은 빅데이터를 불러올 때<br>-&gt; read.csv() 함수보다 fread() 함수가 더 빠르게 처리</li>
+<li>이럴 때 설치해야 하는 패키지가 data.table<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;data.table&quot;)</span><br><span class="line">library(&quot;data.table&quot;)</span><br><span class="line"></span><br><span class="line">fread(&quot;student.csv&quot;)</span><br><span class="line"> no    sex height weight</span><br><span class="line">1:  1   male    172     72</span><br><span class="line">2:  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="엑셀파일-불러오기"><a href="#엑셀파일-불러오기" class="headerlink" title="엑셀파일 불러오기"></a>엑셀파일 불러오기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;readxl&quot;)</span><br><span class="line">library(&quot;readxl&quot;)</span><br><span class="line"></span><br><span class="line">read_excel(&quot;student1_xl.xlsx&quot;)</span><br><span class="line"># A tibble: 2 × 4</span><br><span class="line">     no sex    height weight</span><br><span class="line">  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span><br><span class="line">1     1 male      172     72</span><br><span class="line">2     2 female    165     62</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#헤더 제외하고 불러오기</span><br><span class="line">- 헤더 제외 x</span><br><span class="line">read.csv(&quot;student1.csv&quot;)</span><br><span class="line">  school  Korea      X    X.1</span><br><span class="line">1     no    sex height weight</span><br><span class="line">2      1   male    172     72</span><br><span class="line">3      2 female    165     62</span><br><span class="line"></span><br><span class="line">- 헤더 제외</span><br><span class="line">read.csv(&quot;student1.csv&quot;,skip = 1)</span><br><span class="line">  no    sex height weight</span><br><span class="line">1  1   male    172     72</span><br><span class="line">2  2 female    165     62</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 엑셀 파일에 있는 특정 시트 불러오기</span><br><span class="line">read_excel(&quot;student1_xl.xlsx&quot;,sheet=2)</span><br><span class="line"># A tibble: 2 × 4</span><br><span class="line">     no sex    `100M`  Lift</span><br><span class="line">  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;</span><br><span class="line">1     1 male     13.2    12</span><br><span class="line">2     2 female   17.8     5</span><br></pre></td></tr></table></figure>
+<h3 id="txt-파일-불러오기"><a href="#txt-파일-불러오기" class="headerlink" title="txt 파일 불러오기"></a>txt 파일 불러오기</h3><ul>
+<li>txt 파일을 불러올 때는 read.table() 함수 이용</li>
+<li>탭&#x2F;세미콜론(;)&#x2F;쉼표(,)로 형태가 구분</li>
+</ul>
+<ol>
+<li>탭으로 구분된 txt 파일 불러오기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">read.table(&quot;student1.txt&quot;)</span><br><span class="line">  V1     V2     V3     V4</span><br><span class="line">1 no    sex height weight</span><br><span class="line">2  1   male    172     72</span><br><span class="line">3  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>세미콜론으로 구분된 txt 파일 불러오기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">read.table(&quot;student2.txt&quot;, sep = &quot;;&quot;)</span><br><span class="line">  V1     V2     V3     V4</span><br><span class="line">1 no    sex height weight</span><br><span class="line">2  1   male    172     72</span><br><span class="line">3  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>쉼표로 구분된 txt 파일 불러오기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">read.table(&quot;student3.txt&quot;, sep = &quot;,&quot;)</span><br><span class="line">  V1     V2     V3     V4</span><br><span class="line">1 no    sex height weight</span><br><span class="line">2  1   male    172     72</span><br><span class="line">3  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>헤더 관리하기<br>  -read.table() 함수는 기본적으로 헤더가 없는 것으로 인식<br>-&gt; 새로운 헤더를 생성</li>
+</ol>
+<ul>
+<li>이를 해결하기 위해 파라미터를 이용하여 헤더 지정</li>
+<li>헤더가 있다고 지정하고 싶으면 header &#x3D; T를,<br>없다고 지정하고 싶으면 header &#x3D; F를 입력<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">read.table(&quot;student1.txt&quot;, header = T)  </span><br><span class="line">  no    sex height weight</span><br><span class="line">1  1   male    172     72</span><br><span class="line">2  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li>헤더가 없는 파일 불러오기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">read.csv(&quot;student2.csv&quot;)    # 행을 헤더로 인식</span><br><span class="line">  X1   male X177 X78</span><br><span class="line">1  2 female  167  63</span><br><span class="line"></span><br><span class="line">read.csv(&quot;student2.csv&quot;, header = F)   # 헤더가 없다고 지정하자 새 변수이름이 생성</span><br><span class="line">  V1     V2  V3 V4</span><br><span class="line">1  1   male 177 78</span><br><span class="line">2  2 female 167 63</span><br><span class="line"></span><br><span class="line"># colnames() 함수로 변수이름 지정</span><br><span class="line">student2 &lt;- read.csv(&quot;student2.csv&quot;, header = F)</span><br><span class="line">student2</span><br><span class="line">V1     V2  V3 V4</span><br><span class="line">1  1   male 177 78</span><br><span class="line">2  2 female 167 63</span><br><span class="line"></span><br><span class="line">colnames(students2) &lt;- c(&quot;no&quot;,&quot;sex&quot;,&quot;height&quot;,&quot;weight&quot;)</span><br><span class="line">student2</span><br><span class="line"> no    sex height weight</span><br><span class="line">1  1   male    177     78</span><br><span class="line">2  2 female    167     63</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="spss-파일-불러오기"><a href="#spss-파일-불러오기" class="headerlink" title="spss 파일 불러오기"></a>spss 파일 불러오기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;foreign&quot;)</span><br><span class="line">library(&quot;foreign&quot;)</span><br><span class="line"></span><br><span class="line">student &lt;- read.spss(&quot;student.sav&quot;)</span><br><span class="line">as.data.frame(student)    # 형태 변환</span><br><span class="line">no    sex height weight</span><br><span class="line">1  1 male      172     72</span><br><span class="line">2  2 female    165     62</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-시각화데이터_블로그게시방법"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -699,6 +1012,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2022/07/20/Day25_20220720/">July 20, 2022, Day25</a></h6>
+              <span>July 20, 2022</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2022/07/19/Day24_20220719/">July 19, 2022, Day24</a></h6>
               <span>July 19, 2022</span>
             </div>
@@ -753,18 +1078,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2022/07/05/Day14_20220705_ML/">July 5, 2022, Day14</a></h6>
-              <span>July 5, 2022</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -783,7 +1096,7 @@
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
