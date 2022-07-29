@@ -104,6 +104,125 @@
         
           <section id="main">
   
+    <article id="post-리눅스_세팅"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/">July 29, 2022, Day32</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/" class="article-date">
+	  <time datetime="2022-07-28T23:22:22.000Z" itemprop="datePublished">July 29, 2022</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="리눅스-환경-세팅"><a href="#리눅스-환경-세팅" class="headerlink" title="리눅스 환경 세팅"></a>리눅스 환경 세팅</h1><h3 id="1-PC-정보-확인"><a href="#1-PC-정보-확인" class="headerlink" title="1. PC 정보 확인"></a>1. PC 정보 확인</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>버전이 20H1, 20H2, 21H1, 21H2 이하면 X</li>
+</ul>
+<h3 id="2-Powershell을-관리자-권한으로-실행"><a href="#2-Powershell을-관리자-권한으로-실행" class="headerlink" title="2. Powershell을 관리자 권한으로 실행"></a>2. Powershell을 관리자 권한으로 실행</h3><ul>
+<li><p>아래의 코드를 복사 붙여넣기</p>
+<ul>
+<li><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></li>
+<li><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></li>
+</ul>
+<p>  <img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="3-wsl-update-x64-msi-실행"><a href="#3-wsl-update-x64-msi-실행" class="headerlink" title="3. wsl_update_x64.msi 실행"></a>3. wsl_update_x64.msi 실행</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%202.png" alt="Untitled"></p>
+<h3 id="4-Microsoft-store에서-ubuntu-20-04-4-LTS-설치"><a href="#4-Microsoft-store에서-ubuntu-20-04-4-LTS-설치" class="headerlink" title="4. Microsoft store에서 ubuntu 20.04.4 LTS 설치"></a>4. Microsoft store에서 ubuntu 20.04.4 LTS 설치</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%203.png" alt="Untitled"></p>
+<h3 id="5-ubuntu-실행-시-enabled-메시지가-뜬다면"><a href="#5-ubuntu-실행-시-enabled-메시지가-뜬다면" class="headerlink" title="5. ubuntu 실행 시 enabled 메시지가 뜬다면?"></a>5. ubuntu 실행 시 enabled 메시지가 뜬다면?</h3><ul>
+<li>powershell에서<br><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code><br>코드 입력 시 에러가 뜬다.</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%204.png" alt="Untitled"></p>
+<h3 id="6-windows-기능-켜기-x2F-끄기-실행"><a href="#6-windows-기능-켜기-x2F-끄기-실행" class="headerlink" title="6. windows 기능 켜기&#x2F;끄기 실행"></a>6. windows 기능 켜기&#x2F;끄기 실행</h3><ul>
+<li>windows 하이퍼바이저 플랫폼 체크 후 확인 및 재부팅</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%205.png" alt="Untitled"></p>
+<h3 id="7-Powershell-재실행-및-코드-입력"><a href="#7-Powershell-재실행-및-코드-입력" class="headerlink" title="7. Powershell 재실행 및 코드 입력"></a>7. Powershell 재실행 및 코드 입력</h3><ul>
+<li><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code></li>
+</ul>
+<h3 id="8-ubuntu-20-04-4-LTS-재실행"><a href="#8-ubuntu-20-04-4-LTS-재실행" class="headerlink" title="8. ubuntu 20.04.4 LTS 재실행"></a>8. ubuntu 20.04.4 LTS 재실행</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>위와 같은 화면이 뜬다면 설치 성공!</li>
+</ul>
+<h3 id="9-Powershell-재실행-후-버전-확인"><a href="#9-Powershell-재실행-후-버전-확인" class="headerlink" title="9. Powershell 재실행 후 버전 확인"></a>9. Powershell 재실행 후 버전 확인</h3><ul>
+<li>버전이 2여야 하는데 1이라면….?</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%207.png" alt="Untitled"></p>
+<h3 id="10-ubuntu-삭제-후-재설치"><a href="#10-ubuntu-삭제-후-재설치" class="headerlink" title="10. ubuntu 삭제 후 재설치"></a>10. ubuntu 삭제 후 재설치</h3><ul>
+<li>재설치 후 위 과정 반복</li>
+</ul>
+<h3 id="11-Powershell에서-버전-재확인"><a href="#11-Powershell에서-버전-재확인" class="headerlink" title="11. Powershell에서 버전 재확인"></a>11. Powershell에서 버전 재확인</h3><ul>
+<li>버전 수정이 된 것을 알 수 있다.</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%208.png" alt="Untitled"></p>
+<h3 id="※-주의사항-Powershell을-실행할-때는-ubuntu-창을"><a href="#※-주의사항-Powershell을-실행할-때는-ubuntu-창을" class="headerlink" title="※  주의사항 : Powershell을 실행할 때는 ubuntu 창을,"></a>※  주의사항 : Powershell을 실행할 때는 ubuntu 창을,</h3><pre><code>                  ubuntu를 실행할 때는 Powershell 창을 끄는 것이 좋다.
+</code></pre>
+<h1 id="리눅스-x2F-vs-code-연동"><a href="#리눅스-x2F-vs-code-연동" class="headerlink" title="리눅스 &#x2F; vs code 연동"></a>리눅스 &#x2F; vs code 연동</h1><h2 id="1-환경-변수-확인"><a href="#1-환경-변수-확인" class="headerlink" title="1. 환경 변수 확인"></a>1. 환경 변수 확인</h2><ul>
+<li>빅데이터 플랫폼 구축</li>
+<li>웹사이트 구축<ul>
+<li>configuration : 각 설치 프로그램끼리 환경 변수로 유기적으로 연결</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%209.png" alt="Untitled"></p>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2010.png" alt="Untitled"></p>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2011.png" alt="Untitled"></p>
+<h2 id="2-vs-code에서-Remote-WSL-설치"><a href="#2-vs-code에서-Remote-WSL-설치" class="headerlink" title="2. vs code에서 Remote - WSL 설치"></a>2. vs code에서 Remote - WSL 설치</h2><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2012.png" alt="Untitled"></p>
+<h2 id="3-Ubuntu에서-경로-입력-및-vs-code-연동-실행"><a href="#3-Ubuntu에서-경로-입력-및-vs-code-연동-실행" class="headerlink" title="3. Ubuntu에서 경로 입력 및 vs code 연동 실행"></a>3. Ubuntu에서 경로 입력 및 vs code 연동 실행</h2><ul>
+<li>관리자 권한 실행을 하지 않을 것(하려면 환경 변수를 제대로 맞춰 놔야 함)</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2013.png" alt="Untitled"></p>
+<h2 id="4-vs-code에서-가상환경-설치-및-접속"><a href="#4-vs-code에서-가상환경-설치-및-접속" class="headerlink" title="4. vs code에서 가상환경 설치 및 접속"></a>4. vs code에서 가상환경 설치 및 접속</h2><ul>
+<li>which python3</li>
+<li>sudo apt-get update</li>
+<li>sudo apt install python3-pip</li>
+<li>sudo pip3 install virtualenv</li>
+<li>virtualenv venv</li>
+<li>source venv&#x2F;bin&#x2F;activate</li>
+</ul>
+<h2 id="5-환경-변수-설정"><a href="#5-환경-변수-설정" class="headerlink" title="5.  환경 변수 설정"></a>5.  환경 변수 설정</h2><ul>
+<li><p>vi ~&#x2F;.bashrc</p>
+</li>
+<li><p>export AIRFLOW_HOME&#x3D;&#x2F;mnt&#x2F;c&#x2F;dataEngineering</p>
+</li>
+<li><p>ESC 후 shift + ; + wq! + Enter: 저장</p>
+</li>
+<li><p>source ~&#x2F;.bashrc : 시스템에 반영</p>
+</li>
+<li><p>echo $AIRFLOW_HOME입력해서 출력된 경로와 내 경로가 같은지 확인</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-example"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -5131,239 +5250,6 @@ Name: month, dtype: int64
 <!-- Table of Contents -->
 
   
-    <article id="post-Day14_20220705_ML"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2022/07/05/Day14_20220705_ML/">July 5, 2022, Day14</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2022/07/05/Day14_20220705_ML/" class="article-date">
-	  <time datetime="2022-07-05T00:22:22.000Z" itemprop="datePublished">July 5, 2022</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Chapter-5-트리-알고리즘-lt-트리의-앙상블-gt"><a href="#Chapter-5-트리-알고리즘-lt-트리의-앙상블-gt" class="headerlink" title="Chapter 5. 트리 알고리즘 &lt;트리의 앙상블&gt;"></a>Chapter 5. 트리 알고리즘 &lt;트리의 앙상블&gt;</h1><h2 id="랜덤-포레스트"><a href="#랜덤-포레스트" class="headerlink" title="랜덤 포레스트"></a>랜덤 포레스트</h2><ul>
-<li>Decision Tree (나무 1개)<ul>
-<li>여러 개 심음</li>
-<li>샘플링</li>
-<li>feature importances</li>
-</ul>
-</li>
-<li>예측해야 할 행의 갯수 –&gt; 100만개</li>
-<li>컬럼의 갯수 200개 –&gt; 100개로 필터링<ul>
-<li>나무 100개를 심고 평균을 내자</li>
-<li>나무 1개당 컬럼을 10개로</li>
-<li>T1 mae : 20 &#x2F; T2 mae : 30 &#x2F; T3 mae : 10, ….<ul>
-<li>T1 ~ T100 mae :  20</li>
-<li>feature importances</li>
-</ul>
-</li>
-<li>샘플링 : 부트스트랩 샘플 (복원 추출)</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 라이브러리 불러오기</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split, cross_validate</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment"># 데이터 불러오기</span></span><br><span class="line">wine = pd.read_csv(<span class="string">&#x27;https://bit.ly/wine_csv_data&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># input, target 분리</span></span><br><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 훈련데이터, 테스트데이터 분리</span></span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    data, target, test_size = <span class="number">0.2</span>, random_state = <span class="number">42</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모델링</span></span><br><span class="line">rf = RandomForestClassifier(n_jobs = -<span class="number">1</span>, random_state = <span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모형 평가</span></span><br><span class="line">scores = cross_validate(rf, train_input, train_target,</span><br><span class="line">                        return_train_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]), np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 특성 중요도</span></span><br><span class="line">rf.fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(rf.feature_importances_)</span><br><span class="line"></span><br><span class="line"><span class="comment"># OOB (부트스트랩 샘플에 포함되지 않고 남는 샘플)를 이용한 결정 트리 평가</span></span><br><span class="line">rf = RandomForestClassifier(oob_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>, random_state = <span class="number">42</span>)</span><br><span class="line">rf.fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(rf.oob_score_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.9973541965122431 0.8905151032797809
-[0.23167441 0.50039841 0.26792718]
-0.8934000384837406
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 엑스트라 트리</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> ExtraTreesClassifier</span><br><span class="line">et = ExtraTreesClassifier(n_jobs = -<span class="number">1</span>, random_state = <span class="number">42</span>)</span><br><span class="line">scores = cross_validate(et, train_input, train_target,</span><br><span class="line">                        return_train_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]), np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.9974503966084433 0.8887848893166506
-</code></pre>
-<h2 id="그레이디언트-부스팅"><a href="#그레이디언트-부스팅" class="headerlink" title="그레이디언트 부스팅"></a>그레이디언트 부스팅</h2><ul>
-<li>경사하강법의 원리를 이용</li>
-<li>T1 ~ TN 증가하면서 오차를 보정 및 정확성을 높임</li>
-<li>랜덤포레스트와의 차이점<ul>
-<li>랜덤포레스트 : 각 나무 간 상호 연관성 없음</li>
-<li>그레이디언트 부스팅 : 각 나무 간 상호 연관성 있음</li>
-</ul>
-</li>
-<li>단점 : 속도가 너무 느림</li>
-<li>대안 : XGBoost, LightGBM</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 라이브러리 불러오기</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> GradientBoostingClassifier</span><br><span class="line"></span><br><span class="line">gb = GradientBoostingClassifier(random_state = <span class="number">42</span>)</span><br><span class="line">scores = cross_validate(gb, train_input, train_target,</span><br><span class="line">                        return_train_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]), np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8881086892152563 0.8720430147331015
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gb = GradientBoostingClassifier(n_estimators = <span class="number">500</span>, learning_rate = <span class="number">0.2</span>,</span><br><span class="line">                                random_state = <span class="number">42</span>)</span><br><span class="line">scores = cross_validate(gb, train_input, train_target,</span><br><span class="line">                        return_train_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]), np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.9464595437171814 0.8780082549788999
-</code></pre>
-<ul>
-<li>5장 3절의 키포인트 두 가지<ul>
-<li>랜덤포레스트</li>
-<li>부스팅</li>
-</ul>
-</li>
-</ul>
-<h1 id="Chapter-6-비지도-학습"><a href="#Chapter-6-비지도-학습" class="headerlink" title="Chapter 6. 비지도 학습"></a>Chapter 6. 비지도 학습</h1><ul>
-<li>실무에서의 난이도<ul>
-<li>비지도 학습 &gt;&gt;&gt; 지도학습</li>
-</ul>
-</li>
-<li>비지도학습<ul>
-<li>분류 –&gt; 수치적으로 분류</li>
-<li>뉴스 기사 분류<ul>
-<li>만 개 이상의 기사 분류</li>
-<li>정치 &#x2F;사회 &#x2F; 경제 &#x2F; 세계 &#x2F; 연예 &#x2F; 스포츠 &#x2F; 건강 등</li>
-<li>러시아 - 우크라이나 정세<ul>
-<li>세계뉴스? 경제뉴스? 사회뉴스?</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="주성분-분석"><a href="#주성분-분석" class="headerlink" title="주성분 분석"></a>주성분 분석</h2><ul>
-<li><p>Feature Engineering 기법</p>
-</li>
-<li><p>StandardScaler()</p>
-</li>
-<li><p>좌표계 공간 개념</p>
-<ul>
-<li>직교 + 회전</li>
-</ul>
-</li>
-<li><p>공분산 등(통계 관련 내용)</p>
-</li>
-<li><p>Feature Engineering 기법</p>
-</li>
-<li><p>StandardScaler()</p>
-</li>
-<li><p>현 ML의 문제점 : 컬림의 갯수가 매우 많음</p>
-</li>
-<li><p>차원 축소</p>
-<ul>
-<li>특성이 많으면 훈련 데이터에 쉽게 과대적합됨</li>
-<li>특성을 줄여서 학습 모델의 성능 향상</li>
-<li>모델의 학습 시간을 감소시켜줌</li>
-<li>대표적 방법론 : PCA, EFA</li>
-</ul>
-</li>
-<li><p>PCA vs EFA</p>
-<ul>
-<li>EFA(탐색적 요인 분석), Factor Analysis<ul>
-<li>예) 국어, 수학, 과학, 영어</li>
-<li>예) 국어 40&#x2F;수학 100&#x2F;과학 100&#x2F;영어 30 –&gt; 위 학생은 언어영역은 수준이 낮은 편이나 수리영역은 매우 수준이 높습니다.</li>
-<li>예) 범주형 &amp; 수치 데이터세트</li>
-</ul>
-</li>
-<li>PCA(주성분 분석)<ul>
-<li>장비1, 장비2, 장비3, 장비4, …</li>
-<li>PC1, PC2, PC3, PC4, …, PCN</li>
-<li>원래 가지고 있던 정보를 알 수 없음(정보 손실)</li>
-<li>범주형 데이터세트에는 사용할 수 없음</li>
-<li>무조건 수치형 데이터세트에만 사용</li>
-<li>PCA를 실행 전, 반드시 표준화 처리(스케일링 실행)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>p.320</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget https://bit.ly/fruits_300_data -O fruits_300.npy</span><br></pre></td></tr></table></figure>
-
-<pre><code>--2022-07-05 04:54:41--  https://bit.ly/fruits_300_data
-Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11
-Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected.
-HTTP request sent, awaiting response... 301 Moved Permanently
-Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
---2022-07-05 04:54:41--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
-Resolving github.com (github.com)... 140.82.113.4
-Connecting to github.com (github.com)|140.82.113.4|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
---2022-07-05 04:54:42--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 3000128 (2.9M) [application/octet-stream]
-Saving to: ‘fruits_300.npy’
-
-fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.07s   
-
-2022-07-05 04:54:42 (42.9 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">fruits = np.load(<span class="string">&#x27;/content/fruits_300.npy&#x27;</span>)</span><br><span class="line">fruits_2d = fruits.reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 300개 행, 10000개의 열</span></span><br><span class="line">fruits_2d.shape</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(300, 10000)
-</code></pre>
-<ul>
-<li>PCA</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line">pca = PCA(n_components = <span class="number">50</span>)</span><br><span class="line">pca.fit(fruits_2d)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>PCA(n_components=50)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(pca.components_.shape)</span><br><span class="line"><span class="comment"># 50개 주성분을 찾았다는 것</span></span><br><span class="line"><span class="comment"># 10000개의 픽셀 특성을 줄이는 것이 아님</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>(50, 10000)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_fruits</span>(<span class="params">arr, ratio=<span class="number">1</span></span>):</span><br><span class="line">    n = <span class="built_in">len</span>(arr)    <span class="comment"># n은 샘플 개수입니다</span></span><br><span class="line">    <span class="comment"># 한 줄에 10개씩 이미지를 그립니다. 샘플 개수를 10으로 나누어 전체 행 개수를 계산합니다. </span></span><br><span class="line">    rows = <span class="built_in">int</span>(np.ceil(n/<span class="number">10</span>))</span><br><span class="line">    <span class="comment"># 행이 1개 이면 열 개수는 샘플 개수입니다. 그렇지 않으면 10개입니다.</span></span><br><span class="line">    cols = n <span class="keyword">if</span> rows &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">10</span></span><br><span class="line">    fig, axs = plt.subplots(rows, cols, </span><br><span class="line">                            figsize=(cols*ratio, rows*ratio), squeeze=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rows):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(cols):</span><br><span class="line">            <span class="keyword">if</span> i*<span class="number">10</span> + j &lt; n:    <span class="comment"># n 개까지만 그립니다.</span></span><br><span class="line">                axs[i, j].imshow(arr[i*<span class="number">10</span> + j], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">            axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(pca.components_.reshape(-<span class="number">1</span>, <span class="number">100</span>, <span class="number">100</span>))</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/../images/Day14_20220705_ML/output_16_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 머신러닝에서 컬럼의 갯수를 10000개에서 50개로 줄임</span></span><br><span class="line"><span class="comment">## 컬럼이 수치 데이터일 때만 가능함</span></span><br><span class="line">fruits_pca = pca.transform(fruits_2d)</span><br><span class="line"><span class="built_in">print</span>(fruits_pca.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(300, 50)
-</code></pre>
-<ul>
-<li>훈련데이터, 테스트데이터 분리</li>
-</ul>
-<h3 id="설명된-분산"><a href="#설명된-분산" class="headerlink" title="설명된 분산"></a>설명된 분산</h3><ul>
-<li>주성분이 원본 데이터의 분산을 얼마나 잘 나타내는지 기록한 값</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 92%</span></span><br><span class="line"><span class="comment"># 원본 이미지 압축</span></span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(pca.explained_variance_ratio_))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.9215461847321526
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(pca.explained_variance_ratio_)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/../images/Day14_20220705_ML/output_21_0.png" alt="png"></p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -5476,6 +5362,18 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.07s
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/">July 29, 2022, Day32</a></h6>
+              <span>July 29, 2022</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2022/07/26/example/">July 26, 2022, Day29</a></h6>
               <span>July 26, 2022</span>
             </div>
@@ -5530,18 +5428,6 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.07s
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2022/07/08/bike-sharing-training/">Bike Sharing Demand Training</a></h6>
-              <span>July 8, 2022</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -5560,7 +5446,7 @@ fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.07s
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 

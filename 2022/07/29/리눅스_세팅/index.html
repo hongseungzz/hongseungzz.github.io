@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>July 29, 2022, Day32 | SeungZZang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="리눅스 환경 세팅1. PC 정보 확인  버전이 20H1, 20H2, 21H1, 21H2 이하면 X  2. Powershell을 관리자 권한으로 실행 아래의 코드를 복사 붙여넣기  dism.exe &#x2F;online &#x2F;enable-feature &#x2F;featurename:Microsoft-Windows-Subsystem-Linux &#x2F;all &#x2F;norestart dism">
+<meta property="og:type" content="article">
+<meta property="og:title" content="July 29, 2022, Day32">
+<meta property="og:url" content="https://hongseungzz.github.io/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/index.html">
+<meta property="og:site_name" content="SeungZZang&#39;s Blog">
+<meta property="og:description" content="리눅스 환경 세팅1. PC 정보 확인  버전이 20H1, 20H2, 21H1, 21H2 이하면 X  2. Powershell을 관리자 권한으로 실행 아래의 코드를 복사 붙여넣기  dism.exe &#x2F;online &#x2F;enable-feature &#x2F;featurename:Microsoft-Windows-Subsystem-Linux &#x2F;all &#x2F;norestart dism">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%201.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%202.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%203.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%204.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%205.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%206.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%207.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%208.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%209.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2010.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2011.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2012.png">
+<meta property="og:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2013.png">
+<meta property="article:published_time" content="2022-07-28T23:22:22.000Z">
+<meta property="article:modified_time" content="2022-07-29T08:50:28.864Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hongseungzz.github.io/images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SeungZZang&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="SeungZZang&#39;s Blog" rel="home"> SeungZZang&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-리눅스_세팅" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      July 29, 2022, Day32
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/" class="article-date">
+	  <time datetime="2022-07-28T23:22:22.000Z" itemprop="datePublished">July 29, 2022</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="리눅스-환경-세팅"><a href="#리눅스-환경-세팅" class="headerlink" title="리눅스 환경 세팅"></a>리눅스 환경 세팅</h1><h3 id="1-PC-정보-확인"><a href="#1-PC-정보-확인" class="headerlink" title="1. PC 정보 확인"></a>1. PC 정보 확인</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>버전이 20H1, 20H2, 21H1, 21H2 이하면 X</li>
+</ul>
+<h3 id="2-Powershell을-관리자-권한으로-실행"><a href="#2-Powershell을-관리자-권한으로-실행" class="headerlink" title="2. Powershell을 관리자 권한으로 실행"></a>2. Powershell을 관리자 권한으로 실행</h3><ul>
+<li><p>아래의 코드를 복사 붙여넣기</p>
+<ul>
+<li><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></li>
+<li><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></li>
+</ul>
+<p>  <img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="3-wsl-update-x64-msi-실행"><a href="#3-wsl-update-x64-msi-실행" class="headerlink" title="3. wsl_update_x64.msi 실행"></a>3. wsl_update_x64.msi 실행</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%202.png" alt="Untitled"></p>
+<h3 id="4-Microsoft-store에서-ubuntu-20-04-4-LTS-설치"><a href="#4-Microsoft-store에서-ubuntu-20-04-4-LTS-설치" class="headerlink" title="4. Microsoft store에서 ubuntu 20.04.4 LTS 설치"></a>4. Microsoft store에서 ubuntu 20.04.4 LTS 설치</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%203.png" alt="Untitled"></p>
+<h3 id="5-ubuntu-실행-시-enabled-메시지가-뜬다면"><a href="#5-ubuntu-실행-시-enabled-메시지가-뜬다면" class="headerlink" title="5. ubuntu 실행 시 enabled 메시지가 뜬다면?"></a>5. ubuntu 실행 시 enabled 메시지가 뜬다면?</h3><ul>
+<li>powershell에서<br><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code><br>코드 입력 시 에러가 뜬다.</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%204.png" alt="Untitled"></p>
+<h3 id="6-windows-기능-켜기-x2F-끄기-실행"><a href="#6-windows-기능-켜기-x2F-끄기-실행" class="headerlink" title="6. windows 기능 켜기&#x2F;끄기 실행"></a>6. windows 기능 켜기&#x2F;끄기 실행</h3><ul>
+<li>windows 하이퍼바이저 플랫폼 체크 후 확인 및 재부팅</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%205.png" alt="Untitled"></p>
+<h3 id="7-Powershell-재실행-및-코드-입력"><a href="#7-Powershell-재실행-및-코드-입력" class="headerlink" title="7. Powershell 재실행 및 코드 입력"></a>7. Powershell 재실행 및 코드 입력</h3><ul>
+<li><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code></li>
+</ul>
+<h3 id="8-ubuntu-20-04-4-LTS-재실행"><a href="#8-ubuntu-20-04-4-LTS-재실행" class="headerlink" title="8. ubuntu 20.04.4 LTS 재실행"></a>8. ubuntu 20.04.4 LTS 재실행</h3><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>위와 같은 화면이 뜬다면 설치 성공!</li>
+</ul>
+<h3 id="9-Powershell-재실행-후-버전-확인"><a href="#9-Powershell-재실행-후-버전-확인" class="headerlink" title="9. Powershell 재실행 후 버전 확인"></a>9. Powershell 재실행 후 버전 확인</h3><ul>
+<li>버전이 2여야 하는데 1이라면….?</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%207.png" alt="Untitled"></p>
+<h3 id="10-ubuntu-삭제-후-재설치"><a href="#10-ubuntu-삭제-후-재설치" class="headerlink" title="10. ubuntu 삭제 후 재설치"></a>10. ubuntu 삭제 후 재설치</h3><ul>
+<li>재설치 후 위 과정 반복</li>
+</ul>
+<h3 id="11-Powershell에서-버전-재확인"><a href="#11-Powershell에서-버전-재확인" class="headerlink" title="11. Powershell에서 버전 재확인"></a>11. Powershell에서 버전 재확인</h3><ul>
+<li>버전 수정이 된 것을 알 수 있다.</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%208.png" alt="Untitled"></p>
+<h3 id="※-주의사항-Powershell을-실행할-때는-ubuntu-창을"><a href="#※-주의사항-Powershell을-실행할-때는-ubuntu-창을" class="headerlink" title="※  주의사항 : Powershell을 실행할 때는 ubuntu 창을,"></a>※  주의사항 : Powershell을 실행할 때는 ubuntu 창을,</h3><pre><code>                  ubuntu를 실행할 때는 Powershell 창을 끄는 것이 좋다.
+</code></pre>
+<h1 id="리눅스-x2F-vs-code-연동"><a href="#리눅스-x2F-vs-code-연동" class="headerlink" title="리눅스 &#x2F; vs code 연동"></a>리눅스 &#x2F; vs code 연동</h1><h2 id="1-환경-변수-확인"><a href="#1-환경-변수-확인" class="headerlink" title="1. 환경 변수 확인"></a>1. 환경 변수 확인</h2><ul>
+<li>빅데이터 플랫폼 구축</li>
+<li>웹사이트 구축<ul>
+<li>configuration : 각 설치 프로그램끼리 환경 변수로 유기적으로 연결</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%209.png" alt="Untitled"></p>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2010.png" alt="Untitled"></p>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2011.png" alt="Untitled"></p>
+<h2 id="2-vs-code에서-Remote-WSL-설치"><a href="#2-vs-code에서-Remote-WSL-설치" class="headerlink" title="2. vs code에서 Remote - WSL 설치"></a>2. vs code에서 Remote - WSL 설치</h2><p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2012.png" alt="Untitled"></p>
+<h2 id="3-Ubuntu에서-경로-입력-및-vs-code-연동-실행"><a href="#3-Ubuntu에서-경로-입력-및-vs-code-연동-실행" class="headerlink" title="3. Ubuntu에서 경로 입력 및 vs code 연동 실행"></a>3. Ubuntu에서 경로 입력 및 vs code 연동 실행</h2><ul>
+<li>관리자 권한 실행을 하지 않을 것(하려면 환경 변수를 제대로 맞춰 놔야 함)</li>
+</ul>
+<p><img src="/../images/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/Untitled%2013.png" alt="Untitled"></p>
+<h2 id="4-vs-code에서-가상환경-설치-및-접속"><a href="#4-vs-code에서-가상환경-설치-및-접속" class="headerlink" title="4. vs code에서 가상환경 설치 및 접속"></a>4. vs code에서 가상환경 설치 및 접속</h2><ul>
+<li>which python3</li>
+<li>sudo apt-get update</li>
+<li>sudo apt install python3-pip</li>
+<li>sudo pip3 install virtualenv</li>
+<li>virtualenv venv</li>
+<li>source venv&#x2F;bin&#x2F;activate</li>
+</ul>
+<h2 id="5-환경-변수-설정"><a href="#5-환경-변수-설정" class="headerlink" title="5.  환경 변수 설정"></a>5.  환경 변수 설정</h2><ul>
+<li><p>vi ~&#x2F;.bashrc</p>
+</li>
+<li><p>export AIRFLOW_HOME&#x3D;&#x2F;mnt&#x2F;c&#x2F;dataEngineering</p>
+</li>
+<li><p>ESC 후 shift + ; + wq! + Enter: 저장</p>
+</li>
+<li><p>source ~&#x2F;.bashrc : 시스템에 반영</p>
+</li>
+<li><p>echo $AIRFLOW_HOME입력해서 출력된 경로와 내 경로가 같은지 확인</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/26/example/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">July 26, 2022, Day29</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%A6%AC%EB%88%85%EC%8A%A4-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85"><span class="nav-number">1.</span> <span class="nav-text">리눅스 환경 세팅</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-PC-%EC%A0%95%EB%B3%B4-%ED%99%95%EC%9D%B8"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. PC 정보 확인</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Powershell%EC%9D%84-%EA%B4%80%EB%A6%AC%EC%9E%90-%EA%B6%8C%ED%95%9C%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Powershell을 관리자 권한으로 실행</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wsl-update-x64-msi-%EC%8B%A4%ED%96%89"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. wsl_update_x64.msi 실행</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Microsoft-store%EC%97%90%EC%84%9C-ubuntu-20-04-4-LTS-%EC%84%A4%EC%B9%98"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Microsoft store에서 ubuntu 20.04.4 LTS 설치</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-ubuntu-%EC%8B%A4%ED%96%89-%EC%8B%9C-enabled-%EB%A9%94%EC%8B%9C%EC%A7%80%EA%B0%80-%EB%9C%AC%EB%8B%A4%EB%A9%B4"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. ubuntu 실행 시 enabled 메시지가 뜬다면?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-windows-%EA%B8%B0%EB%8A%A5-%EC%BC%9C%EA%B8%B0-x2F-%EB%81%84%EA%B8%B0-%EC%8B%A4%ED%96%89"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. windows 기능 켜기&#x2F;끄기 실행</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Powershell-%EC%9E%AC%EC%8B%A4%ED%96%89-%EB%B0%8F-%EC%BD%94%EB%93%9C-%EC%9E%85%EB%A0%A5"><span class="nav-number">1.0.7.</span> <span class="nav-text">7. Powershell 재실행 및 코드 입력</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-ubuntu-20-04-4-LTS-%EC%9E%AC%EC%8B%A4%ED%96%89"><span class="nav-number">1.0.8.</span> <span class="nav-text">8. ubuntu 20.04.4 LTS 재실행</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Powershell-%EC%9E%AC%EC%8B%A4%ED%96%89-%ED%9B%84-%EB%B2%84%EC%A0%84-%ED%99%95%EC%9D%B8"><span class="nav-number">1.0.9.</span> <span class="nav-text">9. Powershell 재실행 후 버전 확인</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-ubuntu-%EC%82%AD%EC%A0%9C-%ED%9B%84-%EC%9E%AC%EC%84%A4%EC%B9%98"><span class="nav-number">1.0.10.</span> <span class="nav-text">10. ubuntu 삭제 후 재설치</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Powershell%EC%97%90%EC%84%9C-%EB%B2%84%EC%A0%84-%EC%9E%AC%ED%99%95%EC%9D%B8"><span class="nav-number">1.0.11.</span> <span class="nav-text">11. Powershell에서 버전 재확인</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%BB-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD-Powershell%EC%9D%84-%EC%8B%A4%ED%96%89%ED%95%A0-%EB%95%8C%EB%8A%94-ubuntu-%EC%B0%BD%EC%9D%84"><span class="nav-number">1.0.12.</span> <span class="nav-text">※  주의사항 : Powershell을 실행할 때는 ubuntu 창을,</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%A6%AC%EB%88%85%EC%8A%A4-x2F-vs-code-%EC%97%B0%EB%8F%99"><span class="nav-number">2.</span> <span class="nav-text">리눅스 &#x2F; vs code 연동</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-%ED%99%95%EC%9D%B8"><span class="nav-number">2.1.</span> <span class="nav-text">1. 환경 변수 확인</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-vs-code%EC%97%90%EC%84%9C-Remote-WSL-%EC%84%A4%EC%B9%98"><span class="nav-number">2.2.</span> <span class="nav-text">2. vs code에서 Remote - WSL 설치</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Ubuntu%EC%97%90%EC%84%9C-%EA%B2%BD%EB%A1%9C-%EC%9E%85%EB%A0%A5-%EB%B0%8F-vs-code-%EC%97%B0%EB%8F%99-%EC%8B%A4%ED%96%89"><span class="nav-number">2.3.</span> <span class="nav-text">3. Ubuntu에서 경로 입력 및 vs code 연동 실행</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-vs-code%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A0%91%EC%86%8D"><span class="nav-number">2.4.</span> <span class="nav-text">4. vs code에서 가상환경 설치 및 접속</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95"><span class="nav-number">2.5.</span> <span class="nav-text">5.  환경 변수 설정</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 SeungZZang&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
