@@ -104,6 +104,1557 @@
         
           <section id="main">
   
+    <article id="post-Review_Test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/07/06/Review_Test/">July 6, 2022, Day15</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/07/06/Review_Test/" class="article-date">
+	  <time datetime="2022-07-05T22:22:22.000Z" itemprop="datePublished">July 6, 2022</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">titanic = sns.load_dataset(<span class="string">&#x27;titanic&#x27;</span>)</span><br><span class="line">titanic.info()</span><br><span class="line">titanic.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 15 columns):
+ #   Column       Non-Null Count  Dtype   
+---  ------       --------------  -----   
+ 0   survived     891 non-null    int64   
+ 1   pclass       891 non-null    int64   
+ 2   sex          891 non-null    object  
+ 3   age          714 non-null    float64 
+ 4   sibsp        891 non-null    int64   
+ 5   parch        891 non-null    int64   
+ 6   fare         891 non-null    float64 
+ 7   embarked     889 non-null    object  
+ 8   class        891 non-null    category
+ 9   who          891 non-null    object  
+ 10  adult_male   891 non-null    bool    
+ 11  deck         203 non-null    category
+ 12  embark_town  889 non-null    object  
+ 13  alive        891 non-null    object  
+ 14  alone        891 non-null    bool    
+dtypes: bool(2), category(2), float64(2), int64(4), object(5)
+memory usage: 80.7+ KB
+</code></pre>
+  <div id="df-5b46856c-14e7-43b0-87d8-184603a46837">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>embarked</th>
+      <th>class</th>
+      <th>who</th>
+      <th>adult_male</th>
+      <th>deck</th>
+      <th>embark_town</th>
+      <th>alive</th>
+      <th>alone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>C</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>C</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.9250</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>53.1000</td>
+      <td>S</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>C</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.0500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.4583</td>
+      <td>Q</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Queenstown</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>1</td>
+      <td>male</td>
+      <td>54.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>51.8625</td>
+      <td>S</td>
+      <td>First</td>
+      <td>man</td>
+      <td>True</td>
+      <td>E</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>2.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>21.0750</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>child</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>11.1333</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>14.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>30.0708</td>
+      <td>C</td>
+      <td>Second</td>
+      <td>child</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5b46856c-14e7-43b0-87d8-184603a46837')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-5b46856c-14e7-43b0-87d8-184603a46837 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-5b46856c-14e7-43b0-87d8-184603a46837&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.histplot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>, bins = <span class="number">30</span>, hue = <span class="string">&#x27;sex&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047e37d50&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_1_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.histplot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>, bins = <span class="number">20</span>, hue = <span class="string">&#x27;alive&#x27;</span>, multiple = <span class="string">&#x27;stack&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047ccb790&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_2_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.kdeplot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>, hue = <span class="string">&#x27;sex&#x27;</span>, multiple = <span class="string">&#x27;stack&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047f59c50&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_3_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.kdeplot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>, hue = <span class="string">&#x27;alive&#x27;</span>, multiple = <span class="string">&#x27;stack&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047b57cd0&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_4_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.displot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f9047b102d0&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_5_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.displot(data = titanic, x = <span class="string">&#x27;age&#x27;</span>, kde = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f9047af2090&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_6_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.displot(data = titanic, x = <span class="string">&#x27;fare&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f9047a86d50&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_7_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.displot(data = titanic, x = <span class="string">&#x27;fare&#x27;</span>, kde = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f90479d4590&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_8_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.barplot(x = <span class="string">&#x27;class&#x27;</span>, y = <span class="string">&#x27;age&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047771150&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_9_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.pointplot(x = <span class="string">&#x27;class&#x27;</span>, y = <span class="string">&#x27;age&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90476dff50&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_10_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.barplot(x = <span class="string">&#x27;sex&#x27;</span>, y = <span class="string">&#x27;fare&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90476c1990&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_11_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.pointplot(x = <span class="string">&#x27;sex&#x27;</span>, y = <span class="string">&#x27;fare&#x27;</span>, data = titanic)</span><br><span class="line">titanic[<span class="string">&#x27;sex&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>male      577
+female    314
+Name: sex, dtype: int64
+</code></pre>
+<p><img src="/../images/Review_Test/output_12_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.barplot(x = <span class="string">&#x27;sex&#x27;</span>, y = <span class="string">&#x27;age&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90475abd10&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_13_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(x = <span class="string">&#x27;alive&#x27;</span>, y = <span class="string">&#x27;age&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047509410&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_14_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.violinplot(x = <span class="string">&#x27;alive&#x27;</span> , y = <span class="string">&#x27;age&#x27;</span>, hue = <span class="string">&#x27;sex&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047ae5f90&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_15_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.violinplot(x = <span class="string">&#x27;alive&#x27;</span> , y = <span class="string">&#x27;age&#x27;</span>, hue = <span class="string">&#x27;sex&#x27;</span>, data = titanic, split = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f904741ba50&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_16_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.countplot(x = <span class="string">&#x27;sex&#x27;</span>, data = titanic)</span><br><span class="line">sns.countplot(x = <span class="string">&#x27;alive&#x27;</span>, data = titanic)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9047388750&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_17_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">flights = sns.load_dataset(<span class="string">&#x27;flights&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(flights))</span><br><span class="line">flights.head()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+  <div id="df-8bd6ff5a-351a-43ed-a9d8-b31cac425258">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>Jan</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>Feb</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>Mar</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>Apr</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8bd6ff5a-351a-43ed-a9d8-b31cac425258')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-8bd6ff5a-351a-43ed-a9d8-b31cac425258 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-8bd6ff5a-351a-43ed-a9d8-b31cac425258&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flights[<span class="string">&#x27;month&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Jan    12
+Feb    12
+Mar    12
+Apr    12
+May    12
+Jun    12
+Jul    12
+Aug    12
+Sep    12
+Oct    12
+Nov    12
+Dec    12
+Name: month, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">flights_pivot = flights.pivot(index = <span class="string">&#x27;month&#x27;</span>, columns = <span class="string">&#x27;year&#x27;</span>, values = <span class="string">&#x27;passengers&#x27;</span>)</span><br><span class="line">flights_pivot</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-aa216323-40e3-4a02-9dc0-c9a82d5f9bd4">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>year</th>
+      <th>1949</th>
+      <th>1950</th>
+      <th>1951</th>
+      <th>1952</th>
+      <th>1953</th>
+      <th>1954</th>
+      <th>1955</th>
+      <th>1956</th>
+      <th>1957</th>
+      <th>1958</th>
+      <th>1959</th>
+      <th>1960</th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Jan</th>
+      <td>112</td>
+      <td>115</td>
+      <td>145</td>
+      <td>171</td>
+      <td>196</td>
+      <td>204</td>
+      <td>242</td>
+      <td>284</td>
+      <td>315</td>
+      <td>340</td>
+      <td>360</td>
+      <td>417</td>
+    </tr>
+    <tr>
+      <th>Feb</th>
+      <td>118</td>
+      <td>126</td>
+      <td>150</td>
+      <td>180</td>
+      <td>196</td>
+      <td>188</td>
+      <td>233</td>
+      <td>277</td>
+      <td>301</td>
+      <td>318</td>
+      <td>342</td>
+      <td>391</td>
+    </tr>
+    <tr>
+      <th>Mar</th>
+      <td>132</td>
+      <td>141</td>
+      <td>178</td>
+      <td>193</td>
+      <td>236</td>
+      <td>235</td>
+      <td>267</td>
+      <td>317</td>
+      <td>356</td>
+      <td>362</td>
+      <td>406</td>
+      <td>419</td>
+    </tr>
+    <tr>
+      <th>Apr</th>
+      <td>129</td>
+      <td>135</td>
+      <td>163</td>
+      <td>181</td>
+      <td>235</td>
+      <td>227</td>
+      <td>269</td>
+      <td>313</td>
+      <td>348</td>
+      <td>348</td>
+      <td>396</td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <td>121</td>
+      <td>125</td>
+      <td>172</td>
+      <td>183</td>
+      <td>229</td>
+      <td>234</td>
+      <td>270</td>
+      <td>318</td>
+      <td>355</td>
+      <td>363</td>
+      <td>420</td>
+      <td>472</td>
+    </tr>
+    <tr>
+      <th>Jun</th>
+      <td>135</td>
+      <td>149</td>
+      <td>178</td>
+      <td>218</td>
+      <td>243</td>
+      <td>264</td>
+      <td>315</td>
+      <td>374</td>
+      <td>422</td>
+      <td>435</td>
+      <td>472</td>
+      <td>535</td>
+    </tr>
+    <tr>
+      <th>Jul</th>
+      <td>148</td>
+      <td>170</td>
+      <td>199</td>
+      <td>230</td>
+      <td>264</td>
+      <td>302</td>
+      <td>364</td>
+      <td>413</td>
+      <td>465</td>
+      <td>491</td>
+      <td>548</td>
+      <td>622</td>
+    </tr>
+    <tr>
+      <th>Aug</th>
+      <td>148</td>
+      <td>170</td>
+      <td>199</td>
+      <td>242</td>
+      <td>272</td>
+      <td>293</td>
+      <td>347</td>
+      <td>405</td>
+      <td>467</td>
+      <td>505</td>
+      <td>559</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>Sep</th>
+      <td>136</td>
+      <td>158</td>
+      <td>184</td>
+      <td>209</td>
+      <td>237</td>
+      <td>259</td>
+      <td>312</td>
+      <td>355</td>
+      <td>404</td>
+      <td>404</td>
+      <td>463</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>Oct</th>
+      <td>119</td>
+      <td>133</td>
+      <td>162</td>
+      <td>191</td>
+      <td>211</td>
+      <td>229</td>
+      <td>274</td>
+      <td>306</td>
+      <td>347</td>
+      <td>359</td>
+      <td>407</td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>Nov</th>
+      <td>104</td>
+      <td>114</td>
+      <td>146</td>
+      <td>172</td>
+      <td>180</td>
+      <td>203</td>
+      <td>237</td>
+      <td>271</td>
+      <td>305</td>
+      <td>310</td>
+      <td>362</td>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>Dec</th>
+      <td>118</td>
+      <td>140</td>
+      <td>166</td>
+      <td>194</td>
+      <td>201</td>
+      <td>229</td>
+      <td>278</td>
+      <td>306</td>
+      <td>336</td>
+      <td>337</td>
+      <td>405</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-aa216323-40e3-4a02-9dc0-c9a82d5f9bd4')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-aa216323-40e3-4a02-9dc0-c9a82d5f9bd4 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-aa216323-40e3-4a02-9dc0-c9a82d5f9bd4&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.heatmap(data = flights_pivot)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90472669d0&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_21_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.lineplot(x = <span class="string">&#x27;month&#x27;</span>, y = <span class="string">&#x27;passengers&#x27;</span>, data = flights)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90470d0850&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_22_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tips = sns.load_dataset(<span class="string">&#x27;tips&#x27;</span>)</span><br><span class="line">tips.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-518fa7f3-c2ae-4371-b992-128e8e419a71">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-518fa7f3-c2ae-4371-b992-128e8e419a71')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-518fa7f3-c2ae-4371-b992-128e8e419a71 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-518fa7f3-c2ae-4371-b992-128e8e419a71&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.scatterplot(x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>,  hue = <span class="string">&#x27;day&#x27;</span>, data = tips)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f904708c350&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_24_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.scatterplot(x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>,  hue = <span class="string">&#x27;sex&#x27;</span>, data = tips)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9046e524d0&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_25_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.regplot(x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>, data = tips)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9046d93850&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_26_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">0</span>)</span><br><span class="line">intercept = <span class="number">4</span></span><br><span class="line">slope = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">noise = np.random.randn(<span class="number">50</span>, <span class="number">1</span>)</span><br><span class="line">x = <span class="number">5</span> * np.random.randn(<span class="number">50</span>, <span class="number">1</span>)</span><br><span class="line">y = slope * x + intercept + noise</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 데이터 프레임 생성</span></span><br><span class="line">data = pd.DataFrame(</span><br><span class="line">    &#123; <span class="string">&#x27;X&#x27;</span> : x[:, <span class="number">0</span>],</span><br><span class="line">      <span class="string">&#x27;Y&#x27;</span> : y[:, <span class="number">0</span>]&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-585b0239-336a-4955-ba55-7653fef067b0">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-4.477333</td>
+      <td>-7.667946</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.934512</td>
+      <td>10.203695</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.554026</td>
+      <td>-2.683339</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-5.903161</td>
+      <td>-11.468590</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.140911</td>
+      <td>5.444825</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2.141659</td>
+      <td>9.447700</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.332586</td>
+      <td>5.947847</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.512359</td>
+      <td>8.385721</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-3.171610</td>
+      <td>-5.618050</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-1.813706</td>
+      <td>-1.030519</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-3.362302</td>
+      <td>-5.942863</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.797766</td>
+      <td>0.060976</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-4.065731</td>
+      <td>-7.436157</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-8.631413</td>
+      <td>-21.772564</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.887131</td>
+      <td>7.105255</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-2.008905</td>
+      <td>-1.693040</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-8.150992</td>
+      <td>-18.958896</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2.313911</td>
+      <td>10.736576</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-4.536492</td>
+      <td>-9.296408</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.259727</td>
+      <td>3.925085</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>3.645453</td>
+      <td>12.383369</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.644915</td>
+      <td>6.588362</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>5.697003</td>
+      <td>21.955446</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>-6.174129</td>
+      <td>-15.264552</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2.011708</td>
+      <td>12.304879</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-3.424050</td>
+      <td>-7.726517</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-4.353986</td>
+      <td>-9.016199</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-2.894248</td>
+      <td>-4.869929</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-1.557763</td>
+      <td>0.859491</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0.280827</td>
+      <td>6.311839</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>-5.825749</td>
+      <td>-13.322300</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>4.504132</td>
+      <td>17.890560</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2.328312</td>
+      <td>10.097151</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>-7.681218</td>
+      <td>-21.024452</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>7.441261</td>
+      <td>25.975871</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>9.479446</td>
+      <td>32.594687</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>5.893898</td>
+      <td>22.911984</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>-0.899624</td>
+      <td>2.503507</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>-5.353763</td>
+      <td>-12.448616</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>5.272259</td>
+      <td>19.514473</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>-2.015885</td>
+      <td>-3.096207</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>6.112225</td>
+      <td>20.916658</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1.041375</td>
+      <td>5.417854</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>4.883195</td>
+      <td>20.600361</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.781832</td>
+      <td>8.835844</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>3.532866</td>
+      <td>14.160523</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>0.052500</td>
+      <td>2.904705</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>8.929352</td>
+      <td>31.565548</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>0.634560</td>
+      <td>4.289784</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>2.009947</td>
+      <td>9.817100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-585b0239-336a-4955-ba55-7653fef067b0')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-585b0239-336a-4955-ba55-7653fef067b0 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-585b0239-336a-4955-ba55-7653fef067b0&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax.scatter(data[<span class="string">&#x27;X&#x27;</span>], data[<span class="string">&#x27;Y&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/../images/Review_Test/output_28_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.scatterplot(x = <span class="string">&#x27;X&#x27;</span>, y = <span class="string">&#x27;Y&#x27;</span>, data = data)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9046552d90&gt;
+</code></pre>
+<p><img src="/../images/Review_Test/output_29_1.png" alt="png"></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-Day14_20220705_ML"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -7349,587 +8900,6 @@ total :  360
 <!-- Table of Contents -->
 
   
-    <article id="post-Day08_20220627"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2022/06/27/Day08_20220627/">June 27, 2022, Day08</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2022/06/27/Day08_20220627/" class="article-date">
-	  <time datetime="2022-06-27T00:22:22.000Z" itemprop="datePublished">June 27, 2022</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="6-27-월-강의"><a href="#6-27-월-강의" class="headerlink" title="6.27(월) 강의"></a>6.27(월) 강의</h1><h2 id="github-파이썬-레포-만들기"><a href="#github-파이썬-레포-만들기" class="headerlink" title="github 파이썬 레포 만들기"></a>github 파이썬 레포 만들기</h2><p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled.png"></p>
-<ul>
-<li>.gitignore template에서 파이썬 선택</li>
-</ul>
-<h2 id="github에-업데이트하지-않을-디렉토리-및-파일-입력하기"><a href="#github에-업데이트하지-않을-디렉토리-및-파일-입력하기" class="headerlink" title="github에 업데이트하지 않을 디렉토리 및 파일 입력하기"></a>github에 업데이트하지 않을 디렉토리 및 파일 입력하기</h2><p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%201.png"></p>
-<ul>
-<li>.gitignore 에  특정 디렉토리와 파일을 입력</li>
-<li>중요: git add . 가 아닌 git add .gitignore를 입력할 것</li>
-</ul>
-<h2 id="런타임-유형-설정"><a href="#런타임-유형-설정" class="headerlink" title="런타임 유형 설정"></a>런타임 유형 설정</h2><p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%202.png"></p>
-<ul>
-<li>런타임 유형 설정을 클릭하면 해당 창이 뜸</li>
-<li>중간에 바꾸면 처음부터 다시 입력해야 함</li>
-<li>따라서 가장 먼저 설정해줘야 함</li>
-</ul>
-<h2 id="저장한-ipynb-파일-실행"><a href="#저장한-ipynb-파일-실행" class="headerlink" title="저장한 ipynb 파일 실행"></a>저장한 ipynb 파일 실행</h2><h3 id="첫-번째-방법"><a href="#첫-번째-방법" class="headerlink" title="첫 번째 방법"></a>첫 번째 방법</h3><ul>
-<li>아나콘다 - 주피터 노트북 or 주피터 랩으로 열기</li>
-</ul>
-<p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%203.png"></p>
-<p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%204.png"></p>
-<h3 id="두-번째-방법"><a href="#두-번째-방법" class="headerlink" title="두 번째 방법"></a>두 번째 방법</h3><ul>
-<li>구글 코랩으로 열기(구글  드라이브)</li>
-</ul>
-<p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%205.png"></p>
-<h2 id="블로그-폴더에-파일-올리기"><a href="#블로그-폴더에-파일-올리기" class="headerlink" title="블로그 폴더에 파일 올리기"></a>블로그 폴더에 파일 올리기</h2><h3 id="첫-번째-방법-1"><a href="#첫-번째-방법-1" class="headerlink" title="첫 번째 방법"></a>첫 번째 방법</h3><ul>
-<li>아나콘다 - 주피터 노트북 or 주피터 랩으로 ipynb파일을 md 파일로 변환하여 저장<ul>
-<li>주피터 랩일 경우</li>
-</ul>
-</li>
-</ul>
-<p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%206.png"></p>
-<ul>
-<li><p>아나콘다 - 주피터 노트북 or 주피터 랩으로 ipynb파일을 md 파일로 변환하여 저장</p>
-<ul>
-<li>주피터 노트북일 경우</li>
-</ul>
-<p>  <img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%207.png"></p>
-</li>
-</ul>
-<h3 id="두-번째-방법-1"><a href="#두-번째-방법-1" class="headerlink" title="두 번째 방법"></a>두 번째 방법</h3><ul>
-<li>구글 코랩 - 파일 → 다운로드 → .ipynb 다운로드</li>
-<li>이후는 첫 번째 방법과 동일</li>
-</ul>
-<p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%208.png"></p>
-<h2 id="파이썬-툴"><a href="#파이썬-툴" class="headerlink" title="파이썬 툴"></a>파이썬 툴</h2><p><img src="/../images/6%EC%9B%9427%EC%9D%BC_%EA%B0%95%EC%9D%98/Untitled%209.png"></p>
-<ul>
-<li>jupyter와 colab은 세트 개념 : 강의 or blog</li>
-<li>pycharm과 visual studio code 중 택 1 → 가상환경 세팅에서 차이<ul>
-<li>집 윈도우 pc : pycharm</li>
-<li>리눅스 환경 : visual studio code</li>
-</ul>
-</li>
-</ul>
-<h1 id="파이썬-기초문법"><a href="#파이썬-기초문법" class="headerlink" title="파이썬 기초문법"></a>파이썬 기초문법</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Hello world
-</code></pre>
-<h2 id="주석처리"><a href="#주석처리" class="headerlink" title="주석처리"></a>주석처리</h2><ul>
-<li><p>1줄 주석, 여러 줄 주석 처리</p>
-<ul>
-<li>함수 또는 클래스를 문서화할 때 주로 사용</li>
-</ul>
-</li>
-<li><p>프로젝트 할 때</p>
-<ul>
-<li><p>전체 공정 100이라 가정하면</p>
-</li>
-<li><p>코드 &#x2F; 코드 문서화 &#x2F; 한글작업 문서화 </p>
-<p>  -&gt; 코드 문서화가 제일 어려움</p>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print() 함수 사용</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1줄 주석&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">여러 줄 주석</span></span><br><span class="line"><span class="string">쌍따옴표 3개를 입력해주세요</span></span><br><span class="line"><span class="string">앞뒤로</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;여러줄 주석&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>1줄 주석
-여러줄 주석
-</code></pre>
-<h2 id="변수-scalar"><a href="#변수-scalar" class="headerlink" title="변수(scalar)"></a>변수(scalar)</h2><ul>
-<li>자료형</li>
-<li>Scalar형, Non-Scalar형</li>
-</ul>
-<h3 id="수치형-자료형"><a href="#수치형-자료형" class="headerlink" title="수치형 자료형"></a>수치형 자료형</h3><ul>
-<li>int, float</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_int = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(num_int)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_int))</span><br></pre></td></tr></table></figure>
-
-<pre><code>1
-&lt;class &#39;int&#39;&gt;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_float = <span class="number">0.1</span></span><br><span class="line"><span class="built_in">print</span>(num_float)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_float))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.1
-&lt;class &#39;float&#39;&gt;
-</code></pre>
-<h3 id="Bool형"><a href="#Bool형" class="headerlink" title="Bool형"></a>Bool형</h3><ul>
-<li>True, False(앞 글자만 대문자)</li>
-<li>R: TRUE, FALSE(모두 대문자)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bool_true = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(bool_true)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(bool_true))</span><br></pre></td></tr></table></figure>
-
-<pre><code>True
-&lt;class &#39;bool&#39;&gt;
-</code></pre>
-<h2 id="None-자료형"><a href="#None-자료형" class="headerlink" title="None 자료형"></a>None 자료형</h2><ul>
-<li>Null값, 값이 정해지지 않은 자료형</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">none_x = <span class="literal">None</span></span><br><span class="line"><span class="built_in">print</span>(none_x)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(none_x))</span><br></pre></td></tr></table></figure>
-
-<pre><code>None
-&lt;class &#39;NoneType&#39;&gt;
-</code></pre>
-<h2 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h2><ul>
-<li>정수형 사칙연산, 실수형 사칙연산</li>
-<li>결과값의 자료형</li>
-</ul>
-<h3 id="정수형-사칙연산"><a href="#정수형-사칙연산" class="headerlink" title="정수형 사칙연산"></a>정수형 사칙연산</h3><p>+, -, *, &#x2F;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a + b = &#x27;</span>, a+b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a - b = &#x27;</span>, a-b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a * b = &#x27;</span>, a*b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a / b = &#x27;</span>, a/b)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a + b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a - b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a * b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a / b))</span><br></pre></td></tr></table></figure>
-
-<pre><code>a + b =  5
-a - b =  1
-a * b =  6
-a / b =  1.5
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-</code></pre>
-<h3 id="실수형-사칙연산"><a href="#실수형-사칙연산" class="headerlink" title="실수형 사칙연산"></a>실수형 사칙연산</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1.5</span></span><br><span class="line">b = <span class="number">2.5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a + b = &#x27;</span>, a+b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a - b = &#x27;</span>, a-b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a * b = &#x27;</span>, a*b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a / b = &#x27;</span>, a/b)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a + b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a - b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a * b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a / b))</span><br></pre></td></tr></table></figure>
-
-<pre><code>a + b =  4.0
-a - b =  -1.0
-a * b =  3.75
-a / b =  0.6
-&lt;class &#39;float&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-</code></pre>
-<h2 id="논리형-연산자"><a href="#논리형-연산자" class="headerlink" title="논리형 연산자"></a>논리형 연산자</h2><ul>
-<li>Bool형</li>
-<li>True와 False 값으로 정의</li>
-<li>조건식<ul>
-<li>교집합(&#x3D;and), 합집합(&#x3D;or)</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">and</span> <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">and</span> <span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">False</span> <span class="keyword">and</span> <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">False</span> <span class="keyword">and</span> <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>True
-False
-False
-False
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">or</span> <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">False</span> <span class="keyword">or</span> <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="literal">False</span> <span class="keyword">or</span> <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>True
-True
-True
-False
-</code></pre>
-<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><ul>
-<li>비교 연산자는 부등호를 의미</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">4</span> &gt; <span class="number">3</span>)   <span class="comment"># 참 = True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span> &lt; <span class="number">3</span>)   <span class="comment"># 거짓 = False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span> &gt; <span class="number">3</span> <span class="keyword">and</span> <span class="number">4</span> &lt; <span class="number">3</span>)   <span class="comment"># False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span> &gt; <span class="number">3</span> <span class="keyword">or</span> <span class="number">4</span> &lt; <span class="number">3</span>)    <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>True
-False
-False
-True
-</code></pre>
-<h2 id="논리형-amp-비교-연산자-응용"><a href="#논리형-amp-비교-연산자-응용" class="headerlink" title="논리형 &amp; 비교 연산자 응용"></a>논리형 &amp; 비교 연산자 응용</h2><ul>
-<li>input()</li>
-<li>형 변환<ul>
-<li>데이터 타입을 바꾸는 것</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하세요..!&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(var)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(var))   <span class="comment"># str = 문자</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>숫자를 입력하세요..!&quot;g&quot;
-&quot;g&quot;
-&lt;class &#39;str&#39;&gt;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num1 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;첫번째 숫자를 입력하세요..!&quot;</span>))</span><br><span class="line">num2 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;두번째 숫자를 입력하세요..!&quot;</span>))</span><br><span class="line">num3 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;세번째 숫자를 입력하세요..!&quot;</span>))</span><br><span class="line">num4 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;네번째 숫자를 입력하세요..!&quot;</span>))</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var1 = num1 &gt;= num2</span><br><span class="line">var2 = num3 &lt; num4</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(var1 <span class="keyword">and</span> var2)</span><br><span class="line"><span class="built_in">print</span>(var1 <span class="keyword">or</span> var2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 True</span></span><br><span class="line"><span class="comment"># 2 False</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>False
-True
-</code></pre>
-<h2 id="Stirng"><a href="#Stirng" class="headerlink" title="Stirng"></a>Stirng</h2><ul>
-<li>Non Scalar</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello World&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br><span class="line"><span class="comment"># 어떤 것을 해도 상관 없지만 앞뒤가 같으면 됨</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;Hello World&#x27;&quot;</span>)   <span class="comment"># 따옴표를 보여주고 싶을 경우 예시</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&quot;Hello World&quot;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Hello World
-Hello World
-&#39;Hello World&#39;
-&quot;Hello World&quot;
-</code></pre>
-<h2 id="String-Operators"><a href="#String-Operators" class="headerlink" title="String Operators"></a>String Operators</h2><ul>
-<li>문자열 연산자</li>
-<li>+, * 가능</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&quot;Hello&quot;</span></span><br><span class="line">str2 = <span class="string">&quot;World&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str1 + str2)</span><br><span class="line"></span><br><span class="line">str3 = <span class="string">&quot;Hello&quot;</span></span><br><span class="line">str4 = <span class="string">&quot; World&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str3 + str4)</span><br></pre></td></tr></table></figure>
-
-<pre><code>HelloWorld
-Hello World
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greet = str3 + str4</span><br><span class="line"><span class="built_in">print</span>(greet * <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Hello WorldHello WorldHello World
-</code></pre>
-<h2 id="조건문-if"><a href="#조건문-if" class="headerlink" title="조건문 if"></a>조건문 if</h2><ul>
-<li>프로그래밍에서 조건을 판단하여 해당 조건에 맞는 상황을 수행</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">19</span></span><br><span class="line">b = <span class="number">95</span></span><br><span class="line"><span class="keyword">if</span> a &lt; b :</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;a is ace&quot;</span>)    <span class="comment"># if 다음 문장은 탭키나 스페이스바 4번을 눌러 반드시 들여쓰기를 해야 함</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>a is ace
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span> :</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;a는 5보다 크다&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> a &gt; <span class="number">0</span> :</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;a는 0보다 크다&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> a &gt; -<span class="number">3</span> : </span><br><span class="line">  <span class="built_in">print</span> (<span class="string">&quot;a는 -3보다 크다&quot;</span>)</span><br><span class="line"><span class="keyword">else</span> :                              <span class="comment"># else 에는 조건을 붙이지 않음</span></span><br><span class="line">  <span class="built_in">print</span> (<span class="string">&quot;a는 아주 작다&quot;</span>) </span><br></pre></td></tr></table></figure>
-
-<pre><code>숫자를 입력하시오10
-a는 5보다 크다
-</code></pre>
-<h2 id="반복문-for"><a href="#반복문-for" class="headerlink" title="반복문 for"></a>반복문 for</h2><ul>
-<li>실행해야 할 문장을 여러 번 반복</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]:</span><br><span class="line">  <span class="built_in">print</span>(a)    <span class="comment"># for 다음 문장 역시 들여쓰기를 해야 함</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (a,b) <span class="keyword">in</span> [(<span class="number">1</span>,<span class="number">9</span>), (<span class="number">9</span>,<span class="number">5</span>), (<span class="number">0</span>,<span class="number">8</span>), (<span class="number">1</span>,<span class="number">8</span>)] :</span><br><span class="line">  <span class="built_in">print</span>(a + b)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hello World 100000번 출력</span></span><br><span class="line"><span class="keyword">for</span> o <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>) :         <span class="comment"># for 변수 in range(반복횟수) :</span></span><br><span class="line">  <span class="comment"># print(o+1)                # 파이썬은 0부터 시작이기 때문에 1을 더해서 1부터 시작하도록 만들어줌</span></span><br><span class="line">  <span class="built_in">print</span>(o+<span class="number">1</span>, <span class="string">&quot;Hello World&quot;</span>)    <span class="comment"># print(변수+1, 값) -&gt; 인덱스와 값이 같이 출력</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>1 Hello World
-2 Hello World
-3 Hello World
-4 Hello World
-5 Hello World
-</code></pre>
-<ul>
-<li>for loop if 조건문 사용</li>
-<li>문자열, 리스트 등 –&gt; 시퀀스 데이터(반복문을 쓸 수 있음)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;Turner&quot;</span></span><br><span class="line"><span class="comment"># r이 시작하면 반복문을 멈추세요</span></span><br><span class="line"><span class="keyword">for</span> u <span class="keyword">in</span> a : </span><br><span class="line">  <span class="built_in">print</span>(u)            <span class="comment"># print() 위치에 따라 출력값을 조정할 수 있음</span></span><br><span class="line">  <span class="keyword">if</span> u == <span class="string">&quot;r&quot;</span> :</span><br><span class="line">    <span class="keyword">break</span>             <span class="comment"># 들여쓰기 라인을 잘 맞춰야 함</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>T
-u
-r
-</code></pre>
-<ul>
-<li>enumerate()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alphabets = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> index, value <span class="keyword">in</span> <span class="built_in">enumerate</span>(alphabets) :</span><br><span class="line">  <span class="built_in">print</span>(index, value)</span><br></pre></td></tr></table></figure>
-
-<pre><code>0 a
-1 b
-2 c
-</code></pre>
-<h2 id="리스트-컴프리헨션-list-comprehension"><a href="#리스트-컴프리헨션-list-comprehension" class="headerlink" title="리스트 컴프리헨션(list comprehension)"></a>리스트 컴프리헨션(list comprehension)</h2><ul>
-<li>반복문을 한 줄에 처리할 수 있음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;kiwi&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>]</span><br><span class="line">newlist = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 알파벳 a가 있는 과일만 추출 후, 새로운 리스트에 담기</span></span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits :</span><br><span class="line">  <span class="comment"># print(fruit)</span></span><br><span class="line">  <span class="keyword">if</span> <span class="string">&quot;a&quot;</span> <span class="keyword">in</span> fruit : </span><br><span class="line">    newlist.append(fruit)</span><br><span class="line"><span class="built_in">print</span>(newlist)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;apple&#39;, &#39;banana&#39;]
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newlist = [fruit <span class="keyword">for</span> fruit <span class="keyword">in</span> fruits <span class="keyword">if</span> <span class="string">&quot;a&quot;</span> <span class="keyword">in</span> fruit]</span><br><span class="line"><span class="built_in">print</span>(newlist)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;apple&#39;, &#39;banana&#39;]
-</code></pre>
-<h2 id="반복문-while"><a href="#반복문-while" class="headerlink" title="반복문 while"></a>반복문 while</h2><ul>
-<li>조건문이 참인 동안에 while문 아래의 문장이 반복해서 수행</li>
-<li>for 반복문과는 차이가 있음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lm = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> lm &lt; <span class="number">28</span> :</span><br><span class="line">  lm = lm+<span class="number">2</span></span><br><span class="line">  <span class="built_in">print</span>(lm)</span><br><span class="line"></span><br><span class="line">hsg = <span class="number">19</span></span><br><span class="line"><span class="keyword">while</span> hsg &lt; <span class="number">95</span> :</span><br><span class="line">  hsg = hsg+<span class="number">8</span></span><br><span class="line">  <span class="built_in">print</span>(hsg)</span><br></pre></td></tr></table></figure>
-
-<h2 id="def"><a href="#def" class="headerlink" title="def"></a>def</h2><ul>
-<li>함수를 만들 때 사용하는 예약어</li>
-<li>예약어 : 프로그래밍 언어에서 이미 문법적 용도로 사용하고 있는 단어</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">plus</span>(<span class="params">a, b</span>) :</span><br><span class="line">  <span class="keyword">return</span> a+b</span><br><span class="line"></span><br><span class="line">plus(<span class="number">5</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hsg</span>(<span class="params">a, b</span>) :</span><br><span class="line">  <span class="keyword">return</span> a*b-<span class="number">3</span></span><br><span class="line"></span><br><span class="line">hsg(<span class="number">9</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 한 코드에 하나의 def 예약어만 출력 가능</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>33
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">plus</span>(<span class="params">a, b</span>) :</span><br><span class="line">  <span class="keyword">return</span> a+b</span><br><span class="line"></span><br><span class="line">plus(<span class="number">5</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>9
-</code></pre>
-<h2 id="문자열-인덱싱"><a href="#문자열-인덱싱" class="headerlink" title="문자열 인덱싱"></a>문자열 인덱싱</h2><ul>
-<li>인덱싱은 0번째부터 시작</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">greeting = <span class="string">&quot;Hello Kaggle&quot;</span></span><br><span class="line">i = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하세요!&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(greeting[i])</span><br></pre></td></tr></table></figure>
-
-<h2 id="슬라이싱"><a href="#슬라이싱" class="headerlink" title="슬라이싱"></a>슬라이싱</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">greeting = <span class="string">&quot;Hello Kaggle&quot;</span></span><br><span class="line"><span class="comment"># print(greeting[시작인덱스:끝인덱스-1])</span></span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>:<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[:<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">6</span>:])</span><br><span class="line"><span class="comment"># print(greeting[시작인덱스:끝인덱스-1:건너뛸 숫자])</span></span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>:<span class="number">10</span>:<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>:<span class="number">12</span>:<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>:<span class="number">11</span>:<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>Hello Ka
-Hello Ka
-Kaggle
-HloKg
-HlKg
-Hog
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alphabet_letter = <span class="string">&quot;Hong seung gi&quot;</span></span><br><span class="line"><span class="built_in">print</span>(alphabet_letter[<span class="number">0</span>:<span class="number">13</span>:<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>Hn en i
-</code></pre>
-<h2 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h2><ul>
-<li>[]로 표시</li>
-<li>[item1, item2, item3]</li>
-<li>파이썬은 모든 프로그램이 리스트에서 출발 -&gt; ★ 가장 중요 ★</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [] <span class="comment"># 빈 리스트</span></span><br><span class="line">a_func = <span class="built_in">list</span>() <span class="comment"># 빈 리스트 생성</span></span><br><span class="line">b = [<span class="number">1</span>] <span class="comment"># 숫자 요소</span></span><br><span class="line">c = [<span class="string">&#x27;apple&#x27;</span>] <span class="comment"># 문자 요소</span></span><br><span class="line">d = [<span class="number">1</span>,<span class="number">2</span>, [<span class="string">&#x27;apple&#x27;</span>], <span class="string">&#x27;apple&#x27;</span>]</span><br><span class="line">e = [<span class="number">19</span>, <span class="number">95</span>, <span class="number">8</span>, <span class="number">18</span>, <span class="string">&#x27;Happy&#x27;</span>, <span class="string">&quot;Hong&#x27;s&quot;</span>, <span class="string">&quot;birthday&quot;</span>]</span><br><span class="line"><span class="built_in">print</span>(e)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[19, 95, 8, 18, &#39;Happy&#39;, &quot;Hong&#39;s&quot;, &#39;birthday&#39;]
-</code></pre>
-<h2 id="리스트-값-수정하기"><a href="#리스트-값-수정하기" class="headerlink" title="리스트 값 수정하기"></a>리스트 값 수정하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">&quot;Hong&quot;</span>, <span class="string">&quot;seung&quot;</span>, <span class="string">&quot;zzang&quot;</span>]</span><br><span class="line">a[<span class="number">2</span>] = <span class="string">&quot;gi&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;Hong&#39;, &#39;seung&#39;, &#39;gi&#39;]
-</code></pre>
-<h2 id="리스트-값-추가하기"><a href="#리스트-값-추가하기" class="headerlink" title="리스트 값 추가하기"></a>리스트 값 추가하기</h2><ul>
-<li>메서드 사용</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">&quot;Hong&quot;</span>, <span class="string">&quot;seung&quot;</span>, <span class="string">&quot;zzang&quot;</span>]</span><br><span class="line">a.append(<span class="string">&quot;Woooooooo&quot;</span>)   <span class="comment"># 변수 입력 할 필요 없이 메서드만 입력하면 됨</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">a.extend([<span class="string">&quot;gg, gl&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">a.append([<span class="string">&quot;gg, gl&quot;</span>])    <span class="comment"># append로 여러 개 입력하면 대괄호까지 입력됨</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>insert(인덱스 위치, 값)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">&quot;Hong&quot;</span>, <span class="string">&quot;seung&quot;</span>, <span class="string">&quot;zzang&quot;</span>]</span><br><span class="line">a.insert(<span class="number">2</span>, <span class="string">&quot;gi&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;Hong&#39;, &#39;seung&#39;, &#39;gi&#39;, &#39;zzang&#39;]
-</code></pre>
-<h2 id="리스트-값-삭제하기"><a href="#리스트-값-삭제하기" class="headerlink" title="리스트 값 삭제하기"></a>리스트 값 삭제하기</h2><ul>
-<li>remove(), del</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">a.remove(<span class="number">1</span>)    <span class="comment"># 해당되는 처음 값 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">a.remove(<span class="number">3</span>)    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[2, 3, 1, 3, 2]
-[1, 2, 1, 3, 2]
-</code></pre>
-<ul>
-<li>del</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">19</span>]</span><br><span class="line"><span class="keyword">del</span> a[<span class="number">1</span>]    <span class="comment"># 인덱스에 해당하는 값 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> a[<span class="number">0</span>:<span class="number">2</span>]   <span class="comment"># 인덱스 범위에 해당하는 값 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[2, 5, 8, 14, 16, 19]
-[8, 14, 16, 19]
-</code></pre>
-<ul>
-<li>pop()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">adp = a.pop(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(adp)</span><br><span class="line">x = a.pop()    <span class="comment"># 마지막 리스트 값</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[1, 2, 3, 4]
-5
-</code></pre>
-<ul>
-<li>clear() : 리스트 내 모든 값 삭제</li>
-<li>index() : 값의 위치를 불러옴</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line">b = [<span class="string">&quot;Hong&quot;</span>, <span class="string">&quot;Kim&quot;</span>, <span class="string">&quot;Lee&quot;</span>, <span class="string">&quot;Jeong&quot;</span>, <span class="string">&quot;Lee&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a.index(<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(b.index(<span class="string">&quot;Lee&quot;</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>1
-2
-</code></pre>
-<ul>
-<li>sort : 리스트의 정렬</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">6</span>]</span><br><span class="line">a.sort(reverse = <span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="built_in">help</span>(<span class="built_in">list</span>.sort)</span><br><span class="line"><span class="comment"># help(list.index)</span></span><br><span class="line"><span class="comment"># help(list.clear)</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>[1, 2, 4, 5, 6, 7, 8]
-Help on method_descriptor:
-
-clear(self, /)
-    Remove all items from list.
-</code></pre>
-<h2 id="문자열-리스트"><a href="#문자열-리스트" class="headerlink" title="문자열, 리스트"></a>문자열, 리스트</h2><ul>
-<li>내장함수를 익히는 것이 포인트</li>
-</ul>
-<h2 id="튜플"><a href="#튜플" class="headerlink" title="튜플"></a>튜플</h2><ul>
-<li>면접질문 : 리스트와 튜플의 차이가 무엇인가?</li>
-<li>리스트 : []<ul>
-<li>수정, 삭제, 추가</li>
-</ul>
-</li>
-<li>튜플 : ()<ul>
-<li>다 안됨</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="number">0</span>)            <span class="comment"># 콤마가 없어서 int 형태</span></span><br><span class="line">tuple2 = (<span class="number">0</span>,)           <span class="comment"># 콤마가 있어야 tuple 형태가 됨</span></span><br><span class="line">tuple3 = <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tuple1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tuple2))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tuple3))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tuple1)</span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br><span class="line"><span class="built_in">print</span>(tuple3)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;class &#39;int&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-0
-(0,)
-(0, 1, 2)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="keyword">del</span> a[<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-299-3c8e6a62588a&gt; in &lt;module&gt;()
-      1 a = (0, 1, 2, 3, &#39;a&#39;)
-----&gt; 2 del a[4]
-
-
-TypeError: &#39;tuple&#39; object doesn&#39;t support item deletion
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a[<span class="number">4</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-300-51bb12b026ce&gt; in &lt;module&gt;()
-      1 a = (0, 1, 2, 3, &#39;a&#39;)
-----&gt; 2 a[4] = 4
-      3 
-      4 print(a)
-
-
-TypeError: &#39;tuple&#39; object does not support item assignment
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a.index(<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>문자열 연산자</li>
-<li>+, *</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obp = (<span class="number">0.348</span>, <span class="number">0.288</span>, <span class="number">0.256</span>)</span><br><span class="line">slg = (<span class="number">0.556</span>, <span class="number">0.376</span>, <span class="number">0.292</span>)</span><br><span class="line"><span class="built_in">print</span>(obp + slg)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(0.348, 0.288, 0.256, 0.556, 0.376, 0.292)
-</code></pre>
-<h2 id="딕셔너리"><a href="#딕셔너리" class="headerlink" title="딕셔너리"></a>딕셔너리</h2><ul>
-<li>key(키)와 value(값)으로 구성</li>
-<li>슬라이싱! &#x3D; (값의 순서가 존재해야 함)</li>
-<li>순서라는 개념 자체가 존재하지 않음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">temp_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span> : [<span class="string">&#x27;김현수&#x27;</span>, <span class="string">&#x27;이정후&#x27;</span>],     <span class="comment"># 복수일 경우 []로 묶어줘야 함</span></span><br><span class="line">    <span class="string">&#x27;avg&#x27;</span> : [<span class="number">0.344</span>, <span class="number">0.367</span>],</span><br><span class="line">    <span class="string">&#x27;war&#x27;</span> : [<span class="number">3.42</span>, <span class="number">5.16</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(temp_dict[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_dict[<span class="string">&#x27;avg&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_dict[<span class="string">&#x27;war&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[&#39;김현수&#39;, &#39;이정후&#39;]
-[0.344, 0.367]
-[3.42, 5.16]
-</code></pre>
-<ul>
-<li>keys() 값만 출력</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_dict.keys()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>dict_keys([&#39;name&#39;, &#39;avg&#39;, &#39;war&#39;])
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(temp_dict.keys())     <span class="comment"># 리스트로 만들어주기</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[&#39;name&#39;, &#39;avg&#39;, &#39;war&#39;]
-</code></pre>
-<ul>
-<li>values() 값만 출력</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_dict.values()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>dict_values([[&#39;김현수&#39;, &#39;이정후&#39;], [0.344, 0.367], [3.42, 5.16]])
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(temp_dict.values())</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>[[&#39;김현수&#39;, &#39;이정후&#39;], [0.344, 0.367], [3.42, 5.16]]
-</code></pre>
-<ul>
-<li>items() -&gt; key-value 쌍으로 list와 tuple 형태로 출력</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_dict.items()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>dict_items([(&#39;name&#39;, [&#39;김현수&#39;, &#39;이정후&#39;]), (&#39;avg&#39;, [0.344, 0.367]), (&#39;war&#39;, [3.42, 5.16])])
-</code></pre>
-<h1 id="점프-투-파이썬-보충"><a href="#점프-투-파이썬-보충" class="headerlink" title="점프 투 파이썬 보충"></a>점프 투 파이썬 보충</h1><h2 id="사칙연산-1"><a href="#사칙연산-1" class="headerlink" title="사칙연산"></a>사칙연산</h2><ul>
-<li>제곱을 나타내는 연산자 **</li>
-<li>나눗셈의 나머지를 반환하는 연산자 %</li>
-<li>나눗셈의 몫을 반환하는 연산자 &#x2F;&#x2F;</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">7</span></span><br><span class="line">b = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(a ** b)</span><br><span class="line"><span class="built_in">print</span>(a % b)</span><br><span class="line"><span class="built_in">print</span>(a // b)</span><br></pre></td></tr></table></figure>
-
-<pre><code>343
-1
-2
-</code></pre>
-<h2 id="문자열-자료형"><a href="#문자열-자료형" class="headerlink" title="문자열 자료형"></a>문자열 자료형</h2><ul>
-<li>문자열을 만드는 방법 추가적인 2가지<ul>
-<li>큰따옴표 3개를 연속써서 양쪽 둘러싸기</li>
-<li>작은따옴표 3개를 연속써서 양쪽 둘러싸기</li>
-</ul>
-</li>
-</ul>
-<h3 id="문자열-안에-작은따옴표나-큰따옴표를-포함시키고-싶을-때"><a href="#문자열-안에-작은따옴표나-큰따옴표를-포함시키고-싶을-때" class="headerlink" title="문자열 안에 작은따옴표나 큰따옴표를 포함시키고 싶을 때"></a>문자열 안에 작은따옴표나 큰따옴표를 포함시키고 싶을 때</h3><ul>
-<li>문자열 안에 작은따옴표 포함시키기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">food = <span class="string">&quot;python&#x27;s favorite food is perl&quot;</span></span><br><span class="line"><span class="built_in">print</span>(food)</span><br></pre></td></tr></table></figure>
-
-<pre><code>python&#39;s favorite food is perl
-</code></pre>
-<ul>
-<li>문자열에 큰따옴표 포함시키기(인용)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BlockB = <span class="string">&#x27;&quot;very very good.&quot; they says.&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(BlockB)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&quot;very very good.&quot; they says.
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BlockB = <span class="string">&quot;\&quot;very very good.\&quot; they says.&quot;</span></span><br><span class="line"><span class="built_in">print</span>(BlockB)</span><br><span class="line">food = <span class="string">&#x27;python\&#x27;s favorite food is perl&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(food)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&quot;very very good.&quot; they says.
-python&#39;s favorite food is perl
-</code></pre>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -8042,6 +9012,18 @@ python&#39;s favorite food is perl
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2022/08/01/Heroku_%EB%B0%B0%ED%8F%AC/">August 1, 2022, Day33</a></h6>
+              <span>August 1, 2022</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2022/07/29/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%84%B8%ED%8C%85/">July 29, 2022, Day32</a></h6>
               <span>July 29, 2022</span>
             </div>
@@ -8096,18 +9078,6 @@ python&#39;s favorite food is perl
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2022/07/19/Day24_20220719/">July 19, 2022, Day24</a></h6>
-              <span>July 19, 2022</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -8126,7 +9096,7 @@ python&#39;s favorite food is perl
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
